@@ -1,0 +1,15 @@
+@charset "utf-8";
+footer{width:100%;position:fixed;bottom:0;left:0;z-index:199}
+.menu_bottom{width:100%;color:#FFF}
+.menu_bottom ul{list-style:none}
+.menu_bottom li{width:20%;height:50px;float:left}
+.menu_bottom li a{display:block;text-decoration:none}
+.menu_bottom li .menu_icon{width:auto;height:25px;text-align:center;margin-top:5px;display:block}
+.menu_bottom li .menu_icon img{height:100%}
+.menu_bottom li .menu_txt{color:#333;font-size:12px;height:20px;line-height:20px;text-align:center}
+#hide{position:fixed;right:5px;bottom:50px;z-index:1000}
+.footer_show,.footer_hide{width:34px;height:32px;background:url("../images/hideBg.png")/*tpa=http://qycdn.u-kor.cn/images/hideBg.png*/ no-repeat;position:relative}
+.footer_hide:after{content:"";width:10px;height:10px;border-width:1px 1px 0 0;border-style:solid;border-color:#707070;position:absolute;top:9px;left:50%;margin-left:-5px;-webkit-transform:rotate(-45deg)}
+.footer_hide:before{content:"";width:1px;height:12px;border-right:1px solid #707070;position:absolute;top:8px;left:50%; margin-left:-1px}
+.footer_show:after{content:"";width:10px;height:10px;border-width:1px 1px 0 0;border-style:solid;border-color:#707070;position:absolute;top:7px;left:50%;margin-left:-5px;-webkit-transform:rotate(135deg)}
+.footer_show:before{content:"";width:1px;height:12px;border-right:1px solid #707070;position:absolute;top:7px;left:50%; margin-left:-1px}

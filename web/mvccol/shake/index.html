@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>摇一摇</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<div id="bg-flower">
+			<audio preload="auto" id="audio_male" src="audio/male.mp3"></audio>
+			<audio preload="auto" id="audio_match" src="audio/match.mp3"></audio>
+			<audio preload="auto" id="audio_nomatch" src="audio/nomatch.mp3"></audio>
+		</div>
+		<section id="handsome">
+			<div></div>
+			<div>
+				<b id="loading">正在进行奖品匹配...</b>
+			</div>
+		</section>
+		<section>
+			<dl id="result"style="color:#ffffff">
+				<dt>
+					<img src="image/touxiang.jpg"width="100%">
+				</dt>
+				<dd>刘少鹏<br/>300积分</dd>
+			</dl>
+		</section>
+		<ul id="footer"style="position: relative;background-color: beige">
+			<li style="position: absolute;left:25%;top:-70px;width:50%;height:50px;background-color: #f84a2e;border:solid 3px #ffce0c;border-radius: 100px;line-height: 50px;text-align: center;color: #ffffff;font-weight: 900;">
+				点击抢红包
+			</li>
+			<!--<li class="active">宝藏</li>-->
+			<!--<li>积分</li>-->
+			<!--<li>朋友</li>-->
+		</ul>
+		<script src="js/index.js"></script>
+		<script>
+			footer.addEventListener("click",function(e){
+				var li = e.target;
+				if("LI"===li.tagName){
+					document.title = "摇"+li.innerHTML;
+					onShake();
+					var lis = footer.getElementsByTagName("li");
+					for(var n=0,len=lis.length;n<len;n++){
+						lis[n].setAttribute("class","");
+					}
+					li.setAttribute("class","active");
+				}
+			});
+			function animationend(e){
+				var div = e.target;
+				div.className = "";
+				loading.className = "active";
+				result.className = "";
+				setTimeout(function(){
+					audio_match.play();
+					loading.className = "";
+					result.className = "result-in";
+				},1200);
+			}
+			handsome.addEventListener("animationend",animationend);
+			handsome.addEventListener("webkitAnimationEnd",animationend);
+
+			var hands = handsome.getElementsByTagName("div");
+			function onShake(){
+				if(hands[1].className){
+					return;
+				}
+				audio_male.play();
+				hands[0].setAttribute("class","hand-up");
+				hands[1].className = "hand-down";
+				if(result.className === "result-in"){
+					result.className = "result-out";
+				}
+			}
+			ShakeHandler(onShake,2500);
+		</script>
+	</body>
+</html>

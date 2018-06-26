@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>家的味道</title>
+		<meta charset=UTF-8"utf-8">
+		<meta content="" name="description">
+		<meta content="" name="keywords">
+		<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+		<meta content="telephone=no, address=no" name="format-detection">
+		<link href="css/main.css-v=5.css" rel="stylesheet" />
+		<script type="text/javascript">
+		(function(){
+			var phoneWidth = parseInt(window.screen.width),
+				phoneScale = phoneWidth/640,
+				ua = navigator.userAgent;
+
+			if (/Android (\d+\.\d+)/.test(ua)){
+				var version = parseFloat(RegExp.$1);
+				// andriod 2.3
+				if(version > 2.3){
+					document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+				// andriod 2.3以上
+				}else{
+					document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+				}
+				// 其他系统
+			}  
+		})();
+        		var config = {
+			coverUrl:'img/20141120172731_77852.jpg',
+			swipeCur: 0,
+			swipeDir:'vertical', // 'vertical' // horizontal
+		}
+        //业务关联链接数组
+        var ary_biz_jump_id = new Array();
+        var ary_biz_jump_url = new Array();
+		</script>
+		<script src="js/zepot.js"></script>
+		<script src="js/lottery.js"></script>
+		<script src="js/swipe.js"></script>
+		<script src="js/player.js"></script>
+		<script src="js/bur.js"></script>
+		<script src="js/app.js"></script>
+		
+	</head>
+	<body onselectstart="return true;" ondragstart="return false;">
+		<div class="container">
+			<div class="loading-img"><img src="img/loading.gif-v=2014-05-21.gif" /></div>
+
+			<div class="swipe" id="swipe">
+				<ul>
+
+                                    					        <li><div style="background-image: url(img/20141201121635_88040.jpg)"></div></li>
+                            					
+                    
+                                    					        <li><div style="background-image: url(img/20141201121615_81960.jpg)"></div></li>
+                            					
+                    
+                                    					        <li><div style="background-image: url(img/20141201121557_87367.jpg)"></div></li>
+                            					
+                    
+                                    					        <li><div style="background-image: url(img/20141201121539_59300.jpg)"></div></li>
+                            					
+                    
+                                    					        <li><div style="background-image: url(img/20141201121520_79010.jpg)"></div></li>
+                            					
+                    
+                                    					        <li><div style="background-image: url(img/20141201121501_44100.jpg)"></div></li>
+                            					
+                    
+                                    					        <li><div style="background-image: url(img/20141201121442_10478.jpg)"></div></li>
+                            					
+             
+                                    					        <li>
+					        	<!--带按钮的图片需加上class top/middle/bottom ，位置分别在上中下 -->
+					        	<div class="bottom" style="background-image: url(http://scene.img.weimob.com/static/1a/50/71/image/20141201/20141201121929_46373.jpg)">
+			                <script>
+                var biz_jump_url = "http://255034.m.weimob.com/webreserve/ReserveBook?rid=28243&pid=255034&wechatid=fromUsername";
+                ary_biz_jump_url.push(biz_jump_url);
+                ary_biz_jump_id.push('biz_jump_'+'21');
+                </script>
+ 
+								        	</div>
+					        </li>
+                            					
+                    
+                
+
+				</ul>
+			</div>
+            			<div id="musicWrap" class="music_wrap f-hide">
+				<span class="text move hide">打开</span>
+                				    <i id="audioBtn" data-src="http://114.215.116.254/MyNosql/mb/mp3/gdbk.mp3" class="btn_music on"></i>
+                			</div>
+            
+			<div id="arrowV" class="arrow_v f-hide"><p></p></div>
+
+			<div id="arrowH" class="arrow_h f-hide">
+				<span class="arrow_l"></span>
+				<span class="arrow_r"></span>
+			</div>
+
+			<div class="lottery" id="lottery"></div>
+			<div class="download_mask" id="downloadMask"><i></i></div>
+		</div>
+  
+	</body>
+	 
+</html>

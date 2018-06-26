@@ -1,0 +1,31 @@
+@charset "utf-8";
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+
+
+.turntable-bg {
+	width:700px;
+	margin:40px auto 0 auto;
+	height:700px;
+	position:relative;
+	background:url("../images/turntable-bg2.png");
+	background-repeat: no-repeat;
+}
+.turntable-bg .pointer {
+	width:174px;
+	height:228px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-94px;
+	margin-top:-130px;
+	z-index:8;
+}
+.turntable-bg .rotate {
+	width:590px;
+	height:590px;
+	position:absolute;
+	left:54px;
+	top:51px;
+}

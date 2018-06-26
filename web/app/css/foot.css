@@ -1,0 +1,44 @@
+/* footbutton */
+#footbutton{
+position:fixed;
+width:100%;
+left:0;
+bottom:0;
+z-index:999;
+height:45px;
+/* line-height:45px; */
+background-color:#EAEAEA;
+border-bottom:1px solid #ccc;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#EAEAEA)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #FFFFFF, #EAEAEA); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, #FFFFFF, #EAEAEA); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, #FFFFFF, #EAEAEA); /* IE10 */
+  background-image:      -o-linear-gradient(top, #FFFFFF, #EAEAEA); /* Opera 11.10+ */
+background:linear-gradient(to bottom, #FFFFFF, #EAEAEA);
+
+box-shadow:-1px -1px 3px #ccc;
+min-width:320px;
+}
+
+.hewarp li{ 
+float:left;padding:0 5px;
+width:16.5%;
+text-align:center;
+margin:0 auto;
+}
+.hewarp li a,.hewarp li span{
+display:block;
+font-size:11px;
+height:45px;
+width:100%;
+/* line-height:80px; */
+
+}
+
+.hewarp li img{
+width:25px;
+display:block;
+margin:0 auto;
+ padding-top:2px;
+
+}

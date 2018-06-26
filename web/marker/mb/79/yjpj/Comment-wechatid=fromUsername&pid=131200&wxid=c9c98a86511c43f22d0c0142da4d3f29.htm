@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微盟、微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="微盟，国内最大的微信公众智能服务平台，微盟八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <link rel="stylesheet" type="text/css" href="../../stc.weimob.com/css/message.css-2014-08-28.css" tppabs="http://stc.weimob.com/css/message.css?2014-08-28" media="all" />
+<script type="text/javascript" src="../../stc.weimob.com/src/message/jquery_min.js-2014-08-28" tppabs="http://stc.weimob.com/src/message/jquery_min.js?2014-08-28"></script>
+<title>留言</title>
+	<link rel="shortcut icon" href="http://stc.weimob.com/img/favicon.ico" />
+    <!--[if lte IE 9]><script src="../../stc.weimob.com/src/watermark.js" tppabs="http://stc.weimob.com/src/watermark.js"></script><![endif]-->
+	<!--[if IE 7]><link href="../../stc.weimob.com/css/font_awesome_ie7.css" tppabs="http://stc.weimob.com/css/font_awesome_ie7.css" rel="stylesheet" /><![endif]-->
+</head>
+<body>
+	<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta content="" name="description">
+	<meta content="" name="keywords">
+	<meta content="eric.wu" name="author">
+	<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+	<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+	<meta content="no-cache" http-equiv="pragma">
+	<meta content="0" http-equiv="expires">
+	<meta content="telephone=no, address=no" name="format-detection">
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+ 
+	<script type="text/javascript"> 
+		$(document).ready(function () { 
+			$("#showcard1").click(function () { 
+				var btn = $(this);
+				var wxname = $("#wxname1").val();
+				if (wxname  == '') {
+					alert("请输入昵称");
+					return;
+				}
+				var info = $("#info1").val();
+					if (info == '') {
+					alert("请输入内容");
+					return;
+				}
+				var submitData = {
+					nickname:wxname,
+					info: info,
+					action: "setly"
+				};
+				$.post('/Webmessage/SubConment?openid=fromUsername&wxid=c9c98a86511c43f22d0c0142da4d3f29', submitData,
+					function(data) {
+						if (data.success == true) {
+							alert(data.msg);
+							setTimeout('http://131200.m.weimob.com/Webmessage/window.location.href=location.href',1000);
+						return;
+					} else {}
+				},
+				"json")
+			}); 
+			//
+			$("#showcard2").click(function () { 
+				var btn = $(this);
+				var wxname = $("#wxname2").val();
+					if (wxname  == '') {
+					alert("请输入昵称");
+					return;
+				}
+				var info = $("#info2").val();
+					if (info == '') {
+					alert("请输入内容");
+					return;
+				}
+				var submitData = {
+					nickname:wxname,
+					info: info,
+					action: "setly"
+				};
+				$.post('/Webmessage/SubConment?openid=fromUsername&wxid=c9c98a86511c43f22d0c0142da4d3f29', submitData,
+					function(data) {
+						if (data.success == true) {
+						alert(data.msg);
+						setTimeout('http://131200.m.weimob.com/Webmessage/window.location.href=location.href',1000);
+						return;
+					} else {}
+				},
+				"json")
+			});  
+			//
+			$(".hhsubmit").click(function () { 
+				var objid = $(this).attr("date");
+				var info = $(".hly"+objid).val();
+					if (info == '') {
+					alert("请输入内容");
+					return;
+				}
+				var submitData = {
+					nickname:'？',
+					fid:objid,
+					info: info,
+					action: "setly"
+				};
+				$.post('/Webmessage/SubConment?openid=fromUsername&wxid=c9c98a86511c43f22d0c0142da4d3f29', submitData,
+				function(data) {
+					if (data.success == true) {
+						alert(data.msg);
+						setTimeout('http://131200.m.weimob.com/Webmessage/window.location.href=location.href',1000);
+						return;
+					} else {}
+				},
+				"json")
+			});  
+			//
+			$(".hfinfo").click(function () { 
+				var objid = $(this).attr("date");
+				$(".hhly"+objid).slideToggle();
+			}); 
+			//
+			$(".hhbt").click(function () { 
+				var objid = $(this).attr("date");
+				$(".hhly"+objid).slideToggle();
+			});
+			//
+			$("#windowclosebutton").click(function () { 
+				$("#windowcenter").slideUp(500);
+			});
+			//
+			$("#alertclose").click(function () { 
+				$("#windowcenter").slideUp(500);
+			});
+		}); 
+		//
+		function alert(title){ 
+			window.scrollTo(0, -1);
+			$("#windowcenter").slideToggle("slow"); 
+			$("#txt").html(title);
+			setTimeout(function(){$("#windowcenter").slideUp(500);},4000);
+		}
+		//
+		$(document).ready(function(){
+			$(".first1").click(function(){
+				$(".ly1").slideToggle();
+			});
+			$(".first2").click(function(){
+				$(".ly2").slideToggle();
+			});
+		});
+	</script> 
+</head>
+ 
+<body id="message" onselectstart="return true;" ondragstart="return false;">
+	<div class="container">
+	  	<div class="qiandaobanner">
+		  	<a href="javascript:history.go(-1);">
+		  		<img src="../../stc.weimob.com/img/message/mpic.jpg" tppabs="http://stc.weimob.com/img/message/mpic.jpg" style="width:100%;" />
+		  	</a>
+	  	</div>
+
+		<div class="cardexplain">
+			<div class="window" id="windowcenter">
+				<div id="title" class="wtitle">操作提示<span class="close" id="alertclose"></span></div>
+				<div class="content">
+					<div id="txt"></div>
+				</div>
+			</div>
+ 
+			<div class="history">
+				<div class="history-date">
+					<ul>
+						<a><h2 class="first first1" style="position: relative;">请点击留言</h2></a>
+						<!--<li class="nob  mb"><div class="beizhu">留言审核通过后才会显示在留言墙上！</div></li>-->
+						<li class="green bounceInDown nob ly1" style="display:none">
+							<dl>
+								<dt>
+									<input name="wxname" type="text" class="px" id="wxname1" value="？" placeholder="请输入您的昵称">
+								</dt>
+								<dt>
+									<textarea name="info" class="pxtextarea" style=" height:60px;" id="info1" placeholder="请输入留言"></textarea>
+								</dt>
+								<dt><a id="showcard1" class="submit" href="javascript:void(0)">提交留言</a></dt>
+							</dl>
+						</li>			
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:53</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159666">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159666" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159666">
+											<textarea name="info" class="pxtextarea hly159666"></textarea> 
+										<a class="hhsubmit submit" date="159666" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>？回复：额 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:53</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159667">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159667" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159667">
+											<textarea name="info" class="pxtextarea hly159667"></textarea> 
+										<a class="hhsubmit submit" date="159667" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:53</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159668">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159668" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159668">
+											<textarea name="info" class="pxtextarea hly159668"></textarea> 
+										<a class="hhsubmit submit" date="159668" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:53</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159669">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159669" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159669">
+											<textarea name="info" class="pxtextarea hly159669"></textarea> 
+										<a class="hhsubmit submit" date="159669" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:53</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159670">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159670" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159670">
+											<textarea name="info" class="pxtextarea hly159670"></textarea> 
+										<a class="hhsubmit submit" date="159670" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:53</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159671">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159671" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159671">
+											<textarea name="info" class="pxtextarea hly159671"></textarea> 
+										<a class="hhsubmit submit" date="159671" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:38</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159664">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159664" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159664">
+											<textarea name="info" class="pxtextarea hly159664"></textarea> 
+										<a class="hhsubmit submit" date="159664" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:38</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159665">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159665" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159665">
+											<textarea name="info" class="pxtextarea hly159665"></textarea> 
+										<a class="hhsubmit submit" date="159665" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:37</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159657">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159657" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159657">
+											<textarea name="info" class="pxtextarea hly159657"></textarea> 
+										<a class="hhsubmit submit" date="159657" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:37</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159658">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159658" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159658">
+											<textarea name="info" class="pxtextarea hly159658"></textarea> 
+										<a class="hhsubmit submit" date="159658" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:37</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159659">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159659" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159659">
+											<textarea name="info" class="pxtextarea hly159659"></textarea> 
+										<a class="hhsubmit submit" date="159659" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:37</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159660">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159660" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159660">
+											<textarea name="info" class="pxtextarea hly159660"></textarea> 
+										<a class="hhsubmit submit" date="159660" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:37</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159661">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159661" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159661">
+											<textarea name="info" class="pxtextarea hly159661"></textarea> 
+										<a class="hhsubmit submit" date="159661" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:37</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159662">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159662" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159662">
+											<textarea name="info" class="pxtextarea hly159662"></textarea> 
+										<a class="hhsubmit submit" date="159662" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:37</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159663">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159663" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159663">
+											<textarea name="info" class="pxtextarea hly159663"></textarea> 
+										<a class="hhsubmit submit" date="159663" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:36</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159651">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159651" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159651">
+											<textarea name="info" class="pxtextarea hly159651"></textarea> 
+										<a class="hhsubmit submit" date="159651" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:36</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159652">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159652" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159652">
+											<textarea name="info" class="pxtextarea hly159652"></textarea> 
+										<a class="hhsubmit submit" date="159652" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:36</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159653">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159653" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159653">
+											<textarea name="info" class="pxtextarea hly159653"></textarea> 
+										<a class="hhsubmit submit" date="159653" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:36</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159654">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159654" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159654">
+											<textarea name="info" class="pxtextarea hly159654"></textarea> 
+										<a class="hhsubmit submit" date="159654" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:36</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159655">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159655" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159655">
+											<textarea name="info" class="pxtextarea hly159655"></textarea> 
+										<a class="hhsubmit submit" date="159655" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:36</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159656">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159656" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159656">
+											<textarea name="info" class="pxtextarea hly159656"></textarea> 
+										<a class="hhsubmit submit" date="159656" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:35</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159650">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159650" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159650">
+											<textarea name="info" class="pxtextarea hly159650"></textarea> 
+										<a class="hhsubmit submit" date="159650" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:31</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159649">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159649" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159649">
+											<textarea name="info" class="pxtextarea hly159649"></textarea> 
+										<a class="hhsubmit submit" date="159649" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:45:03</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159648">淡定
+</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159648" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159648">
+											<textarea name="info" class="pxtextarea hly159648"></textarea> 
+										<a class="hhsubmit submit" date="159648" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								遇见<span>2014-09-26 11:44:47</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="159646">淡定</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="159646" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly159646">
+											<textarea name="info" class="pxtextarea hly159646"></textarea> 
+										<a class="hhsubmit submit" date="159646" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>遇见回复：淡定 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								107桌食客<span>2014-09-24 18:13:31</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="158927">鱼很鲜，汤底真心好味道，是什么汤底? 那个虾也很新鲜，但是沾酱味道太淡。</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="158927" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly158927">
+											<textarea name="info" class="pxtextarea hly158927"></textarea> 
+										<a class="hhsubmit submit" date="158927" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								？<span>2014-08-05 15:24:19</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="116036">看看</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="116036" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly116036">
+											<textarea name="info" class="pxtextarea hly116036"></textarea> 
+										<a class="hhsubmit submit" date="116036" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：淡定 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>？回复：嘻嘻 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>？回复：挺美的 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown nob ly2" style="display:none">
+							<dl>
+								<dt>
+									<input name="wxname" type="text" class="px" id="wxname2" value="？" placeholder="请输入您的昵称">
+								</dt>
+								<dt>
+									<textarea name="info" class="pxtextarea" style=" height:60px;" id="info2" placeholder="请输入留言"></textarea>
+								</dt>
+								<dt>
+									<a id="showcard2" class="submit" href="javascript:void(0)">提交留言</a>
+								</dt>
+							</dl>
+						</li>
+
+
+						<a><h2 class="first first2" style="position: relative;">请点击留言</h2></a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+ 	        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        window.shareData = {  
+            "imgUrl": "../../stc.weimob.com/img/message/mpic.jpg"/*tpa=http://stc.weimob.com/img/message/mpic.jpg*/, 
+            "timeLineLink": "Comment-wechatid=fromUsername&pid=131200&wxid=c9c98a86511c43f22d0c0142da4d3f29.htm"/*tpa=http://131200.m.weimob.com/Webmessage/Comment?wechatid=fromUsername&pid=131200&wxid=c9c98a86511c43f22d0c0142da4d3f29*/,
+            "sendFriendLink": "Comment-wechatid=fromUsername&pid=131200&wxid=c9c98a86511c43f22d0c0142da4d3f29.htm"/*tpa=http://131200.m.weimob.com/Webmessage/Comment?wechatid=fromUsername&pid=131200&wxid=c9c98a86511c43f22d0c0142da4d3f29*/,
+            "weiboLink": "Comment-wechatid=fromUsername&pid=131200&wxid=c9c98a86511c43f22d0c0142da4d3f29.htm"/*tpa=http://131200.m.weimob.com/Webmessage/Comment?wechatid=fromUsername&pid=131200&wxid=c9c98a86511c43f22d0c0142da4d3f29*/,
+            "tTitle": "留言",
+            "tContent": "留言",
+            "fTitle": "留言",
+            "fContent": "留言",
+            "wContent": "留言" 
+        };
+        // 发送给好友
+        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+            WeixinJSBridge.invoke('sendAppMessage', { 
+                "img_url": window.shareData.imgUrl,
+                "img_width": "640",
+                "img_height": "640",
+                "link": window.shareData.sendFriendLink,
+                "desc": window.shareData.fContent,
+                "title": window.shareData.fTitle
+            }, function (res) {
+                _report('send_msg', res.err_msg);
+            })
+        });
+
+        // 分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function (argv) {
+            WeixinJSBridge.invoke('shareTimeline', {
+                "img_url": window.shareData.imgUrl,
+                "img_width": "640",
+                "img_height": "640",
+                "link": window.shareData.timeLineLink,
+                "desc": window.shareData.tContent,
+                "title": window.shareData.tTitle
+            }, function (res) {
+                _report('timeline', res.err_msg);
+            });
+        });
+
+        // 分享到微博
+        WeixinJSBridge.on('menu:share:weibo', function (argv) {
+            WeixinJSBridge.invoke('shareWeibo', {
+                "content": window.shareData.wContent,
+                "url": window.shareData.weiboLink,
+            }, function (res) {
+                _report('weibo', res.err_msg);
+            });
+        });
+        }, false)
+    </script>
+</body>
+<footer style="text-align:center; color:#ffd800;margin-right:20px"><a href="javascript:if(confirm('http://131200.m.weimob.com/weisite/home?pid=131200&bid=268890&wechatid=fromUsername&wxref=mp.weixin.qq.com  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://131200.m.weimob.com/weisite/home?pid=131200&bid=268890&wechatid=fromUsername&wxref=mp.weixin.qq.com'" tppabs="http://131200.m.weimob.com/weisite/home?pid=131200&bid=268890&wechatid=fromUsername&wxref=mp.weixin.qq.com">©渔意楼</a></footer>
+</html></body>
+<script type="text/javascript">
+(function() {
+	var wtj = document.createElement('script'); wtj.type = 'text/javascript'; wtj.async = true;
+	wtj.src = 'http://tj.weimob.com/wtj.js?url=' + encodeURIComponent(location.href);
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wtj, s);
+})();
+function weimobAfterShare(shareFromWechatId,sendFriendLink,shareToPlatform){
+	var wmShare = document.createElement('script'); wmShare.type = 'text/javascript'; wmShare.async = true;
+    wmShare.src = 'http://tj.weimob.com/api-share.js?fromWechatId=' + shareFromWechatId + '&shareToPlatform=';
+	wmShare.src += shareToPlatform + '&pid=131200&sendFriendLink=' + encodeURIComponent(sendFriendLink);
+    var stj = document.getElementsByTagName('script')[0]; stj.parentNode.insertBefore(wmShare, stj);
+}
+
+/**
+ * 默认分享出去的数据
+ *
+ */
+function getShareImageUrl(){
+
+	var share_imgurl = "";
+	if("" == share_imgurl){
+		var shareImgObj = document.getElementsByClassName("shareImgUrl")[0];
+		if('undefined' != typeof(shareImgObj)){
+			share_imgurl = shareImgObj.src;
+		}
+	}
+	return window.shareData.imgUrl || share_imgurl;
+}
+
+window.shareData = window.shareData || {
+		"timeLineLink": "Comment-wechatid=fromUsername&pid=131200&wxid=c9c98a86511c43f22d0c0142da4d3f29.htm"/*tpa=http://131200.m.weimob.com/Webmessage/Comment?wechatid=fromUsername&pid=131200&wxid=c9c98a86511c43f22d0c0142da4d3f29*/,
+	"sendFriendLink": "Comment-wechatid=fromUsername&pid=131200&wxid=c9c98a86511c43f22d0c0142da4d3f29.htm"/*tpa=http://131200.m.weimob.com/Webmessage/Comment?wechatid=fromUsername&pid=131200&wxid=c9c98a86511c43f22d0c0142da4d3f29*/,
+	"weiboLink": "Comment-wechatid=fromUsername&pid=131200&wxid=c9c98a86511c43f22d0c0142da4d3f29.htm"/*tpa=http://131200.m.weimob.com/Webmessage/Comment?wechatid=fromUsername&pid=131200&wxid=c9c98a86511c43f22d0c0142da4d3f29*/,
+	"tTitle": document.title,
+	"tContent": document.title,
+	"fTitle": document.title,
+	"fContent": document.title,
+	"wContent": document.title
+}
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+	// 发送给好友
+	WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+		WeixinJSBridge.invoke('sendAppMessage', { 
+			"img_url": getShareImageUrl(),
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.sendFriendLink,
+			"desc": window.shareData.fContent,
+			"title": window.shareData.fTitle
+		}, function (res) {
+			if('send_app_msg:cancel' != res.err_msg){
+				weimobAfterShare("",window.shareData.sendFriendLink,'appmessage');
+			}
+			_report('send_msg', res.err_msg);
+		})
+	});
+
+	// 分享到朋友圈
+	WeixinJSBridge.on('menu:share:timeline', function (argv) {
+		WeixinJSBridge.invoke('shareTimeline', {
+			"img_url": getShareImageUrl(),
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.timeLineLink,
+			"desc": window.shareData.tContent,
+			"title": window.shareData.tTitle
+		}, function (res) {
+			if('share_timeline:cancel' != res.err_msg){
+				//如果用户没有取消
+				weimobAfterShare("",window.shareData.timeLineLink,'timeline');
+			}
+			_report('timeline', res.err_msg);
+		});
+	});
+
+	// 分享到微博
+	WeixinJSBridge.on('menu:share:weibo', function (argv) {
+		WeixinJSBridge.invoke('shareWeibo', {
+			"content": window.shareData.wContent,
+			"url": window.shareData.weiboLink
+		}, function (res) {
+			if('share_weibo:cancel' != res.err_msg){
+				weimobAfterShare("",window.shareData.weiboLink,'weibo');
+			}
+			_report('weibo', res.err_msg);
+		});
+	});
+}, false);
+</script>
+<script type="text/javascript" src="../../kf.weimob.com/js/ChatFloat.js" tppabs="http://kf.weimob.com/js/ChatFloat.js"></script>
+<script type="text/javascript">
+var str_domain = location.href.split('/',4)[2];
+var boolIsTest = true;
+if(str_domain == 'http://131200.m.weimob.com/Webmessage/www.weimob.com' || str_domain.indexOf('http://131200.m.weimob.com/Webmessage/m.weimob.com') > 0){
+	boolIsTest = false;
+}
+new ChatFloat({
+        AId: '131200',
+        openid: "",
+		top:150,
+		right:0,
+		IsTest:boolIsTest
+});
+</script>
+</html>

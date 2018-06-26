@@ -1,0 +1,61 @@
+.timer{
+z-index: 10;
+position: absolute;
+padding-top: 7px;
+padding-left:10px;
+width:100%;
+	
+	}
+.traffic{
+	z-index: 10;
+position: absolute;
+padding-left:51%;
+	}
+.timebg{
+	background:url(../img/timebg.png) no-repeat;
+	}
+.lyd{
+z-index: 10;
+position: absolute;
+padding-left:61%;
+line-height:30px;
+font-size:16px;
+	}
+.wx_min{
+	min-width:280px!important;}
+.pd_top{
+	padding-top:46px;}
+.hytel{
+	width:35px;
+	height:35px;
+	 
+	}
+.hydz{
+	 width:35px;
+	height:35px;
+	 
+	}
+.hytel_zi{
+	padding-left:40px;
+	margin-top:-30px;
+	font-size:18px;
+	}
+.hydz_zi{
+	padding-left:40px;
+	margin-top:-30px;
+	font-size:18px; 
+	}
+.mg_top10{
+	margin-top:10px;}
+.hy_name{
+	font-size:20px;
+	margin-left:-12px; 
+	}
+.hy_summary{
+	}
+.bg_hui{
+	background-color:#F5F3F3}
+.hy_dh_you{
+ 
+	
+	}

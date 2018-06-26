@@ -1,0 +1,74 @@
+DIV.jGrowl {
+	Z-INDEX: 9999; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; COLOR: #fff; FONT-SIZE: 12px; PADDING-TOP: 10px
+}
+DIV.jGrowl A {
+	COLOR: #fff !important
+}
+DIV.ie6 {
+	POSITION: absolute
+}
+DIV.top-right.ie6 {
+	BOTTOM: auto; RIGHT: auto
+}
+DIV.top-left.ie6 {
+	
+}
+DIV.bottom-right.ie6 {
+	
+}
+DIV.bottom-left.ie6 {
+	
+}
+DIV.center.ie6 {
+	WIDTH: 100%
+}
+BODY > DIV.jGrowl {
+	POSITION: fixed
+}
+BODY > DIV.top-left.jGrowl {
+	TOP: 0px; LEFT: 0px
+}
+BODY > DIV.top-right.jGrowl {
+	TOP: 0px; RIGHT: 0px
+}
+BODY > DIV.bottom-left.jGrowl {
+	BOTTOM: 0px; LEFT: 0px
+}
+BODY > DIV.bottom-right.jGrowl {
+	BOTTOM: 0px; RIGHT: 0px
+}
+BODY > DIV.center.jGrowl {
+	WIDTH: 50%; TOP: 0px; LEFT: 25%
+}
+DIV.center DIV.jGrowl-notification {
+	MARGIN-LEFT: auto; MARGIN-RIGHT: auto
+}
+DIV.center DIV.jGrowl-closer {
+	MARGIN-LEFT: auto; MARGIN-RIGHT: auto
+}
+DIV.jGrowl DIV.jGrowl-notification {
+	BORDER-BOTTOM: #266dbb 3px solid; TEXT-ALIGN: left; FILTER: progid:DXImageTransform.Microsoft.Alpha(Opacity=95); BORDER-LEFT: #266dbb 3px solid; PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #5d9adf; MARGIN-TOP: 5px; PADDING-LEFT: 10px; WIDTH: 235px; PADDING-RIGHT: 10px; ZOOM: 1; DISPLAY: none; FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif; MARGIN-BOTTOM: 5px; FONT-SIZE: 1em; BORDER-TOP: #266dbb 3px solid; BORDER-RIGHT: #266dbb 3px solid; PADDING-TOP: 10px; opacity: .95
+}
+DIV.jGrowl DIV.jGrowl-closer {
+	BORDER-BOTTOM: #266dbb 3px solid; TEXT-ALIGN: left; FILTER: progid:DXImageTransform.Microsoft.Alpha(Opacity=95); BORDER-LEFT: #266dbb 3px solid; PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #5d9adf; MARGIN-TOP: 5px; PADDING-LEFT: 10px; WIDTH: 235px; PADDING-RIGHT: 10px; ZOOM: 1; DISPLAY: none; FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif; MARGIN-BOTTOM: 5px; FONT-SIZE: 1em; BORDER-TOP: #266dbb 3px solid; BORDER-RIGHT: #266dbb 3px solid; PADDING-TOP: 10px; opacity: .95
+}
+DIV.jGrowl DIV.jGrowl-notification {
+	MIN-HEIGHT: 40px
+}
+DIV.jGrowl DIV.jGrowl-notification DIV.header {
+	FONT-SIZE: 0.85em; FONT-WEIGHT: bold
+}
+DIV.jGrowl DIV.jGrowl-notification DIV.close {
+	Z-INDEX: 99; FLOAT: right; FONT-SIZE: 1em; CURSOR: pointer; FONT-WEIGHT: bold
+}
+DIV.jGrowl DIV.jGrowl-closer {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 4px; FONT-SIZE: 0.9em; CURSOR: pointer; FONT-WEIGHT: bold; PADDING-TOP: 4px
+}
+
+@media Print    
+{
+DIV.jGrowl {
+	DISPLAY: none
+}
+
+}

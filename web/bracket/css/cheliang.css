@@ -1,0 +1,86 @@
+﻿.th1{
+    width: 10px;
+}
+.th2{
+    width: 20px;
+}
+.th3{
+    width:30px;
+}
+.th4{
+    width: 40px;
+}
+.th5{
+    width: 50px;
+}
+.th6{
+    width: 60px;
+}
+.th7{
+    width: 70px;
+}
+.th8{
+    width: 80px;
+}
+.th9{
+    width: 90px;
+}
+.th10{
+    width: 100px;
+}
+.th11{
+    width: 110px;
+}
+.th12{
+    width: 120px;
+}
+.th13{
+    width: 130px;
+}
+.th14{
+    width: 140px;
+}
+.th15{
+    width: 150px;
+}
+.th16{
+    width: 160px;
+}
+.th17{
+    width: 170px;
+}
+.th18{
+    width: 180px;
+}
+.th19{
+    width: 190px;
+}
+.th19{
+    width: 190px;
+}
+.th20{
+    width: 200px;
+}
+.th21{
+    width: 210px;
+}
+.th22{
+    width: 220px;
+}
+.th23{
+    width: 230px;
+}
+.th24{
+    width: 240px;
+}
+.th25{
+    width: 250px;
+}
+.sl{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+.float_right{
+    float: right;
+}

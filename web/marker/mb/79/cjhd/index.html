@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css-2014-08-28.css"   media="all" />
+<link rel="stylesheet" type="text/css" href="css/common.css-2014-08-28.css"   media="all" />
+<link rel="stylesheet" type="text/css" href="css/home-28.css-2014-08-28.css"   media="all" />
+<link rel="stylesheet" type="text/css" href="css/menu-3.css-2014-08-28.css"   media="all" />
+<script type="text/javascript" src="js/jQuery.js"  ></script>
+<script type="text/javascript" src="js/swipe.js-2014-08-28"  ></script>
+<script type="text/javascript" src="js/zepto.js-2014-08-28"  ></script>
+<title>元亨商贸</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="微白水" />
+        <meta name="Description" content="微白水" />
+        <!-- Mobile Devices Support @begin -->
+            <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <!-- Mobile Devices Support @end -->
+        <link rel="shortcut icon" href=" img/favicon.ico" />
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+        
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css-v=2014100900.css"   media="all" />
+
+<div class="body">
+		<!--
+	幻灯片管理
+	-->
+	<div style="-webkit-transform:translate3d(0,0,0);">
+		<div id="banner_box" class="box_swipe">
+			<ul>
+									<li>
+												<a onclick="return false;">
+																<img src="img/20140507193343_74535.jpg"   alt="3" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onclick="return false;">
+																<img src="img/20140507/20140507193409_41181.jpg"   alt="4" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onclick="return false;">
+																<img src="img/20140507193431_58179.jpg"   alt="5" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onclick="return false;">
+																<img src="img/20140507193542_58024.jpg"   alt="5" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onclick="return false;">
+																<img src="img/20140507194946_12467.jpg"   alt="5" style="width:100%;" />
+								</a>
+					</li>
+							</ul>
+			<ol>
+									<li class="on"></li>
+									<li ></li>
+									<li ></li>
+									<li ></li>
+									<li ></li>
+							</ol>
+		</div>
+	</div>
+		<script>
+		$(function(){
+			new Swipe(document.getElementById('banner_box'), {
+				speed:500,
+				auto:3000,
+				callback: function(){
+					var lis = $(this.element).next("ol").children();
+					lis.removeClass("on").eq(this.index).addClass("on");
+				}
+			});
+		});
+	</script>
+<br/>			<section>
+			<a href="tel:0913-6187189" class="link_tel icon-phone"0913-6187189</a>
+		</section>
+				<!--
+		用户分类管理
+        -->
+		<section>
+			<ul class="list_ul">
+									<li>
+													<a href="#"  >
+													<figure>
+								<div style="background-image:url(img/20140507212205_43460.jpg);">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">优惠劵</figcaption>
+							</figure>
+						</a>
+					</li>
+									<li>
+													<a href="#">
+													<figure>
+								<div style="background-image:url(img/20140507212232_28088.jpg);">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">大转盘</figcaption>
+							</figure>
+						</a>
+					</li>
+									<li>
+													<a href="#">
+													<figure>
+								<div style="background-image:url(img/20140507212257_19268.jpg);">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">刮刮乐</figcaption>
+							</figure>
+						</a>
+					</li>
+							</ul>
+		</section>
+	</div>
+
+<!--
+导航菜单
+   后台设置的快捷菜单
+-->
+							<article id="shareCover" class="share" onclick="$('#shareCover').toggleClass('on')">
+			<table>
+				<tr>
+					<td colspan="2" style="text-align:right;">
+						<img src=" img/share_1.png-v=2014-08-28.png"   style="width:120px!important;" />
+						<img src=" img/share_2.png-v=2014-08-28.png"   style="width:30px!important;" />
+					</td>
+				</tr>
+				<tr>
+					<td style="width:50%;">
+						<img src=" img/share_4.png-v=2014-08-28.png"   />
+						<div>发送给朋友</div>
+					</td>
+					<td>
+						<img src=" img/share_3.png-v=2014-08-28.png"   />
+						<div>分享到朋友圈</div>
+					</td>
+				</tr>
+			</table>
+		</article>
+		<section data-role="widget" data-widget="nav7" class="nav7">
+			<div class="plug-div-wrap">
+				<div class="plug-div model1">
+					<div id="plug-phone" class="plug-phone">
+													<div>
+																	<a href="tel:0913-6187189" class="icon-phone">
+										<label>电话</label>
+									</a>
+															</div>
+													<div>
+																	<a href=" #" class="icon-globe ">
+										<label>地址</label>
+									</a>
+															</div>
+													<div>
+																	<a href="#" class="icon-edit">
+										<label>留言</label>
+									</a>
+															</div>
+												<div>
+							<a href="../index.html" class="icon-share"><label>首页</label></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	
+<!--
+分享前控制
+-->
+	 
+<script type="text/javascript" src=" js/ChatFloat.js" tppabs="http://kf.weimob.com/js/ChatFloat.js"></script>
+<script type="text/javascript">
+var str_domain = location.href.split('/',4)[2];
+var boolIsTest = true;
+if(str_domain == 'http://131200.m.weimob.com/weisite/www.weimob.com' || str_domain.indexOf('http://131200.m.weimob.com/weisite/m.weimob.com') > 0){
+	boolIsTest = false;
+}
+new ChatFloat({
+        AId: '131200',
+        openid: "",
+		top:150,
+		right:0,
+		IsTest:boolIsTest
+});
+</script>
+</html>
+

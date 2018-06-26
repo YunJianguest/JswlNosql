@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:s="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.4.xsd"
+	default-autowire="byType" default-lazy-init="true">
+
+	<description>SpringSecurity安全配置</description>
+
+	<!-- http安全配置     login-processing-url="/j_security_check"    -->
+	<!--logout-url="/j_security_logout" invalidate-session="true" -->
+	<!--第二次会提示错误  	-->
+	<s:http auto-config="false" access-decision-manager-ref="accessDecisionManager" servlet-api-provision="false">
+		<s:form-login login-page="/login.action" default-target-url="/"	always-use-default-target="true"		 
+			authentication-failure-url="/login!error.action"  />
+		<s:logout logout-success-url="/login.action" />
+		<s:concurrent-session-control max-sessions="10" exception-if-maximum-exceeded="false" />
+		
+	</s:http>
+
+	<!-- 认证配置 -->
+	<s:authentication-provider user-service-ref="userDetailsService">
+		<!-- 可设置hash使用sha1或md5散列密码后再存入数据库plaintext -->
+		<s:password-encoder hash="plaintext" />
+	</s:authentication-provider>
+	
+	<!-- 项目实现的用户查询服务 -->
+	<bean id="userDetailsService" class="com.lsp.sys.security.UserDetailsServiceImpl" />
+
+	<!-- 重新定义的FilterSecurityInterceptor,使用databaseDefinitionSource提供的url-授权关系定义 -->
+	<bean id="filterSecurityInterceptor" class="org.springframework.security.intercept.web.FilterSecurityInterceptor">
+		<s:custom-filter before="FILTER_SECURITY_INTERCEPTOR" />
+		<property name="accessDecisionManager" ref="accessDecisionManager" />
+		<property name="objectDefinitionSource" ref="databaseDefinitionSource" />
+	</bean>
+
+	<!-- DefinitionSource工厂,使用resourceDetailsService提供的URL-授权关系. -->
+	<bean id="databaseDefinitionSource" class="com.lsp.sys.security.DefinitionSourceFactoryBean">
+		<property name="resourceDetailsService" ref="resourceDetailsService" />
+	</bean>
+	
+	<!-- 项目实现的URL-授权查询服务 -->
+	<bean id="resourceDetailsService" class="com.lsp.sys.security.ResourceDetailsServiceImpl" />
+
+	<!-- 授权判断配置, 将授权名称的默认前缀由ROLE_改为A_. -->
+	<bean id="accessDecisionManager" class="org.springframework.security.vote.AffirmativeBased">
+		<property name="decisionVoters">
+			<list>
+				<bean class="org.springframework.security.vote.RoleVoter">
+					<property name="rolePrefix" value="ROLE_" />
+				</bean>
+				<bean class="org.springframework.security.vote.AuthenticatedVoter" />
+			</list>
+		</property>
+	</bean>
+	<!-- 开发时自动登录的filter -->
+	<bean id="autoLoginFilter" class="com.lsp.sys.security.AutoLoginFilter">
+		<property name="enabled" value="false" />
+		<property name="defaultUserName" value="chongzhi" />
+		<s:custom-filter after="FILTER_SECURITY_INTERCEPTOR"/>
+	</bean>
+	
+</beans>
+
+	

@@ -1,0 +1,155 @@
+body {
+    height: 100%;
+    background-color:#FBFBFB;
+}
+.bt{
+    margin: 2px auto;
+    text-align: center;
+}
+.bt ul{
+    margin-left: 3%;
+    list-style:none;
+    padding:10px;
+    text-align: center;
+ }
+.bt li{
+    display:inline-block;
+    white-space:nowrap
+    list-style:none;
+    padding-right: 5%;
+}
+
+ .tou{
+    color: #8ab10c;
+     font-size: 18px;
+     font-weight: 300;
+}
+.tpxw{
+    width: 96%;
+    margin: 0px auto;
+}
+.tpxw img{
+    width: 100%;
+}
+
+.xiaolu{
+    padding: 2px;
+    background-color: #8ab10c;
+    color: #fff;
+}
+.xiaohong{
+    padding: 2px;
+    background-color: #e55e04;
+    color: #fff;
+}
+.xiaolan{
+    padding: 2px;
+    background-color: #005eac;
+    color: #fff;
+}
+.fd{
+    position: relative;
+    bottom: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    line-height: 28px;
+    padding-left: 3%;
+
+}
+.bz {
+    padding: 10px 0px;
+    text-align: left;
+    border-bottom: 1px solid #CCC;
+     
+    clear: both;
+}
+.xlogo{
+    position: relative;
+    float: left;
+    margin-right: 10px;
+}
+.xlogo img{
+    height: 70px;
+    width: 100px;
+}
+.xlogo1{
+    position: relative;
+    float: right;
+    margin-left: 10px;
+}
+.xlogo1 img{
+    height: 55px;
+    width: 75px;
+}
+.yuedu2{
+    position: relative;
+    clear: both;
+    float: right;
+    bottom: 15px;
+    right:80px
+}
+.tuwen{
+    width: 96%;
+    margin: 5px auto;
+   
+}
+.dz{
+    width: 80%;
+    padding: 1% 0;
+}
+.dz1{
+    width: 98%;
+    padding: 1% 0;
+    line-height:20px ;
+}
+.bta{
+    overflow:hidden;
+    height:20px
+}
+.bt1{
+    width: 70%;
+    float: left;
+    height: 15px;
+
+}
+.jj{
+    width: 100%;
+    line-height:15px;
+}
+.yuedu{
+    position: relative;
+    float: right;
+    bottom: 10px;
+}
+.yuedu1{
+    position: relative;
+    clear: both;
+    float: right;
+    bottom: 15px;
+}
+.yuedu3{
+    position: relative;
+    clear: both;
+    float: right;
+    bottom: 13px;
+}
+
+.zutu{
+    width: 96%;
+    margin: 0px auto;
+    clear: both;
+    padding: 10px 0px;
+}
+.zutu img{
+    max-height: 78px;
+    width: 100%;
+}
+.xtp{
+    padding: 5px;
+    width: 33.3%;
+    float: left;
+}
+.qingli{
+    margin-bottom: -50px;
+}

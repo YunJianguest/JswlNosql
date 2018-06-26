@@ -1,0 +1,33 @@
+.body{
+	max-width:640px;
+	margin:auto;
+	min-height:100%;
+	position:relative;
+	font-size:12px;
+	display:block;
+}
+.article{
+	color:#333333;
+	padding:10px 20px;
+	overflow: hidden;
+	-webkit-box-sizing:border-box; font-family:"Î¢ÈíÑÅºÚ",sans-serif !important; 
+}
+
+.article header h3{
+	font-size:15px;
+	line-height:23px;
+	color:#272727;
+}
+.article header sapn{
+	font-size:12px;
+	line-height:15px;
+	color:#939393;
+	font-weight:bold;
+}
+.article .content{
+	font-weight:bold;
+	padding:10px 0;
+	line-height:22px;
+	color:#747474;
+	word-wrap:break-word;
+}

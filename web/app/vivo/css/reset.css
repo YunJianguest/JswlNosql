@@ -1,0 +1,42 @@
+
+
+.g-lottery-case {padding: 20px 0 100px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.g-lottery-case .g-left {
+    width: 100%;
+    float: left;
+}
+
+.g-lottery-box {
+    width: 12rem;
+    height: 12rem;
+    margin:0  auto;
+    position: relative;
+    background: url(../images/down.png) no-repeat;
+    background-size:12rem 12rem ;
+}
+
+.g-lottery-box .g-lottery-img {
+    width: 10.6rem;
+    height: 10.5rem;
+    position: relative;
+    background: url(../images/middle.png) no-repeat;
+    background-size:10rem 10rem ;
+    left: 1rem;
+    top: 0.7rem;
+}
+
+.g-lottery-box .playbtn {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+    background: url(../images/top.png) no-repeat;
+    background-size:5rem 5rem ;
+}

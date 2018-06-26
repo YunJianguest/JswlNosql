@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset= "utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css-2014-08-28.css"   media="all" />
+<link rel="stylesheet" type="text/css" href="css/common.css-2014-08-28.css"   media="all" />
+<link rel="stylesheet" type="text/css" href="css/home-28.css-2014-08-28.css"   media="all" />
+<link rel="stylesheet" type="text/css" href="css/menu-3.css-2014-08-28.css"   media="all" />
+<script type="text/javascript" src="js/jQuery.js"  ></script>
+<script type="text/javascript" src="js/swipe.js-2014-08-28"  ></script>
+<script type="text/javascript" src="js/zepto.js-2014-08-28"  ></script>
+<link rel="stylesheet" type="text/css" href="common/css/iscroll.css" />
+<link rel="stylesheet" type="text/css" href="common/css/wz.css" />
+<title>涮烤坊</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="微白水" />
+        <meta name="Description" content="微白水" />
+        <!-- Mobile Devices Support @begin -->
+            <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <!-- Mobile Devices Support @end -->
+        <link rel="shortcut icon" href="img/favicon.ico" />
+   
+   <script>
+    ;(function zan($) {
+        $.extend({
+            tipsBox: function(options) {
+                options = $.extend({
+                    obj: null,  //jq对象，要在那个html标签上显示
+                    str: "+1",  //字符串，要显示的内容;也可以传一段html，如: "<b style='font-family:Microsoft YaHei;'>+1</b>"
+                    startSize: "12px",  //动画开始的文字大小
+                    endSize: "30px",    //动画结束的文字大小
+                    interval: 1500,  //动画时间间隔
+                    color: "red",    //文字颜色
+                    callback: function() {}    //回调函数
+                }, options);
+                $("body").append("<span class='num'>"+ options.str +"</span>");
+                var box = $(".num");
+                var left = options.obj.offset().left - options.obj.width() / 2;
+                var top = options.obj.offset().top + options.obj.height();
+                box.css({
+                    "position": "absolute",
+                    "left": left + "px",
+                    "top": top + "px",
+                    "z-index": 9999,
+                    "font-size": options.startSize,
+                    "line-height": options.endSize,
+                    "color": options.color
+                });
+                box.animate({
+                    "font-size": options.endSize,
+                    "opacity": "0",
+                    "top": top - parseInt(options.endSize) + "px"
+                }, options.interval , function() {
+                    box.remove();
+                    options.callback();
+                });
+            }
+        });
+    })(jQuery);
+</script>
+
+<script>
+	var zan=0;
+	$(function() {
+		
+	  
+		$("#btn").click(function() {
+			zan++;
+		 
+		 if(zan==1)
+		 {
+		 	 
+		 		$.tipsBox({
+				
+				obj: $(this),
+				str: "赞+1",
+			 			
+               callback: function  zan() {
+                    //alert(5);
+                }
+			});
+		 	}else{
+		 		
+		 	 
+		 		
+		 		}
+		  zanCompany();
+		
+		});
+	 
+	});
+	
+</script>
+<script type="text/javascript">
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+WeixinJSBridge.call('hideToolbar');
+});
+function zanCompany() {
+
+$.post('/MyNosql/wwz/wwzajax!zanCompany.action?toUser=${toUser}&companyid=${company._id}',
+function(res) {
+
+if (res) {
+
+} else {
+alert('请求失败了');
+}
+});
+}
+</script>
+
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+        
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css-v=2014100823.css"  media="all" />
+
+
+<div class="body">
+		<!--
+	幻灯片管理
+	-->
+	<div data-role="widget" data-widget="music90" class="music90">
+<link rel="stylesheet" href="css/music90.css">
+			<script src="js/player.js" ></script>
+			<a href="javascript:void(0);" class="btn_music" onclick="playbox.init(this).play();"></a><audio id="audio" loop src="http://wnmp3.oss-cn-qingdao.aliyuncs.com/好听.mp3" style="pointer-events:none;display:none;width:0!important;height:0!important;"></audio>
+</div>
+
+<div  class="zan90" >
+	   <a herf="javascript:void(0);" class="btn_zan" id="btn" ></a>
+	
+</div>
+
+
+	<div style="-webkit-transform:translate3d(0,0,0);">
+		<div id="banner_box" class="box_swipe">
+			<ul>
+									<li>
+												<a onClick="return false;">
+																<img src="img/20140507193343_74535.jpg"   alt="3" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onClick="return false;">
+																<img src="img/20140507193409_41181.jpg"   alt="4" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onClick="return false;">
+																<img src="img/20140507193431_58179.jpg"   alt="5" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onClick="return false;">
+																<img src="img/20140507193542_58024.jpg"   alt="5" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onClick="return false;">
+																<img src="img/20140507194946_12467.jpg"   alt="5" style="width:100%;" />
+								</a>
+					</li>
+							</ul>
+			<ol>
+									<li class="on"></li>
+									<li ></li>
+									<li ></li>
+									<li ></li>
+									<li ></li>
+							</ol>
+		</div>
+	</div>
+		<script>
+		$(function(){
+			new Swipe(document.getElementById('banner_box'), {
+				speed:500,
+				auto:3000,
+				callback: function(){
+					var lis = $(this.element).next("ol").children();
+					lis.removeClass("on").eq(this.index).addClass("on");
+				}
+			});
+		});
+	</script>
+		 
+				<!--
+		用户分类管理
+        -->
+		 <ul class="mainmenu" style="width:auto;padding: 0;">
+<li>
+	<div class="menubtn">
+		<a href="#" cla>
+			<div class="menumesg">
+				<div class="menuimg">
+				 
+         	<img  src="common/img/shi1.jpg" />
+				</div>
+				<div class="menutitle">山庄实景</div>
+			</div>
+		</a>
+	</div>
+</li><li>
+	<div class="menubtn">
+		<a href="#">
+			<div class="menumesg">
+				<div class="menuimg">
+					<img  src="common/img/shi2.jpg" />
+				</div>
+				<div class="menutitle">特别推荐</div>
+			</div>
+		</a>
+	</div>
+</li><li>
+	<div class="menubtn">
+		<a href="#">
+			<div class="menumesg">
+				<div class="menuimg">
+					<img  src="common/img/shi3.jpg" />
+				</div>
+				<div class="menutitle">今日优惠</div>
+			</div>
+		</a>
+	</div>
+</li><li>
+	<div class="menubtn">
+		<a href="#">
+			<div class="menumesg">
+				<div class="menuimg">
+					<img  src="common/img/shi4.jpg" />
+				</div>
+				<div class="menutitle">幸运抽奖</div>
+			</div>
+		</a>
+	</div>
+</li> 
+
+</ul>
+	</div>
+
+<!--
+导航菜单
+   后台设置的快捷菜单
+-->
+							<article id="shareCover" class="share" onclick="$('#shareCover').toggleClass('on')">
+			<table>
+				<tr>
+					<td colspan="2" style="text-align:right;">
+						<img src="img/share_1.png-v=2014-08-28.png"  style="width:120px!important;" />
+						<img src="img/share_2.png-v=2014-08-28.png"  style="width:30px!important;" />
+					</td>
+				</tr>
+				<tr>
+					<td style="width:50%;">
+						<img src="img/share_4.png-v=2014-08-28.png"  />
+						<div>发送给朋友</div>
+					</td>
+					<td>
+						<img src=".img/share_3.png-v=2014-08-28.png"  />
+						<div>分享到朋友圈</div>
+					</td>
+				</tr>
+			</table>
+		</article>
+		<section data-role="widget" data-widget="nav7" class="nav7">
+			<div class="plug-div-wrap">
+				<div class="plug-div model1">
+					<div id="plug-phone" class="plug-phone">
+													<div>
+																				<a href="tel:0913-6187189" class="icon-phone">
+										<label>电话</label>
+									</a>
+															</div>
+													<div id="btn">
+																	<a href="javascript:void(0);" class="icon-globe " >
+										<label>地址</label>
+									</a>
+															</div>
+													<div>
+																	<a href="#" class="icon-edit">
+										<label>留言</label>
+									</a>
+															</div>
+												<div>
+							<a href="index..html" class="icon-share"><label>首页</label></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	
+<!--
+分享前控制
+-->
+	 
+        			<footer style="overflow:visible;">
+				<div class="weimob-copyright" style="padding-bottom:50px;">
+											<span class="weimob-support" >陕西信使文化科技有限公司</span>
+									</div>
+			</footer>
+				<div mark="stat_code" style="width:0px; height:0px; display:none;">
+					</div>
+	</body>
+		<script type="text/javascript">
+(function() {
+	var wtj = document.createElement('script'); wtj.type = 'text/javascript'; wtj.async = true;
+	wtj.src = 'http://tj.weimob.com/wtj.js?url=' + encodeURIComponent(location.href);
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wtj, s);
+})();
+function weimobAfterShare(shareFromWechatId,sendFriendLink,shareToPlatform){
+	var wmShare = document.createElement('script'); wmShare.type = 'text/javascript'; wmShare.async = true;
+    wmShare.src = 'http://tj.weimob.com/api-share.js?fromWechatId=' + shareFromWechatId + '&shareToPlatform=';
+	wmShare.src += shareToPlatform + '&pid=131200&sendFriendLink=' + encodeURIComponent(sendFriendLink);
+    var stj = document.getElementsByTagName('script')[0]; stj.parentNode.insertBefore(wmShare, stj);
+}
+
+/**
+ * 默认分享出去的数据
+ *
+ */
+ 
+</script>
+<script type="text/javascript" src="js/ChatFloat.js" ></script>
+<script type="text/javascript">
+var str_domain = location.href.split('/',4)[2];
+var boolIsTest = true;
+if(str_domain == 'http://131200.m.weimob.com/weisite/www.weimob.com' || str_domain.indexOf('http://131200.m.weimob.com/weisite/m.weimob.com') > 0){
+	boolIsTest = false;
+}
+new ChatFloat({
+        AId: '131200',
+        openid: "",
+		top:150,
+		right:0,
+		IsTest:boolIsTest
+});
+</script>
+</html>
+

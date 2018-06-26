@@ -1,0 +1,7 @@
+.music90 .btn_music{position: fixed; right: 5px; top: 5px; width: 25px; height: 25px; border-radius: 25px; background: rgba(255, 255, 255, .4) url(../img/css_sprite02.png)no-repeat; 
+background-size:25px 25px; z-index: 9999;!important;}
+
+.music90 .btn_music.on{position: fixed; right: 5px; top: 5px; width: 25px; height: 25px; border-radius: 25px; background: rgba(255, 255, 255, .4) url(../img/css_sprite01.png)no-repeat; background-size:25px 25px; z-index: 9999;!important;}
+
+
+.css_sprite01 { background-image:url("../img/css_sprite01.png")/*tpa=http://wx.80lv.com/template/19/img/css_sprite01.png*/!important;  background-repeat: no-repeat!important; } 

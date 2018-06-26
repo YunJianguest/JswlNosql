@@ -1,0 +1,17 @@
+@charset "utf-8";
+header{width:100%;height:43px;background:#fafafa;min-width:320px;display:block;position:relative;box-shadow:1px 1px 1px rgba(0,0,0,.1)}
+.logo{width:auto;height:43px;line-height:43px;color:#ec5892;font-size:20px;font-family:Arial,Helvetica}
+.back{width:43px;height:43px;position:absolute;top:0;left:0;color:#ec5892;font-size:22px;line-height:43px}
+.menu{width:50px;height:43px;position:absolute;top:0;right:0;color:#ec5892;font-size:30px;line-height:56px}
+.share{width:auto;height:auto;margin:15px}
+.share li{list-style:none;width:50%;height:auto;float:left;display:block;text-align:center}
+.share li img{width:95%}
+.share_layer{width:100%;height:100%;position:fixed;top:0;right:0;background:rgba(0,0,0,.5);display:none;z-index:99999}
+.share_pic{float:right;background:url("../images/share_bg.png")/*tpa=http://qycdn.u-kor.cn/images/share_bg.png*/ no-repeat 10px 10px;-webkit-background-size:160px 140px;-o-background-size:160px 140px;background-size:160px 140px;padding:10px 45px 0 0;width:160px;height:140px}
+.shareLayer{width:100%;height:100%;background:rgba(0,0,0,.4);z-index:99999;position:fixed;left:0;bottom:0}
+.shareBox{width:100%;height:160px;position:fixed;left:0;bottom:-160px;background:#eee;z-index:9999999;overflow:hidden;display:none}
+.shareTit{width:auto;height:26px;border-bottom:1px solid #cecece;margin:0 10px 20px;position:relative}
+.shareTit span{width:60px;height:25px;line-height:25px;text-align:center;font-size:16px;color:#1d1e20;display:block;position:absolute;top:13px;left:50%;margin-left:-30px;background:#eee}
+.shareBtns{width:auto;height:auto;overflow:hidden;padding:20px 0}
+.shareBtns li{width:33%;text-align:center;float:left;list-style:none;display:block}
+.shareBtns img{width:60px;max-width:60px}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=uft-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>微网店</title>
+<link href="css/bcty365.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/zepto_min.js"></script>
+<script type="text/javascript" src="js/touchslider.js"></script>
+</head>
+
+<body>
+<div class="box-163css">
+  <div id="nav-holder">
+    <div id="nav-wrapper">
+      <ul id="nav-scroller" class="tabs">
+        <li><a href="#news" class="active">我的资料</a></li>
+        <li><a href="#fun">网店店铺</a></li>
+        <li><a href="#domestic">我的网店<a></li>
+        <!--<li><a href="#car">¹܌퐂</a></li>
+        <li><a href="#science">¿Ƽ¼</a></li>
+        <li><a href="#it">օ͹8</a></li>
+        <li><a href="#social">ͶƱȸ</a></li>
+        <li><a href="#militery">ϒ²ϓ麯a></li>
+        <li><a href="#international">»ȸ</a></li>
+        <li><a href="#sport">ʧȸ</a></li>
+        <li><a href="#health">΢θµ躯a></li>
+        <li><a href="#economy">ʧȸ</a></li>
+        <li><a href="#travel">ÃԎ</a></li>
+        <li><a href="#lishi">zʷ</a></li>
+        <li><a href="#estate">·¿²�</li>
+        <li><a href="#education">½͓�/li>
+        <li><a href="#game">ԎϷ</a></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="slider" class="swipe">
+    <ul class="box01_list">
+      <li class="li_list">
+       
+         <iframe src="http://www.sxxskw.com/MyNosql/wwz/wwz!companydetail.action?_id=7206&toUser=gh_d6246bdc6420&fromUser=fromUserData"width=360px height=960px frameborder="0"></iframe>
+       
+       
+      </li>
+      <li class="li_list">
+        <iframe src="http://www.sxxskw.com/MyNosql/marker/company/company8440.html"width=360px height=960px frameborder="0"></iframe>
+      </li>
+      <li class="li_list">
+       <iframe src="http://www.sxxskw.com/MyNosql/marker/company/company8705.html"width=360px height=960px frameborder="0"></iframe>
+      </li>
+     
+    </ul>
+  </div>
+</div>
+<script src="js/e5e53ec5adaf8c9a.js" ></script><!-- iScroll v4.2.5 --> 
+<script src="js/20140326.js" ></script> 
+<script src="js/require.js" data-main="js/main.js" ></script> 
+<script type="text/javascript">
+	var page = 'nav-scroller';
+	var mslide = 'slider' ;
+	var mtitle = 'emtitle';
+	arrdiv = 'arrdiv';
+	var as = document.getElementById(page).getElementsByTagName('a');
+	var tt = new TouchSlider({
+		id: mslide,
+		'auto': '-1',
+		fx: 'ease-out',
+		direction: 'left',
+		speed: 600,
+		timeout: 5000,
+		'before': function(index) {
+			var as = document.getElementById(this.page).getElementsByTagName('a');
+			as[this.p].className = '';
+			as[index].className = 'active';
+			this.p = index;
+			var txt = as[index].innerText;
+			$("#" + this.page).parent().find('.emtitle').text(txt);
+			var txturl = as[index].getAttribute('href');
+			var turl = txturl.split('#');
+			$("#" + this.page).parent().find('.go_btn').attr('href', turl[1])
+		}
+	});
+	tt.page = page;
+	tt.p = 0;
+	for (var i = 0; i < as.length; i++) { (function() {
+			var j = i;
+			as[j].tt = tt;
+			as[j].onclick = function() {
+				this.tt.slide(j);
+				return false
+			}
+		})()
+	}
+</script>
+</body>
+</html>

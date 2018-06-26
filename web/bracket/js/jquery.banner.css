@@ -1,0 +1,59 @@
+
+body{
+	margin:0px;
+	padding:0px;
+}
+ul,li{list-style:none;}
+.box_skitter {
+	background: #c3b4a1; width: 967px; height: 355px; position: relative; overflow:hidden;
+}
+.box_skitter img {
+	max-width: none;
+	width:967px;
+	height:355px;
+}
+.box_skitter ul {
+	display: none;
+}
+.box_skitter .container_skitter {
+	overflow: hidden; position: relative;
+}
+.box_skitter .image {
+	overflow: hidden;
+}
+.box_skitter .image img {
+	display: none;
+}
+.box_skitter .box_clone {
+	left: 0px; top: 0px; width: 100px; overflow: hidden; display: none; position: absolute; z-index: 20;
+}
+.box_skitter .box_clone img {
+	left: 0px; top: 0px; position: absolute; z-index: 20;
+}
+.box_skitter .prev_button {
+	background: url("../img/prev.png") no-repeat left top; left: 35px; top: 50%; width: 42px; height: 42px; text-indent: -9999em; overflow: hidden; margin-top: -25px; position: absolute; z-index: 100; visibility:hidden;
+}
+.box_skitter .next_button {
+	background: url("../img/next.png") no-repeat left top; top: 50%; width: 42px; height: 42px; right: 35px; text-indent: -9999em; overflow: hidden; margin-top: -25px; position: absolute; z-index: 100; visibility:hidden;
+}
+.box_skitter .info_slide_dots {
+	padding: 5px 0px 5px 5px; border-radius: 50px; bottom: 5px; position: absolute; z-index: 151; -moz-border-radius: 50px; -webkit-border-radius: 50px;
+}
+.box_skitter .info_slide_dots .image_number {
+	background: rgb(51, 51, 51); margin: 0px 5px 0px 0px; border-radius: 50px; width: 18px; height: 18px; text-indent: -9999em; overflow: hidden; float: left; cursor: pointer; -moz-border-radius: 50px; -webkit-border-radius: 50px;
+}
+.box_skitter .info_slide_dots .image_number_select {
+	background: rgb(204, 0, 0); margin: 0px 5px 0px 0px; float: left;
+}
+.box_skitter .label_skitter {
+	left: 0px; bottom: 0px; display: none; position: absolute; z-index: 150;
+}
+.box_skitter .label_skitter {
+	background: rgb(0, 0, 0); left: 0px; bottom: 0px; color: rgb(255, 255, 255); display: none; position: absolute; z-index: 150; opacity: 0.8;
+}
+.box_skitter .label_skitter p {
+	font: 22px/normal arial, tahoma; margin: 0px; padding: 10px; letter-spacing: -1px; font-size-adjust: none; font-stretch: normal;
+}
+.box_skitter .progressbar {
+	background: rgb(0, 0, 0); border-radius: 20px; left: 15px; top: 10px; width: 200px; height: 5px; position: absolute; z-index: 99; visibility:hidden;
+}

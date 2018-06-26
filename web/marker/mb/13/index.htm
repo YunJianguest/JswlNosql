@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	
+
+	<title>微白水</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css" >
+	
+	<link rel="stylesheet" type="text/css" href="css/footer.css" >
+	<link rel="stylesheet" type="text/css" href="css/skin_8.css" >
+	
+	<script type="text/javascript" src="js/swipe.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" href="css/animate.css" />
+
+</head>
+
+<body>
+
+		<div class="body_bg"><img src="img/160689.jpg"  /></div>
+	
+	<header id="head" style="display:none">
+		<div class="back"><span class="icon-arrow-left5" onclick="pageBack();"></span></div>
+		<div class="logo">
+				
+				白水苹果
+		</div>
+	</header>
+
+ 
+	
+
+	
+
+	
+  <section class="section">
+	    <div class="ad_box">
+	      <div class="ad_tit">白水苹果</div>
+	      <div class="ad_txt">————亿万人民的口福！</div>
+	      <div class="edit_btn"><span onClick=mode_tab(1)></span></div>
+	    </div>
+    <div id="blockSlide"></div>
+    <ul class="ad_list">
+      	  <li class="rotateInDownLeft animated action" >
+      	  	<a  href="#">
+		        <div class="l_box">
+		          <div class="l_tit">公司简介</div>
+		          <div class="l_pic"><img src="img/162090.png" ></div>
+		        </div>
+	        </a>
+	      </li>
+      	  <li class="bounceInDown animated"
+      	  	   >
+      	  	<a  href="#">
+		        <div class="l_box">
+		          <div class="l_tit">业务报表</div>
+		          <div class="l_pic"><img src="img/162108.png"></div>
+		        </div>
+	        </a>
+	      </li>
+      	  <li class="rotateInDownRight animated" >
+      	  	<a  href="">
+		        <div class="l_box">
+		          <div class="l_tit">企业荣誉</div>
+		          <div class="l_pic"><img src="img/162128.png"></div>
+		        </div>
+	        </a>
+	      </li>
+      	  <li class="rotateInUpLeft animated"
+      	  	   >
+      	  	<a  href="#">
+		        <div class="l_box">
+		          <div class="l_tit">关于我们</div>
+		          <div class="l_pic"><img src="img/162123.png" ></div>
+		        </div>
+	        </a>
+	      </li>
+      	  <li class="bounceInUp animated" >
+      	  	<a  href="#">
+		        <div class="l_box">
+		          <div class="l_tit">在线留言</div>
+		          <div class="l_pic"><img src="img/162113.png" ></div>
+		        </div>
+	        </a>
+	      </li>
+      	  <li class="rotateInUpRight animated" >
+      	  	<a  href="#">
+		        <div class="l_box">
+		          <div class="l_tit">一键导航</div>
+		          <div class="l_pic"><img src="img/162118.png" ></div>
+		        </div>
+	        </a>
+	      </li>
+    </ul>
+    <div class="clear"></div>
+    
+    
+    	<div id="banner_box" class="box_swipe">
+			<ul>
+									<li>
+												<a onClick="return false;">
+																<img src="img/159271.jpg"  alt="3" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onClick="return false;">
+																<img src="img/159274.jpg"  alt="4" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onClick="return false;">
+																<img src="img/159273.jpg"  alt="5" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onClick="return false;">
+																<img src="img/159275.jpg"  alt="5" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onClick="return false;">
+																<img src="img/159277.jpg"  alt="5" style="width:100%;" />
+								</a>
+					</li>
+							</ul>
+			<ol>
+									<li class="on"></li>
+									<li ></li>
+									<li ></li>
+									<li ></li>
+									<li ></li>
+							</ol>
+		</div>
+	</div>
+		<script>
+		$(function(){
+			new Swipe(document.getElementById('banner_box'), {
+				speed:500,
+				auto:3000,
+				callback: function(){
+					var lis = $(this.element).next("ol").children();
+					lis.removeClass("on").eq(this.index).addClass("on");
+				}
+			});
+		});
+	</script>
+  </section>
+  <footer id="navbarFooter">
+  <div class="menu_bottom">
+    <ul>
+  微白水@技术支持
+    </ul>
+  </div>
+  </footer>
+  
+	
+</body>
+</html>

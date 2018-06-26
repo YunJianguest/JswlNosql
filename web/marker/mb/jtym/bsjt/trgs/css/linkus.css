@@ -1,0 +1,119 @@
+body{    font-size: 12px;    background-color:#C0C0C0;}
+
+.line{    height: 1px;    background: #C0C0C0;    margin: 6px auto;}
+
+a img, .ui-mobile fieldset {    border-width: 0;}
+
+/*wb_banner*/
+.wb_banner{
+	display: block;
+	overflow: hidden;
+	height: 188px;
+	position: relative;
+}
+
+.wb_banner .wb_banner-item{
+	display: inline-block;
+	background-position:  center top;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+.wb_banner .wb_banner-item .wb_banner-item-title{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 32px;line-height: 32px;
+	font-size: 14px;
+	text-align: right;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-align: center;
+	width: 100%;
+	opacity: 0.5;
+	color: #FFFFFF;
+	background-color: #000000;
+	text-shadow: none;
+}
+.wb_banner .wb_banner-box{
+	position: absolute;
+	top: 0;left: 0;
+	width: 100%;
+	height: 100%;
+	overflow-x: visible;
+	overflow-y: hidden;
+}
+
+.wb_banner .wb_banner-toolbar{
+	position: absolute;
+	display: block;
+	top: 10px;
+	width: 100px;
+	height: 16px;
+	left: 50%;margin-left: -50px;
+	text-align: center;
+	padding: 0;
+}
+
+.wb_banner .wb_banner-toolbar .wb_banner-toolitem{
+	display: inline-block;
+	border: 1px solid #C0C0C0;
+	background: #000000;
+	opacity: 0.1;
+	width: 10px;height: 10px;
+	border-radius: 10px;
+	padding: 0;margin: 0;
+}
+
+.wb_banner .wb_banner-toolbar .wb_banner-toolitem.selected{
+	opacity: 0.5;
+}
+
+
+/**/
+.part{
+    margin: 8px 8px 40px 8px;
+}
+
+.part .ui-li-count{
+    font-size: 9px;
+    color: #09830F;
+    display: none;
+}
+
+.part .address .ui-link-inherit,.part .tel .ui-link-inherit{
+    padding-left:1px!important;
+}
+
+.part .address, .part .tel{
+    background-repeat: no-repeat;
+    background-position:3px 13px;
+}
+
+.part .address {
+    background-image: url("../img/address.png")/*tpa=http://w.bama555.com/assets/img/address.png*/;
+}
+
+.part .tel {
+    background-image: url("../img/tel.png")/*tpa=http://w.bama555.com/assets/img/tel.png*/;
+}
+
+
+.aboutus{
+    margin: 8px;
+    border-radius: 6px;
+    border: 1px solid #C0C0C0;
+    padding: 13px;
+    background: #FFFFFF;
+}
+
+.aboutus h3{
+    margin: 0 auto 5px auto ;
+    font-size: 14px;
+}
+.aboutus .stage{
+    text-indent: 24px;
+}

@@ -1,0 +1,97 @@
+@charset "utf-8";
+body{background:url("skin8icons/hykbg_03.png")/*tpa=http://qycdn.u-kor.cn/style/skin/skin8icons/hykbg_03.png*/ repeat left top}
+.index_bg{background:#f6f6f6}
+header{background:#fe4a4a;border-bottom:1px solid #ff964a}
+.logo,.back,.menu{color:#fff}
+.box_swipe ol.num li.on{background-color:#fe4a4a}
+.menu_bottom{}
+.menu_bottom li .menu_txt{color:#bfbfbf}
+.menu_bottom li.now .menu_txt{color:#fe4a4a}
+/*-------------------------------------------微商城皮肤-----------------------------------------------------------*/
+.btn_style_gg01{background:#a7a7a7;color:#fff}
+.btn_style_gg02{background:#fe4a4a;color:#fff}
+.btn_style_gg03{background:#ff964a;color:#fff}
+.submit_list .l_box .b_pro .p_price{color:#fe4a4a}
+.shop_list .l_box .b_price{color:#fe4a4a}
+.details_box .b_price span{color:#fe4a4a}
+#tiles_main .tiles_box b{color:#fe4a4a}
+.order_list .l_box .b_pro .p_price{color:#fe4a4a}
+.order_list .l_box .b_total01 em{color:#fe4a4a}
+.order_list .l_box .b_total em{color:#fe4a4a}
+.favorites_list .l_box .b_txt p{color:#fe4a4a}
+.para_main .m_top .t_text b{color:#fe4a4a}
+.para_main .m_cate .c_list li.now{border:1px solid #fe4a4a}
+.para_main .m_cate .c_list li.now:before{background:#fe4a4a}
+.class_box .b_list02 .l_box li.now .b_pic img{border:2px solid #fe4a4a}
+input:checked.check_style:after{border-color:#fe4a4a}
+input.radio_style{border:2px solid #fe4a4a}
+input:checked.radio_style:after{background:#fe4a4a}
+#favoritemap.now,#Collection.now,.shop_list .l_box .b_btn a.now,.favorites_list .l_box .b_shou.now{color:#fe4a4a}
+.jf_ul_ico{color:#fe4a4a}
+.hyk_tab{border:1px solid #fe4a4a}
+.hyk_tab_cur{color:#fff;background:#fe4a4a}
+.pro_list .pro_box .p_price{color:#fe4a4a}
+.cont_form_price span{color:#fe4a4a}
+.cont_btn .btn_yd{background:#fe4a4a}
+.cont_btn .btn_zx{background:#fe4a4a}
+.cont_tab .tab_tit ul,.cont_tab .tab_tit ul li{border-color:#fe4a4a}
+.cont_tab .tab_tit li a{color:#fe4a4a}
+.cont_tab .tab_tit li.now{background:#fe4a4a}
+.btn_auto{background:#fe4a4a}
+.back{background:0;border:0}
+.form_group .submit_btn{background:#fe4a4a}
+.address_items li .tel .icon-phone{color:#fe4a4a}
+.location_btn .icon-location{color:#fe4a4a}
+.location_btn{border-color:#fe4a4a}
+.user_infos .code_btn{background:#fe4a4a}
+.addr_tel a{border-color:#fe4a4a;color:#fe4a4a}
+.addr_tel i{color:#fe4a4a}
+.homeTit{background:-webkit-gradient(linear,0 0,0 100%,from(#fe4a4a),to(#fe4a4a))}
+/*-------------------------------------------会员卡部分icons(后台)-----------------------------------------------------------*/
+.icons_wdye{background:url("skin8icons/hyk_wdye.png")/*tpa=http://qycdn.u-kor.cn/style/skin/skin8icons/hyk_wdye.png*/;background-size:100% 100%}
+.icons_zfb{background:url("skin8icons/hyk_zfb.png")/*tpa=http://qycdn.u-kor.cn/style/skin/skin8icons/hyk_zfb.png*/;background-size:100% 100%}
+.icons_xxzf{background:url("skin8icons/hyk_xxzf.png")/*tpa=http://qycdn.u-kor.cn/style/skin/skin8icons/hyk_xxzf.png*/;background-size:100% 100%}
+.icons_kks{background:url("skin8icons/hyk_kks.png")/*tpa=http://qycdn.u-kor.cn/style/skin/skin8icons/hyk_kks.png*/;background-size:100% 100%}
+.icons_hytq{background:url("skin8icons/hyk_hytq.png")/*tpa=http://qycdn.u-kor.cn/style/skin/skin8icons/hyk_hytq.png*/;background-size:100% 100%}
+.icons_kkjs{background:url("skin8icons/hyk_kkjs.png")/*tpa=http://qycdn.u-kor.cn/style/skin/skin8icons/hyk_kkjs.png*/;background-size:100% 100%}
+.icons_yhq{background:url("skin8icons/hyk_yhq.png")/*tpa=http://qycdn.u-kor.cn/style/skin/skin8icons/hyk_yhq.png*/;background-size:100% 100%}
+.icons_jfsc{background:url("skin8icons/hyk_jfsc.png")/*tpa=http://qycdn.u-kor.cn/style/skin/skin8icons/hyk_jfsc.png*/;background-size:100% 100%}
+.icons_hytz{background:url("skin8icons/hyk_hytz.png")/*tpa=http://qycdn.u-kor.cn/style/skin/skin8icons/hyk_hytz.png*/;background-size:100% 100%}
+.icons_grzl{background:url("skin8icons/hyk_grzl.png")/*tpa=http://qycdn.u-kor.cn/style/skin/skin8icons/hyk_grzl.png*/;background-size:100% 100%}
+.icons_symd{background:url("skin8icons/hyk_symd.png")/*tpa=http://qycdn.u-kor.cn/style/skin/skin8icons/hyk_symd.png*/;background-size:100% 100%}
+.icons_dz{background:url("skin8icons/hyk_dz.png")/*tpa=http://qycdn.u-kor.cn/style/skin/skin8icons/hyk_dz.png*/;background-size:100% 100%}
+.icons_dh{background:url("skin8icons/hyk_dh.png")/*tpa=http://qycdn.u-kor.cn/style/skin/skin8icons/hyk_dh.png*/;background-size:100% 100%}
+.card_account li .left{border-right-color:#fe4a4a}
+.card_account li:first-child{background:#fe4a4a}
+.card_account li{border-color:#fe4a4a}
+.cash_shop a.current{background:#fe4a4a}
+.payment .male_tips{color:#fe4a4a}
+.exchange_items.consume_con .right .r_info .price{color:#fe4a4a}
+.per_info dd .get_key{background:#fe4a4a}
+.vip_card_apply .shop_items dl dt{color:#fe4a4a}
+.vip_card_apply .shop_items dl{border-bottom:1px solid #fe4a4a}
+.vip_card_apply .shop_items .opreate_con a:first-child{border-right:1px solid #fe4a4a}
+.vip_card_apply .shop_items .opreate_con a{color:#fe4a4a}
+.exchange_items.recharge_con .pay_way strong{color:#fe4a4a}
+.cash_shop a{border-top:1px solid #fe4a4a;border-bottom:1px solid #fe4a4a}
+.cash_shop a:first-child{border:1px solid #fe4a4a}
+.cash_shop a:last-child{border:1px solid #fe4a4a}
+/*-------------------------------------------个人中心----------------------------------------------------------*/
+.per_infos_items ul li .icon-text{color:#fe4a4a}
+.per_infos_items ul li .icon-cart{color:#fe4a4a}
+.per_infos_items ul li .icon-location32{color:#fe4a4a}
+.per_infos_items ul li .fa-folder-open{color:#fe4a4a}
+.per_infos_items ul li .fa-file-text{color:#fe4a4a}
+.per_infos_items ul li .fa-ticket{color:#fe4a4a}
+.per_infos_items ul li .icon-creditcard{color:#fe4a4a}
+.per_infos_items ul li .fa-money{color:#fe4a4a}
+.per_infos_items ul li .fa-gift{color:#fe4a4a}
+.login_bg>div:first-of-type{background:#fe4a4a}
+.makeAnAppointment .pink_btn{background:#fe4a4a}
+.fontColorSkin{color:#fe4a4a}
+
+/*会员卡前端*/
+.unbind{background:#fe4a4a;}
+
+/*是否自提货字体颜色*/
+.submit_map .yes{color:#fe4a4a;}

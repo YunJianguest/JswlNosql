@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>团购首页</title>
+    <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="0" http-equiv="expires">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link href="css/main.css-v=2014-08-28.css" rel="stylesheet" />
+    <link href="css/dialog.css-v=2014-08-28.css"  rel="stylesheet" />
+
+<script>
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    WeixinJSBridge.call('hideToolbar');
+});
+</script>
+
+    <script src="js/jquery.min.js"  ></script>
+    <script src="js/swipe.js-v=2014-08-28"  ></script>
+    <script src="js/dialog_min.js-v=2014-08-28"  ></script>
+    <script src="js/global.js-v=2014-08-28"  ></script>
+</head>
+
+<body onselectstart="return true;" ondragstart="return false;" class="gbuy_detail">
+
+<script>
+$(function(){
+    new Swipe(document.getElementById('banner_box'), {
+        speed:500,
+       // auto:3000,
+        callback: function(){
+           var lis = $(this.element).next("ol").children();
+           lis.removeClass("on").eq(this.index).addClass("on");
+        }
+    });
+    window.shareData = {
+        "imgUrl": "../../../../../../../../../../../../img.weimob.com/23/69/85/7_77261/image/20140508/20140508094647_91075.jpg"/*tpa=http://img.weimob.com/23/69/85/7_77261/image/20140508/20140508094647_91075.jpg*/, 
+        "timeLineLink": "../../../../../../../../../detail-pid=131200&bid=268890&goods_id=5880&wechatid=fromUsername.htm"/*tpa=http://131200.m.weimob.com/tg/goods/detail?pid=131200&bid=268890&goods_id=5880&wechatid=fromUsername*/,
+        "sendFriendLink": "../../../../../../../../../detail-pid=131200&bid=268890&goods_id=5880&wechatid=fromUsername.htm"/*tpa=http://131200.m.weimob.com/tg/goods/detail?pid=131200&bid=268890&goods_id=5880&wechatid=fromUsername*/,
+        "weiboLink": "../../../../../../../../../detail-pid=131200&bid=268890&goods_id=5880&wechatid=fromUsername.htm"/*tpa=http://131200.m.weimob.com/tg/goods/detail?pid=131200&bid=268890&goods_id=5880&wechatid=fromUsername*/,
+        "tTitle": "渔意楼10人海鲜套餐",
+        "tContent": "仅售888元！价值1653元的渔意楼10人海鲜套餐，美食滋味，生活表情。",
+        "fTitle": "渔意楼10人海鲜套餐",
+        "fContent": "仅售888元！价值1653元的渔意楼10人海鲜套餐，美食滋味，生活表情。",
+        "wContent": "仅售888元！价值1653元的渔意楼10人海鲜套餐，美食滋味，生活表情。" 
+    };
+});
+
+
+
+function notStart(){
+    var d = new iDialog();
+    d.open({
+        classList: "waiting",
+        title:"已加入开团提醒",
+        close:"<span class='close'>×</span>",
+        content:'<p class="article">您可以在信息设置中<br/>对提醒时间进行设置</p>',
+        btns:[
+            {id:"", name:"确认", onclick:"fn.call();", fn: function(self){
+                self.die();
+            }},
+            {id:"", name:"去设置", onclick:"fn.call();", fn: function(self){
+                self.die();
+            }}
+        ]
+    });
+}</script>
+
+
+
+<div>
+    <div id="container" class="container animate">
+        <header></header>
+        <div class="body">
+            <section>
+                 <div id="banner_box" class="box_swipe">
+                    <ul >
+                                                    <li><img src="img/20140508094647_91075.jpg"   alt="" style="width:100%;"/></li>
+                                            </ul>
+                    <ol>
+<li class="on"></li>
+                                            </ol>
+                </div>
+            </section>
+            <div class="br1" >&nbsp;</div>
+            <section class="detail_price">
+                <ul class="header">
+                    <ol class="tbox" id="nav_2">
+                        <input type="hidden" id="good_status" value="2"/>
+                        <input type="hidden" id="g_status" value="2"/>
+                        <li style="width:100%;">
+                            <label style="line-height:35px;" id="price">￥888.00</label>
+                            <span style="display:block;padding-left:20px;line-height:13px;"><s id="market_price">￥1653.00</s></span></li>
+                        <li id="goods_status">
+                                                            <a href="javascript:;" class="disabled" id="buy_btn">已结束</a>
+                                                    </li>
+                        <dl id="list_sku" class="list_sku">
+                                                                                     <a href= "#"   >
+                                <label></label>
+                                </a>
+                                                                            </dl>
+                    </ol>
+                    
+                </ul>
+                
+                <article>
+                    <br/>
+                    
+                </article>
+                
+                <article>
+                    <h3>
+                        涮烤坊10人海鲜套餐                    </h3>
+                    <div class="p">
+                        仅售888元！价值1653元的渔意楼10人海鲜套餐，美食滋味，生活表情。                    </div>
+                    <div class="f">
+                        <p>
+                            <a class="pre">√  支持随时退订</a>
+                            <a class="pre">√  支持过期退订</a>
+                        <p>
+                        <p class="ofh">
+                                                        <label>已售 67</label>
+                                                        <!--<a href="javascript:;" class="collect fr"><span class="icons icons_collect on">&nbsp;</span>已收藏</a>
+                            <a href="javascript:;" class="collect fr"><span class="icons icons_collect">&nbsp;</span>收藏</a>
+-->
+                            <label class="fr"></label>
+                        </p>
+                    </div>
+                </article>
+            </section>
+            <!--start-->
+                        <!--end-->
+            <section class="detail_section adpt_store">
+                <h6>适用商户</h6>
+                <ul class="tbox">
+                    <li style="width:100%;">
+                        <p>元亨商贸</p>
+                        <p>电话：0913-6187189</p>
+                        <p>地址：陕西白水四马路东十字</p>
+                    </li>
+                    <li>
+                        <a href="tel:0913-6187189"><span class="icons icons_phone">&nbsp;</span></a>
+                    </li>
+                </ul>
+                <ol>
+                    <a href="#"   class="more_store">
+                        查看全部<label>1</label>家商户
+                        <span class="icons icons_right">&nbsp;</span>
+                    </a>
+                </ol>
+            </section>
+            <section class="detail_section new_msg">
+                <h6>最新通知</h6>
+                <article>
+                                    </article>
+            </section>
+            <section class="detail_section detail_info">
+                <h6>团购须知</h6>
+                <article>
+                    <p>使用规则：
+每张美团券不限使用人数，建议8-10人使用
+仅限大厅用餐，不可使用包间
+仅限堂食，不提供餐前外带服务，餐毕可打包，需另付打包费1元/盒
+本单不含餐巾纸，如需使用，到店另付5元/包
+本单含茶芥费10位，如需增加，到店另付2元/位
+提供免费停车位
+店内提供免费WiFi
+                      
+</p>
+                </article>
+            </section>
+            <section class="detail_section detail_info">
+                <h6>团购详情</h6>
+                <article>
+                    <h2 class="content-title" id="anchor-detail" style="font-size:18px;color:#333333;font-family:Tahoma, Helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	本单详情：
+</h2>
+<h2 class="content-title" id="anchor-detail" style="font-size:18px;color:#333333;font-family:Tahoma, Helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<img src="img/20140508110118_11005.jpg"  alt="" />
+</h2>
+<h2 class="content-title" id="anchor-detail" style="font-size:18px;color:#333333;font-family:Tahoma, Helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<span style="font-size:12px;line-height:1.5;font-family:'sans serif', tahoma, verdana, helvetica;font-weight:normal;">菜品实拍：</span> 
+</h2>
+<h2 class="content-title" id="anchor-detail" style="font-size:18px;color:#333333;font-family:Tahoma, Helvetica, arial, sans-serif;background-color:#FFFFFF;">
+	<span style="font-family:'sans serif', tahoma, verdana, helvetica;font-size:12px;font-weight:normal;line-height:1.5;">全餐</span> 
+</h2>
+<p>
+	<img src="img/20140508103105_24354.jpg"   alt="" /> 
+</p>
+<p>
+	<span style="font-size:12px;line-height:1.5;">海螺炖老鸡汤：炖鸡汤除了可以美容外，且营养丰富，味鲜</span> 
+</p>
+<p>
+	<img src="img/20140508103158_50968.jpg"   alt="" /> 
+</p>
+<p>
+	<span style="font-size:12px;line-height:1.5;">豪华刺身拼盘：新鲜的刺身充满了大自然的味道，入口即化的细腻，一再回味。</span> 
+</p>
+<p>
+	<img src="img/20140508103236_34948.jpg"   alt="" /> 
+</p>
+<p>
+	<span style="font-size:12px;line-height:1.5;">烧汁雪花牛肉（大牌）：雪花牛肉指脂肪均匀分布于肌肉组织中，形成大理石样花纹，如同雪花般美丽，因此得名霜降雪花牛肉。</span> 
+</p>
+<p>
+	<img src="img/20140508103338_21420.jpg"   alt="" /> 
+</p>
+<p>
+	<span style="font-size:12px;line-height:1.5;">紫苏焗羊小排（大牌）：精选上等羊小排经特制酱料后美味十足。</span> 
+</p>
+<p>
+	<img src="img/20140508103408_88579.jpg"   alt="" /> 
+</p>
+<p>
+	<span style="font-size:12px;line-height:1.5;">特色捞鸡</span> 
+</p>
+<p>
+	<img src="img/20140508103441_83705.jpg"   alt="" /> 
+</p>
+<p>
+	<span style="font-size:12px;line-height:1.5;">香煎俄罗斯碟鱼头</span> 
+</p>
+<p>
+	<img src="img/20140508103515_57869.jpg"   alt="" /> 
+</p>
+<p>
+	<span style="font-size:12px;line-height:1.5;">韭菜花炒海肠</span> 
+</p>
+<p>
+	<img src="img/20140508103540_29748.jpg"   alt="" /> 
+</p>
+<p>
+	<span style="font-size:12px;line-height:1.5;">咖喱海明虾</span> 
+</p>
+<p>
+	<img src="img/20140508103618_82724.jpg"   alt="" /> 
+</p>
+<p>
+	<span style="font-size:12px;line-height:1.5;">海胆蒸蛋</span> 
+</p>
+<p>
+	<img src="img/20140508103657_93001.jpg"   alt="" /> 
+</p>
+<p>
+	<span style="font-size:12px;line-height:1.5;">上汤时蔬（大牌）</span> 
+</p>
+<p>
+	<img src="img/20140508103719_98559.jpg"   alt="" /> 
+</p>
+<p>
+	<span style="font-size:12px;line-height:1.5;">特色炒饭（大牌）</span> 
+</p>
+<p>
+	<img src="img/20140508103814_55012.jpg"   alt="" /> 
+</p>
+<p>
+	<span style="font-size:12px;line-height:1.5;">马拉糕</span> 
+</p>
+<p>
+	<img src="img/20140508103835_84019.jpg"  alt="" /> 
+</p>
+<p>
+	<br />
+</p>
+<p>
+	<br />
+</p>
+<p>
+	<br />
+</p>
+<p>
+	<br />
+</p>
+<p>
+	<br />
+</p>                </article>
+            </section>
+        </div>
+        <footer>
+    <section class="nav_footer">
+        <ul class="box">
+            <li>
+                <a href="#"  class="on">
+                    <span class="nav_tg">&nbsp;</span>
+                    <label>团 购</label>
+                </a>
+            </li>
+            <li>
+                <a href="#"  class="">
+                    <span class="nav_tgq">&nbsp;</span>
+                    <label>团购券</label>
+                </a>
+            </li>
+            <li>
+                <a href="#"  class="">
+                    <span class="nav_dd">&nbsp;</span>
+                    <label>订 单</label>
+                </a>
+            </li>
+            <!--
+            <li>
+                <a href="javascript:;" class="">
+                    <span class="nav_shc">&nbsp;</span>
+                    <label>收 藏</label>
+                </a>
+            </li>
+            -->
+<!--            <li>-->
+<!--                <a href="/tg/goods/index/pid/--><!--/bid/--><!--/wechatid/--><!--/" class="--><!--">-->
+<!--                    <span class="nav_shzh">&nbsp;</span>-->
+<!--                    <label>设 置</label>-->
+<!--                </a>-->
+<!--            </li>-->
+        </ul>
+    </section>
+</footer>
+    </div>
+</div>
+<script>
+    $(function(){
+        var nav_2 = document.getElementById("nav_2");
+        function listingScroll(){
+            var offset = nav_2.parentNode.offsetTop;
+            setTimeout(function(){
+                if(document.body.scrollTop>=offset){
+                    nav_2.classList.add("on");
+                }else{
+                    nav_2.classList.remove("on");
+                }
+            }, 100);
+        }
+        window.onscroll = function(){
+            listingScroll();
+        }
+        listingScroll();
+    });
+       
+</script>
+
+</body>
+<script type="text/javascript">
+(function() {
+	var wtj = document.createElement('script'); wtj.type = 'text/javascript'; wtj.async = true;
+	wtj.src = 'http://tj.weimob.com/wtj.js?url=' + encodeURIComponent(location.href);
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wtj, s);
+})();
+function weimobAfterShare(shareFromWechatId,sendFriendLink,shareToPlatform){
+	var wmShare = document.createElement('script'); wmShare.type = 'text/javascript'; wmShare.async = true;
+    wmShare.src = 'http://tj.weimob.com/api-share.js?fromWechatId=' + shareFromWechatId + '&shareToPlatform=';
+	wmShare.src += shareToPlatform + '&pid=131200&sendFriendLink=' + encodeURIComponent(sendFriendLink);
+    var stj = document.getElementsByTagName('script')[0]; stj.parentNode.insertBefore(wmShare, stj);
+}
+
+ </script>
+ <script type="text/javascript" src="js/ChatFloat.js"></script>
+<script type="text/javascript">
+var str_domain = location.href.split('/',4)[2];
+var boolIsTest = true;
+if(str_domain == 'www.weimob.com.htm'/*tpa=http://131200.m.weimob.com/tg/goods/detail/pid/131200/bid/268890/wechatid/oGH7gjt7TPKHDU_icmO0W8fjsci8/goods_id/5881/www.weimob.com*/ || str_domain.indexOf('m.weimob.com.htm'/*tpa=http://131200.m.weimob.com/tg/goods/detail/pid/131200/bid/268890/wechatid/oGH7gjt7TPKHDU_icmO0W8fjsci8/goods_id/5881/m.weimob.com*/) > 0){
+	boolIsTest = false;
+}
+new ChatFloat({
+        AId: '131200',
+        openid: "oGH7gjt7TPKHDU_icmO0W8fjsci8",
+		top:150,
+		right:0,
+		IsTest:boolIsTest
+});
+</script>
+
+</html>

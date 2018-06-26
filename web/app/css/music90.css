@@ -1,0 +1,23 @@
+.music90 .btn_music {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width:40px;
+    height:40px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, .4) url(../img/css_sprite02.png) no-repeat;
+    background-size:40px 40px;
+    z-index: 9999;
+}
+
+.music90 .btn_music.on {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, .4) url(../img/css_sprite01.png) no-repeat;
+    background-size: 40px 40px;
+    z-index: 9999;
+}

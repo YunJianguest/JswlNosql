@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css-2014-08-28.css"  media="all" />
+
+<link rel="stylesheet" type="text/css" href="css/common.css-2014-08-28.css"  media="all" />
+
+<link rel="stylesheet" type="text/css" href="css/home-28.css-2014-08-28-tow.css"  media="all" />
+
+<link rel="stylesheet" type="text/css" href="css/menu-3.css-2014-08-28-tow.css"  media="all" />
+
+<script type="text/javascript" src="js/jQuery.js"  ></script>
+<script type="text/javascript" src="js/swipe.js"  ></script>
+
+
+<script type="text/javascript" src="js/zepto.js"  ></script>
+
+<title>苹果宝宝电子年历</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="" />
+        <meta name="Description" content="" />
+        <!-- Mobile Devices Support @begin -->
+            <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <!-- Mobile Devices Support @end -->
+       
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+        
+
+
+<div class="body">
+		<!--
+	幻灯片管理
+	-->
+	<div style="-webkit-transform:translate3d(0,0,0);">
+		<div id="banner_box" class="box_swipe">
+			<ul>
+									<li>
+												<a onclick="return false;">
+																<img src="img/g1.jpg"  alt="3" style="width:100%;" />
+								</a>
+					</li>
+
+									<li>
+												<a onclick="return false;">
+																<img src="img/g2.jpg"  alt="3" style="width:100%;" />
+								</a>
+					</li>
+				 
+							</ul>
+			<ol>
+									<li class="on"></li>
+                                                                        <li></li>
+								 
+							</ol>
+		</div>
+	</div>
+		 
+	<script>
+		$(function(){
+			new Swipe(document.getElementById('banner_box'), {
+				speed:500,
+				auto:3000,
+				callback: function(){
+					var lis = $(this.element).next("ol").children();
+					lis.removeClass("on").eq(this.index).addClass("on");
+				}
+			});
+		});
+	</script>
+<br/>		
+				<!--
+		用户分类管理
+        -->
+		<section>
+			<ul class="list_ul">
+									<li>
+										<a href="index2.html?1">
+													<figure>
+								<div style="background-image:url('img/y1.png');">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">壹月</figcaption>
+							</figure>
+						      </a>
+				      	</li>
+				      			<li>
+										<a href="index2.html?2">
+													<figure>
+								<div style="background-image:url('img/y2.png');">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">貳月</figcaption>
+							</figure>
+						      </a>
+				      	</li>
+				      			<li>
+										<a href="index2.html?3">
+													<figure>
+								<div style="background-image:url('img/y3.png');">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">叁月</figcaption>
+							</figure>
+						      </a>
+				      	</li>
+				      			<li>
+										<a href="index2.html?4">
+													<figure>
+								<div style="background-image:url('img/y4.png');">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">肆月</figcaption>
+							</figure>
+						      </a>
+				      	</li>
+				      			<li>
+										<a href="index2.html?5">
+													<figure>
+								<div style="background-image:url('img/y5.png');">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">伍月</figcaption>
+							</figure>
+						      </a>
+				      	</li>
+				      			<li>
+										<a href="index2.html?6">
+													<figure>
+								<div style="background-image:url('img/y6.png');">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">陆月</figcaption>
+							</figure>
+						      </a>
+				      	</li>
+				      			<li>
+										<a href="index2.html?7">
+													<figure>
+								<div style="background-image:url('img/y7.png');">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">柒月</figcaption>
+							</figure>
+						      </a>
+				      	</li>
+				      			<li>
+										<a href="index2.html?8">
+													<figure>
+								<div style="background-image:url('img/y8.png');">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">捌月</figcaption>
+							</figure>
+						      </a>
+				      	</li>
+				      			<li>
+										<a href="index2.html?9">
+													<figure>
+								<div style="background-image:url('img/y9.png');">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">玖月</figcaption>
+							</figure>
+						      </a>
+				      	</li>
+				      			<li>
+										<a href="index2.html?10">
+													<figure>
+								<div style="background-image:url('img/y10.png');">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">拾月</figcaption>
+							</figure>
+						      </a>
+				      	</li>
+				      			<li>
+										<a href="index2.html?11">
+													<figure>
+								<div style="background-image:url('img/y11.png');">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">拾壹月</figcaption>
+							</figure>
+						      </a>
+				      	</li>
+				      			<li>
+										<a href="index2.html?12">
+													<figure>
+								<div style="background-image:url('img/y12.png');">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">拾貳月</figcaption>
+							</figure>
+						      </a>
+				      	</li>
+				      
+						
+							</ul>
+		</section>
+
+        			<footer style="overflow:visible;">
+				<div class="weimob-copyright">
+
+                                                   <br/>
+											<span class="weimob-support" >微白水@技术支持</span>
+									</div>
+			</footer>
+	</div>
+
+
+	</body>
+
+</html>
+

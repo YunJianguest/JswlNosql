@@ -1,0 +1,11 @@
+.music90 .btn_music{position: absolute; left: 5px; top: 5px; width: 25px; height: 25px; border-radius: 25px; background: rgba(255, 255, 255, .4) url(../img/css_sprite02.png)no-repeat; 
+background-size:25px 25px; z-index: 9999;}
+
+.music90 .btn_music.on{position: absolute; left: 5px; top: 5px; width: 25px; height: 25px; border-radius: 25px; background: rgba(255, 255, 255, .4) url(../img/css_sprite01.png)no-repeat; background-size:25px 25px; z-index: 9999;}
+
+
+
+.zan90 .btn_zan{position: absolute; right: 5px; top: 5px; width: 33px; height: 33px; border-radius: 33px; background: rgba(255, 255, 255, .4) url(../img/zan.png); background-size: 100% 100%; z-index: 10;}
+
+.zan90 .btn_zan.on{background-position: 0 0;}
+.css_sprite01 { background-image:url("../img/css_sprite01.png")/*tpa=http://wx.80lv.com/template/19/img/css_sprite01.png*/!important;  background-repeat: no-repeat!important; } 

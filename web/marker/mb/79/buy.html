@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/main.css-2014-05-21.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="css/mobiscroll_min.css-2014-05-21.css"  media="all" />
+<script type="text/javascript" src="js/zepto_min.js" ></script>
+<script type="text/javascript" src="js/mobiscroll_min.js-2014-05-21"  ></script>
+<script type="text/javascript" src="js/alert.js"  ></script>
+<script type="text/javascript" src="js/swipe.js"  ></script>
+<script type="text/javascript" src="js/initSwipe.js-2014-05-21"  ></script>
+<script type="text/javascript" src="js/index.js"  ></script>
+<title>微白水</title>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<meta name="Keywords" content="" />
+	<meta name="Description" content="" />
+	<!-- Mobile Devices Support @begin -->
+		<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+		<meta content="telephone=no, address=no" name="format-detection">
+		<meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<!-- Mobile Devices Support @end -->
+	<link rel="shortcut icon" href="http://stc.weimob.com/img/favicon.ico" />
+</head>
+<body onselectstart="return true;" ondragstart="return false;">
+	
+
+<script type="text/javascript"   src="My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript">
+window.shareData = {
+	"imgUrl": "../../img.weimob.com/static/23/69/85/image/20140508/20140508091459_73771.jpg"/*tpa=http://img.weimob.com/static/23/69/85/image/20140508/20140508091459_73771.jpg*/,
+	"timeLineLink": "ReserveBook-rid=12509&pid=131200&wechatid=fromUsername.htm"/*tpa=http://131200.m.weimob.com/webreserve/ReserveBook?rid=12509&pid=131200&wechatid=fromUsername*/,
+	"sendFriendLink": "ReserveBook-rid=12509&pid=131200&wechatid=fromUsername.htm"/*tpa=http://131200.m.weimob.com/webreserve/ReserveBook?rid=12509&pid=131200&wechatid=fromUsername*/,
+	"weiboLink": "ReserveBook-rid=12509&pid=131200&wechatid=fromUsername.htm"/*tpa=http://131200.m.weimob.com/webreserve/ReserveBook?rid=12509&pid=131200&wechatid=fromUsername*/,
+	"tTitle": "预约",
+	"tContent": "预约",
+	"fTitle": "预约",
+	"fContent": "预约",
+	"wContent": "预约"
+};
+    var wechatid = "";
+    var tel = "";
+    if(localStorage['tel']){
+         tel = localStorage['tel'];
+    }
+    var uid = "0";
+    var isValiTel = true;
+    if((!uid || uid ==0) && !tel){
+       isValiTel = false;
+    }else{
+       isValiTel = true;
+    }
+    var config = {
+        uploadUrl: '/webreserve/AddImage',
+        submitUrl:'/webreserve/SubmitBook',
+        isValiTel: isValiTel, //是否需要验证手机号码
+        sendCodeUrl: '/webreserve/SendCardCheckCode', //发送验证码
+        subUrl: '/webreserve/CheckMessage', //提交校验验证码是否正确
+        subFn: function(loader,size){
+                var xhr = new XMLHttpRequest(),
+                fd = new FormData();
+                fd.append('is_pic', size);
+                $('#applyBox [name]').each(function(){
+                    var val = this.type == 'file' ? $(this).data('url') : this.value.replace(/<|>/g, '')
+                    if(val){
+                        fd.append(this.name, val);
+                    }
+                });
+                 var ret_single = "";
+                $('#applyBox .single').each(function(){
+                    ret_single += '$'+this.name+'#'+this.value;
+                });
+                    fd.append('fieldsigle', ret_single);
+                var ret_download = "";
+                $('#applyBox .download').each(function(){
+                    ret_download += '$'+this.name+'#'+this.value;
+                });
+                xhr.open("post", config.submitUrl, true);
+                xhr.addEventListener("load", function(e){
+                    var res = JSON.parse(e.target.responseText);
+                    if(res.errno == 1){
+                            $.alert({txt: res.msg});
+                    }else{
+                           jumpurl(res.url);
+                    }
+
+                    loader.close();
+                }, false);
+            xhr.send(fd);
+            }
+        }
+</script>
+
+ 
+
+
+
+
+
+<!--weimob 2.0-->
+<div class="container gray_bg">
+
+ 	<div class="banner">
+		<img src="img/20140508091459_73771.jpg">
+	</div>
+	<div class="explain">
+            <h3>订餐说明</h3>
+            <article>
+                    刷烤房是以各式海鲜为主的餐饮店，其出品采用新鲜的海鲜，原汁原味，传承真味道，演绎出传统美食在现代社会的精彩呈现，清、鲜、爽、嫩、滑、香，齿颊留香，回味无穷            </article>
+        </div>
+	<div class="box">
+            <ul class="box_list" id="addressBox">
+                    <li>
+                        <div><i class="ico_address"></i>地址：</div>
+                        <div><a href="百度地址">陕西白水</a></div>
+                        <div><i class="ico_arrow"></i></div>
+                    </li>
+                    <li>
+			<div><i class="ico_tel"></i>订单电话：</div>
+			<div><a href="tel:0913-6187189">0913-6187189</a></div>
+			<div><i class="ico_arrow"></i></div>
+		    </li>
+            </ul>
+        </div>
+	<div class="box apply_box" id="applyBox">
+	<!--粉丝填写过的信息的，直接就显示名字电话，粉丝没有填写过信息的话，这里就直接留空让粉丝填写-->
+
+ 
+            <dl class="pb15">
+				<dt>			
+                    联系人                </dt>
+                <dd>
+                    <input name="truename" class="txt " id="truename" value="" placeholder="请输入您的真实姓名" type="text">
+                </dd>		
+						<dt>
+                    联系电话<span class="r_tips">*</span>
+                </dt>
+                <dd>
+                    <input name="tel" class="txt required" id="tel" value="" placeholder="请输入您的电话" type="tel">
+                </dd>
+				
+						<dt>预约日期</dt>
+                    <dd>
+                        <input type="text"  id="d12" readonly="readonly" class="txt" value="2014-10-20" placeholder="请输入您的预约日期" />
+                        <img onclick="WdatePicker({el:$dp.$('d12')})" src="My97DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle">
+
+                       
+                    </dd>
+				
+		
+		                                <dt>备注</dt>
+                <dd>
+                        <textarea name="info" class="txt" style=" height:99px;overflow-y:visible" id="info" placeholder="请输入备注信息"></textarea>
+                        <input type="hidden" name="uid" id="uid" value="0" />
+                        <input type="hidden" name="rid" id="rid" value="12509" />
+                        <input type="hidden" name="aid" id="aid" value="131200" />
+                        <input type="hidden" name="hidid" id="hidid" value="0" />
+                </dd>
+            </dl>
+        <img style="display:none;" src="img/20140508091459_73771.jpg"  class="shareImgUrl" />
+        </div>
+	<footer class="sub_wrap">
+		<!--<input id="showcard" class="btn mt20" value="" type="button">-->
+                <input type="submit" class="btn mt20" id="subBtn" value="提交预约">
+		<div class="copyright">陕西信使技术支持</div>
+	</footer>
+        <nav class="nav">
+                <div class="fixed">
+                        <a href="ReserveBook-rid=12509&pid=131200&wechatid=fromUsername.htm"   class="on"><i class="ico_clock"></i>立即预约</a>
+                        <a id="myBtn" ><i class="ico_people"></i>订餐预约</a>
+                </div>
+        </nav>
+</div>
+<script type="text/javascript">
+function jumpurl(url){
+	window.location.href = url;
+}
+</script>
+<script>
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    WeixinJSBridge.call('showOptionMenu');
+});
+</script>
+ 
+
+
+
+</body>
+
+
+
+
+
+<script type="text/javascript">
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		WeixinJSBridge.call('hideToolbar');
+	});
+	
+	function zanCompany() {
+
+		$.post('/MyNosql/wwz/wwzajax!zanCompany.action?toUser=${toUser}&companyid=${company._id}',
+						function(res) {
+							
+							if (res) {
+								
+							} else {
+								alert('请求失败了');
+							}
+						});
+	}
+    </script>
+	<script type="text/javascript">
+
+	document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+	// 发送给好友
+	WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+		WeixinJSBridge.invoke('sendAppMessage', { 
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.link,
+			"desc": window.shareData.content,
+			"title": window.shareData.title
+		}, function (res) {
+			weimobAfterShare("",window.shareData.link,'appmessage');
+			_report('send_msg', res.err_msg);
+		})
+	});
+
+	// 分享到朋友圈
+	WeixinJSBridge.on('menu:share:timeline', function (argv) {
+		WeixinJSBridge.invoke('shareTimeline', {
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.link,
+			"desc": window.shareData.content,
+			"title": window.shareData.title
+		}, function (res) {
+			weimobAfterShare("",window.shareData.link,'timeline');
+			_report('timeline', res.err_msg);
+		});
+	});
+
+	// 分享到微博
+	WeixinJSBridge.on('menu:share:weibo', function (argv) {
+		WeixinJSBridge.invoke('shareWeibo', {
+			"content": window.shareData.content,
+			"url": window.shareData.link
+		}, function (res) {
+			weimobAfterShare("",window.shareData.link,'weibo');
+			_report('weibo', res.err_msg);
+		});
+	});
+}, false);
+</script>
+ </html>

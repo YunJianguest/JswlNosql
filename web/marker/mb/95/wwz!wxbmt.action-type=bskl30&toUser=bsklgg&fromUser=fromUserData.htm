@@ -1,0 +1,1143 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" charset=UTF-8"utf-8"
+	content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+	name="viewport">
+<!--全局样式开始-->
+<link rel="stylesheet" href="css/reset.css" tppabs="http://114.215.116.254/MyNosql/wwz/css/reset.css" />
+<link rel="stylesheet" href="css/plug.css" tppabs="http://114.215.116.254/MyNosql/wwz/css/plug.css" />
+<link rel="stylesheet" href="css/panel.css" tppabs="http://114.215.116.254/MyNosql/wwz/css/panel.css" />
+<link rel="stylesheet" href="css/mobile.css" tppabs="http://114.215.116.254/MyNosql/wwz/css/mobile.css" />
+<!--全局样式结束-->
+<link rel="stylesheet" href="css/bbsmain.css" tppabs="http://114.215.116.254/MyNosql/wwz/css/bbsmain.css" />
+<link rel="stylesheet" href="css/bbsdialog.css" tppabs="http://114.215.116.254/MyNosql/wwz/css/bbsdialog.css" />
+<!--全局脚本开始-->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js" tppabs="http://114.215.116.254/MyNosql/wwz/js/jquery-1.9.1.min.js"></script>
+<!--全局脚本结束-->
+<script type="text/javascript" src="js/bbsmain.js" tppabs="http://114.215.116.254/MyNosql/wwz/js/bbsmain.js"></script>
+<script type="text/javascript" src="js/bbsdialog.js" tppabs="http://114.215.116.254/MyNosql/wwz/js/bbsdialog.js"></script>
+<script>
+	function collectTrends(flag,trendsid) {
+		loading(true);
+		$.post('/MyNosql/wwz/bbs!trendscollect.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&type=bskl30&trendsid='+trendsid+"&flag="+flag, function(res) {
+			loading(false);
+			if (res=='success') {
+				location.reload();
+			}else if (res=='fail') {
+				location.reload();
+			}
+		});
+	}
+	function praiseTrends(flag,trendsid) {
+		loading(true);
+		$.post('/MyNosql/wwz/bbs!trendspraise.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&trendsid='+trendsid+"&flag="+flag, function(res) {
+			loading(false);
+			if (res=='success') {
+				location.reload();
+			}else if (res=='fail') {
+				location.reload();
+			}
+		});
+	}
+</script>
+</head>
+<body id="list_style1" class="ui_body_panel">
+	<div class="ui_page">
+		<!--内页头部开始-->
+		
+
+	<div class="ui_header ui_fixed">
+        <a class="ui_title" href="javascript: void(0);">留言互动</a>
+        <a class="ui_btn ui_back_btn" href="javascript:history.go(-1);">&nbsp;</a>
+        <a class="ui_btn ui_panel_btn ui_menu_btn" href="#panel">&nbsp;</a>
+    </div>
+    
+    
+		<!--内页头部结束-->
+		<!--内页主体开始-->
+		<div id="container" class="container">
+			<header>
+				<div class="header_1">
+					<ul class="tbox">
+						<li><span class="head_img"> <img
+								src="../uploads/images/20140707/221938937.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/20140707/221938937.jpg"
+								onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+						</span></li>
+						<li>
+							<h5>留言互动</h5>
+							<p>
+								<a href="javascript:;" class="label"><span
+									class="icons icons_post">&nbsp;</span>13帖子</a> <a
+									href="javascript:;" class="label"><span
+									class="icons icons_visisted">&nbsp;</span>410访问</a>
+							</p>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<div class="body">
+				<div id="list_article" class="list_article">
+					
+						
+							<article>
+								<header>
+									<ul class="tbox">
+										<li><a
+											href="#"
+											class="head_img"> <img src="../uploads/images/header/bbs_20140623175959_521.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/header/bbs_20140623175959_521.jpg"
+												onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+										</a></li>
+										<li>
+											<h5>小孙</h5>
+											<p>
+												2014-10-06 19-20-46
+											</p>
+										</li>
+										
+									</ul>
+								</header>
+								<section>
+									
+										<figure data-count="1张图片" style="z-index:0;">
+											<div>
+												
+													<img src="../uploads/images/bbs_20141006192046_95.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20141006192046_95.jpg"
+														data-src="../uploads/images/bbs_20141006192046_95.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20141006192046_95.jpg" data-gid="g425"
+														onload="preViewImg(this, event);" />
+												
+											</div>
+										</figure>
+									
+									<div>
+										<h5>大头</h5>
+										<div>哈哈，试试</div>
+									</div>
+									<a
+										href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=5402.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=5402">查看全文</a>
+								</section>
+								<footer>
+									<ul class="box">
+										<li><a
+											href="javascript:;"
+											class="a_collect "onclick=
+											"collectTrends(
+											false,5402);"><span
+												class="icons icons_collect">&nbsp;</span><label>0</label></a></li>
+										<li><a
+											href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=5402.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=5402"
+											class="a_comment"><span class="icons icons_comment">&nbsp;</span><label>0</label></a>
+										</li>
+										<li><a
+											href="javascript:;"
+											class="a_like "onclick=
+											"praiseTrends(false,5402);"><span
+												class="icons icons_like">&nbsp;</span><label>0</label></a></li>
+									</ul>
+								</footer>
+							</article>
+						
+							<article>
+								<header>
+									<ul class="tbox">
+										<li><a
+											href="#"
+											class="head_img"> <img src="../uploads/images/header/bbs_20140623175959_521.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/header/bbs_20140623175959_521.jpg"
+												onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+										</a></li>
+										<li>
+											<h5>小孙</h5>
+											<p>
+												2014-10-06 19-20-34
+											</p>
+										</li>
+										
+									</ul>
+								</header>
+								<section>
+									
+										<figure data-count="1张图片" style="z-index:0;">
+											<div>
+												
+													<img src="../uploads/images/bbs_20141006192034_24.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20141006192034_24.jpg"
+														data-src="../uploads/images/bbs_20141006192034_24.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20141006192034_24.jpg" data-gid="g425"
+														onload="preViewImg(this, event);" />
+												
+											</div>
+										</figure>
+									
+									<div>
+										<h5>大头</h5>
+										<div>哈哈，试试</div>
+									</div>
+									<a
+										href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=5401.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=5401">查看全文</a>
+								</section>
+								<footer>
+									<ul class="box">
+										<li><a
+											href="javascript:;"
+											class="a_collect "onclick=
+											"collectTrends(
+											false,5401);"><span
+												class="icons icons_collect">&nbsp;</span><label>0</label></a></li>
+										<li><a
+											href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=5401.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=5401"
+											class="a_comment"><span class="icons icons_comment">&nbsp;</span><label>0</label></a>
+										</li>
+										<li><a
+											href="javascript:;"
+											class="a_like "onclick=
+											"praiseTrends(false,5401);"><span
+												class="icons icons_like">&nbsp;</span><label>0</label></a></li>
+									</ul>
+								</footer>
+							</article>
+						
+							<article>
+								<header>
+									<ul class="tbox">
+										<li><a
+											href="#"
+											class="head_img"> <img src="../uploads/images/header/bbs_20140623175959_521.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/header/bbs_20140623175959_521.jpg"
+												onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+										</a></li>
+										<li>
+											<h5>小孙</h5>
+											<p>
+												2014-08-30 16-31-52
+											</p>
+										</li>
+										
+									</ul>
+								</header>
+								<section>
+									
+										<figure data-count="1张图片" style="z-index:0;">
+											<div>
+												
+													<img src="../uploads/images/bbs_20140830163152_447.jpeg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20140830163152_447.jpeg"
+														data-src="../uploads/images/bbs_20140830163152_447.jpeg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20140830163152_447.jpeg" data-gid="g425"
+														onload="preViewImg(this, event);" />
+												
+											</div>
+										</figure>
+									
+									<div>
+										<h5>军</h5>
+										<div>有这个吗</div>
+									</div>
+									<a
+										href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=4221.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=4221">查看全文</a>
+								</section>
+								<footer>
+									<ul class="box">
+										<li><a
+											href="javascript:;"
+											class="a_collect "onclick=
+											"collectTrends(
+											false,4221);"><span
+												class="icons icons_collect">&nbsp;</span><label>0</label></a></li>
+										<li><a
+											href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=4221.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=4221"
+											class="a_comment"><span class="icons icons_comment">&nbsp;</span><label>0</label></a>
+										</li>
+										<li><a
+											href="javascript:;"
+											class="a_like "onclick=
+											"praiseTrends(false,4221);"><span
+												class="icons icons_like">&nbsp;</span><label>0</label></a></li>
+									</ul>
+								</footer>
+							</article>
+						
+							<article>
+								<header>
+									<ul class="tbox">
+										<li><a
+											href="#"
+											class="head_img"> <img src="../uploads/images/header/bbs_20140623175959_521.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/header/bbs_20140623175959_521.jpg"
+												onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+										</a></li>
+										<li>
+											<h5>小孙</h5>
+											<p>
+												2014-08-30 16-31-49
+											</p>
+										</li>
+										
+									</ul>
+								</header>
+								<section>
+									
+										<figure data-count="1张图片" style="z-index:0;">
+											<div>
+												
+													<img src="../uploads/images/bbs_20140830163149_186.jpeg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20140830163149_186.jpeg"
+														data-src="../uploads/images/bbs_20140830163149_186.jpeg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20140830163149_186.jpeg" data-gid="g425"
+														onload="preViewImg(this, event);" />
+												
+											</div>
+										</figure>
+									
+									<div>
+										<h5>军</h5>
+										<div>有这个吗</div>
+									</div>
+									<a
+										href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=4220.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=4220">查看全文</a>
+								</section>
+								<footer>
+									<ul class="box">
+										<li><a
+											href="javascript:;"
+											class="a_collect "onclick=
+											"collectTrends(
+											false,4220);"><span
+												class="icons icons_collect">&nbsp;</span><label>0</label></a></li>
+										<li><a
+											href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=4220.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=4220"
+											class="a_comment"><span class="icons icons_comment">&nbsp;</span><label>0</label></a>
+										</li>
+										<li><a
+											href="javascript:;"
+											class="a_like "onclick=
+											"praiseTrends(false,4220);"><span
+												class="icons icons_like">&nbsp;</span><label>0</label></a></li>
+									</ul>
+								</footer>
+							</article>
+						
+							<article>
+								<header>
+									<ul class="tbox">
+										<li><a
+											href="#"
+											class="head_img"> <img src="../uploads/images/header/bbs_20140623175959_521.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/header/bbs_20140623175959_521.jpg"
+												onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+										</a></li>
+										<li>
+											<h5>小孙</h5>
+											<p>
+												2014-07-24 12-14-57
+											</p>
+										</li>
+										
+									</ul>
+								</header>
+								<section>
+									
+										<figure data-count="1张图片" style="z-index:0;">
+											<div>
+												
+													<img src="../uploads/images/bbs_20140724121457_403.jpeg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20140724121457_403.jpeg"
+														data-src="../uploads/images/bbs_20140724121457_403.jpeg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20140724121457_403.jpeg" data-gid="g425"
+														onload="preViewImg(this, event);" />
+												
+											</div>
+										</figure>
+									
+									<div>
+										<h5>李军</h5>
+										<div>哈哈，好</div>
+									</div>
+									<a
+										href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3404.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3404">查看全文</a>
+								</section>
+								<footer>
+									<ul class="box">
+										<li><a
+											href="javascript:;"
+											class="a_collect "onclick=
+											"collectTrends(
+											false,3404);"><span
+												class="icons icons_collect">&nbsp;</span><label>0</label></a></li>
+										<li><a
+											href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3404.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3404"
+											class="a_comment"><span class="icons icons_comment">&nbsp;</span><label>0</label></a>
+										</li>
+										<li><a
+											href="javascript:;"
+											class="a_like "onclick=
+											"praiseTrends(false,3404);"><span
+												class="icons icons_like">&nbsp;</span><label>0</label></a></li>
+									</ul>
+								</footer>
+							</article>
+						
+							<article>
+								<header>
+									<ul class="tbox">
+										<li><a
+											href="#"
+											class="head_img"> <img src="../uploads/images/header/bbs_20140623175959_521.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/header/bbs_20140623175959_521.jpg"
+												onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+										</a></li>
+										<li>
+											<h5>小孙</h5>
+											<p>
+												2014-07-24 12-13-06
+											</p>
+										</li>
+										
+									</ul>
+								</header>
+								<section>
+									
+									<div>
+										<h5>李军</h5>
+										<div>哈哈，好</div>
+									</div>
+									<a
+										href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3402.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3402">查看全文</a>
+								</section>
+								<footer>
+									<ul class="box">
+										<li><a
+											href="javascript:;"
+											class="a_collect "onclick=
+											"collectTrends(
+											false,3402);"><span
+												class="icons icons_collect">&nbsp;</span><label>0</label></a></li>
+										<li><a
+											href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3402.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3402"
+											class="a_comment"><span class="icons icons_comment">&nbsp;</span><label>0</label></a>
+										</li>
+										<li><a
+											href="javascript:;"
+											class="a_like "onclick=
+											"praiseTrends(false,3402);"><span
+												class="icons icons_like">&nbsp;</span><label>0</label></a></li>
+									</ul>
+								</footer>
+							</article>
+						
+							<article>
+								<header>
+									<ul class="tbox">
+										<li><a
+											href="#"
+											class="head_img"> <img src="../uploads/images/header/bbs_20140629183011_206.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/header/bbs_20140629183011_206.jpg"
+												onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+										</a></li>
+										<li>
+											<h5>青青</h5>
+											<p>
+												2014-07-24 08-37-49
+											</p>
+										</li>
+										
+											<li><a
+												href="bbs!updatetrends.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3390.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!updatetrends.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3390"
+												class="icons icons_edit">&nbsp;</a></li>
+										
+									</ul>
+								</header>
+								<section>
+									
+									<div>
+										<h5>安子</h5>
+										<div>很好</div>
+									</div>
+									<a
+										href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3390.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3390">查看全文</a>
+								</section>
+								<footer>
+									<ul class="box">
+										<li><a
+											href="javascript:void(0);"
+											class="a_collect "style="opacity:0.5;"
+											"collectTrends(
+											false,3390);"><span
+												class="icons icons_collect">&nbsp;</span><label>0</label></a></li>
+										<li><a
+											href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3390.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3390"
+											class="a_comment"><span class="icons icons_comment">&nbsp;</span><label>0</label></a>
+										</li>
+										<li><a
+											href="javascript:void(0);"
+											class="a_like "style="opacity:0.5;"
+											"praiseTrends(false,3390);"><span
+												class="icons icons_like">&nbsp;</span><label>0</label></a></li>
+									</ul>
+								</footer>
+							</article>
+						
+							<article>
+								<header>
+									<ul class="tbox">
+										<li><a
+											href="#"
+											class="head_img"> <img src="../uploads/images/header/bbs_20140629183011_206.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/header/bbs_20140629183011_206.jpg"
+												onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+										</a></li>
+										<li>
+											<h5>青青</h5>
+											<p>
+												2014-07-24 00-29-49
+											</p>
+										</li>
+										
+											<li><a
+												href="bbs!updatetrends.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3383.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!updatetrends.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3383"
+												class="icons icons_edit">&nbsp;</a></li>
+										
+									</ul>
+								</header>
+								<section>
+									
+									<div>
+										<h5>王云龙 </h5>
+										<div>不错</div>
+									</div>
+									<a
+										href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3383.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3383">查看全文</a>
+								</section>
+								<footer>
+									<ul class="box">
+										<li><a
+											href="javascript:void(0);"
+											class="a_collect "style="opacity:0.5;"
+											"collectTrends(
+											false,3383);"><span
+												class="icons icons_collect">&nbsp;</span><label>0</label></a></li>
+										<li><a
+											href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3383.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3383"
+											class="a_comment"><span class="icons icons_comment">&nbsp;</span><label>0</label></a>
+										</li>
+										<li><a
+											href="javascript:void(0);"
+											class="a_like "style="opacity:0.5;"
+											"praiseTrends(false,3383);"><span
+												class="icons icons_like">&nbsp;</span><label>0</label></a></li>
+									</ul>
+								</footer>
+							</article>
+						
+							<article>
+								<header>
+									<ul class="tbox">
+										<li><a
+											href="#"
+											class="head_img"> <img src="../uploads/images/header/bbs_20140629183011_206.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/header/bbs_20140629183011_206.jpg"
+												onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+										</a></li>
+										<li>
+											<h5>青青</h5>
+											<p>
+												2014-07-24 00-29-41
+											</p>
+										</li>
+										
+											<li><a
+												href="bbs!updatetrends.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3382.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!updatetrends.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3382"
+												class="icons icons_edit">&nbsp;</a></li>
+										
+									</ul>
+								</header>
+								<section>
+									
+									<div>
+										<h5>王云龙 </h5>
+										<div>不错</div>
+									</div>
+									<a
+										href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3382.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3382">查看全文</a>
+								</section>
+								<footer>
+									<ul class="box">
+										<li><a
+											href="javascript:void(0);"
+											class="a_collect "style="opacity:0.5;"
+											"collectTrends(
+											false,3382);"><span
+												class="icons icons_collect">&nbsp;</span><label>0</label></a></li>
+										<li><a
+											href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3382.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3382"
+											class="a_comment"><span class="icons icons_comment">&nbsp;</span><label>0</label></a>
+										</li>
+										<li><a
+											href="javascript:void(0);"
+											class="a_like "style="opacity:0.5;"
+											"praiseTrends(false,3382);"><span
+												class="icons icons_like">&nbsp;</span><label>0</label></a></li>
+									</ul>
+								</footer>
+							</article>
+						
+							<article>
+								<header>
+									<ul class="tbox">
+										<li><a
+											href="#"
+											class="head_img"> <img src="../uploads/images/header/bbs_20140629183011_206.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/header/bbs_20140629183011_206.jpg"
+												onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+										</a></li>
+										<li>
+											<h5>青青</h5>
+											<p>
+												2014-07-18 02-03-32
+											</p>
+										</li>
+										
+											<li><a
+												href="bbs!updatetrends.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3262.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!updatetrends.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3262"
+												class="icons icons_edit">&nbsp;</a></li>
+										
+									</ul>
+								</header>
+								<section>
+									
+									<div>
+										<h5>晨</h5>
+										<div>妹子，叫几个娃来</div>
+									</div>
+									<a
+										href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3262.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3262">查看全文</a>
+								</section>
+								<footer>
+									<ul class="box">
+										<li><a
+											href="javascript:void(0);"
+											class="a_collect "style="opacity:0.5;"
+											"collectTrends(
+											false,3262);"><span
+												class="icons icons_collect">&nbsp;</span><label>0</label></a></li>
+										<li><a
+											href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3262.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3262"
+											class="a_comment"><span class="icons icons_comment">&nbsp;</span><label>0</label></a>
+										</li>
+										<li><a
+											href="javascript:void(0);"
+											class="a_like "style="opacity:0.5;"
+											"praiseTrends(false,3262);"><span
+												class="icons icons_like">&nbsp;</span><label>0</label></a></li>
+									</ul>
+								</footer>
+							</article>
+						
+							<article>
+								<header>
+									<ul class="tbox">
+										<li><a
+											href="#"
+											class="head_img"> <img src="../uploads/images/header/bbs_20140629183011_206.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/header/bbs_20140629183011_206.jpg"
+												onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+										</a></li>
+										<li>
+											<h5>青青</h5>
+											<p>
+												2014-07-10 22-57-57
+											</p>
+										</li>
+										
+											<li><a
+												href="bbs!updatetrends.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3118.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!updatetrends.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3118"
+												class="icons icons_edit">&nbsp;</a></li>
+										
+									</ul>
+								</header>
+								<section>
+									
+										<figure data-count="1张图片" style="z-index:0;">
+											<div>
+												
+													<img src="../uploads/images/bbs_20140710225757_388.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20140710225757_388.jpg"
+														data-src="../uploads/images/bbs_20140710225757_388.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20140710225757_388.jpg" data-gid="g425"
+														onload="preViewImg(this, event);" />
+												
+											</div>
+										</figure>
+									
+									<div>
+										<h5>凯隆</h5>
+										<div>进来看看，<div><br></div></div>
+									</div>
+									<a
+										href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3118.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3118">查看全文</a>
+								</section>
+								<footer>
+									<ul class="box">
+										<li><a
+											href="javascript:void(0);"
+											class="a_collect "style="opacity:0.5;"
+											"collectTrends(
+											false,3118);"><span
+												class="icons icons_collect">&nbsp;</span><label>0</label></a></li>
+										<li><a
+											href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3118.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3118"
+											class="a_comment"><span class="icons icons_comment">&nbsp;</span><label>0</label></a>
+										</li>
+										<li><a
+											href="javascript:void(0);"
+											class="a_like "style="opacity:0.5;"
+											"praiseTrends(false,3118);"><span
+												class="icons icons_like">&nbsp;</span><label>0</label></a></li>
+									</ul>
+								</footer>
+							</article>
+						
+							<article>
+								<header>
+									<ul class="tbox">
+										<li><a
+											href="#"
+											class="head_img"> <img src="../uploads/images/header/bbs_20140629183011_206.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/header/bbs_20140629183011_206.jpg"
+												onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+										</a></li>
+										<li>
+											<h5>青青</h5>
+											<p>
+												2014-07-25 17-42-25
+											</p>
+										</li>
+										
+											<li><a
+												href="bbs!updatetrends.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3117.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!updatetrends.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3117"
+												class="icons icons_edit">&nbsp;</a></li>
+										
+									</ul>
+								</header>
+								<section>
+									
+										<figure data-count="2张图片" style="z-index:0;">
+											<div>
+												
+													<img src="../uploads/images/bbs_20140725174225_539.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20140725174225_539.jpg"
+														data-src="../uploads/images/bbs_20140725174225_539.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20140725174225_539.jpg" data-gid="g425"
+														onload="preViewImg(this, event);" />
+												
+													<img src="../uploads/images/bbs_20140725174225_471.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20140725174225_471.jpg"
+														data-src="../uploads/images/bbs_20140725174225_471.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/bbs_20140725174225_471.jpg" data-gid="g425"
+														onload="preViewImg(this, event);" />
+												
+											</div>
+										</figure>
+									
+									<div>
+										<h5>潮</h5>
+										<div>真👌</div>
+									</div>
+									<a
+										href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3117.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3117">查看全文</a>
+								</section>
+								<footer>
+									<ul class="box">
+										<li><a
+											href="javascript:void(0);"
+											class="a_collect "style="opacity:0.5;"
+											"collectTrends(
+											false,3117);"><span
+												class="icons icons_collect">&nbsp;</span><label>0</label></a></li>
+										<li><a
+											href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3117.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3117"
+											class="a_comment"><span class="icons icons_comment">&nbsp;</span><label>0</label></a>
+										</li>
+										<li><a
+											href="javascript:void(0);"
+											class="a_like "style="opacity:0.5;"
+											"praiseTrends(false,3117);"><span
+												class="icons icons_like">&nbsp;</span><label>0</label></a></li>
+									</ul>
+								</footer>
+							</article>
+						
+							<article>
+								<header>
+									<ul class="tbox">
+										<li><a
+											href="#"
+											class="head_img"> <img src="../uploads/images/header/bbs_20140629183011_206.jpg" tppabs="http://114.215.116.254/MyNosql/uploads/images/header/bbs_20140629183011_206.jpg"
+												onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+										</a></li>
+										<li>
+											<h5>青青</h5>
+											<p>
+												2014-07-08 22-06-25
+											</p>
+										</li>
+										
+											<li><a
+												href="bbs!updatetrends.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3057.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!updatetrends.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3057"
+												class="icons icons_edit">&nbsp;</a></li>
+										
+									</ul>
+								</header>
+								<section>
+									
+									<div>
+										<h5>超阔气</h5>
+										<div>这也行，白水也太先进了吧<img src="../../../stc.weimob.com/img/sns/emotion/7.gif" tppabs="http://stc.weimob.com/img/sns/emotion/7.gif" data-innerhtml="/::X"><img src="../../../stc.weimob.com/img/sns/emotion/7.gif" tppabs="http://stc.weimob.com/img/sns/emotion/7.gif" data-innerhtml="/::X"><img src="../../../stc.weimob.com/img/sns/emotion/7.gif" tppabs="http://stc.weimob.com/img/sns/emotion/7.gif" data-innerhtml="/::X"></div>
+									</div>
+									<a
+										href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3057.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3057">查看全文</a>
+								</section>
+								<footer>
+									<ul class="box">
+										<li><a
+											href="javascript:void(0);"
+											class="a_collect "style="opacity:0.5;"
+											"collectTrends(
+											false,3057);"><span
+												class="icons icons_collect">&nbsp;</span><label>0</label></a></li>
+										<li><a
+											href="bbs!trendscommentlist.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3057.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!trendscommentlist.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30&_id=3057"
+											class="a_comment"><span class="icons icons_comment">&nbsp;</span><label>1</label></a>
+										</li>
+										<li><a
+											href="javascript:void(0);"
+											class="a_like "style="opacity:0.5;"
+											"praiseTrends(false,3057);"><span
+												class="icons icons_like">&nbsp;</span><label>0</label></a></li>
+									</ul>
+								</footer>
+							</article>
+						
+					
+				</div>
+			</div>
+			<footer>
+				<section class="nav_footer">
+					<ul class="box">
+						<li><a
+							href="wwz!index.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!index.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30"> 
+							<span class="icons_home">&nbsp;</span> <label>首页</label>
+						</a></li>
+						<li><a
+							href="bbs!newtrends.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!newtrends.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30"
+							class="nav_add"> <span class="icons_home_edit">&nbsp;</span>
+						</a></li>
+						<li><a
+							href="bbs!myaccount.action-toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/bbs!myaccount.action?toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+								<span class="icons_my">&nbsp;</span> <label>我的</label>
+						</a></li>
+					</ul>
+				</section>
+			</footer>
+		</div>
+		<!--内页主体结束-->
+		<!--脚部开始-->
+		
+
+
+
+
+
+
+<div class="footer">
+	<div class="copy_cont">
+		<p class="t_center">
+			
+白水凯隆公馆欢迎您
+
+			
+		</p>
+	</div>
+</div>
+		<script type="text/javascript" src="js/jquery.form.js" tppabs="http://114.215.116.254/MyNosql/wwz/js/jquery.form.js"></script>
+		<script type="text/javascript" src="js/main.js" tppabs="http://114.215.116.254/MyNosql/wwz/js/main.js"></script>
+		<script type="text/javascript" src="js/plug.js" tppabs="http://114.215.116.254/MyNosql/wwz/js/plug.js"></script>
+		<!--脚部结束-->
+		<!--右侧菜单开始-->
+		<div class="ui_panel ui_panel_position ui_panel_right_hide" id="panel">
+			<ul class="left_panel_list">
+				
+					
+						
+							<li class=""><a href="wwz!wxnewscommondetail.action-_id=1196&toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!wxnewscommondetail.action?_id=1196&toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+									<i class="left_ico"
+									style="background-image: url('/MyNosql/uploads/images/20140707/203403140.jpg');"></i>
+									<p>简介</p>
+							</a></li>
+
+						
+						
+
+					
+						
+						
+							<li class=""><a
+								href="wwz!wxbmt.action-type=bskl30&toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!wxbmt.action?type=bskl30&toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+									<i class="left_ico"
+									style="background-image: url('/MyNosql/uploads/images/20140707/221938937.jpg');"></i>
+									<p>留言互动</p>
+							</a></li>
+						
+
+					
+						
+							<li class=""><a href="wwz!wxnewscommondetail.action-_id=1200&toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!wxnewscommondetail.action?_id=1200&toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+									<i class="left_ico"
+									style="background-image: url('/MyNosql/uploads/images/20140707/203957593.jpg');"></i>
+									<p>简餐厅</p>
+							</a></li>
+
+						
+						
+
+					
+						
+							<li class=""><a href="wwz!wxnewscommondetail.action-_id=1202&toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!wxnewscommondetail.action?_id=1202&toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+									<i class="left_ico"
+									style="background-image: url('/MyNosql/uploads/images/20140707/204102296.jpg');"></i>
+									<p>会议室</p>
+							</a></li>
+
+						
+						
+
+					
+						
+							<li class=""><a href="wwz!wxnewscommondetail.action-_id=1197&toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!wxnewscommondetail.action?_id=1197&toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+									<i class="left_ico"
+									style="background-image: url('/MyNosql/uploads/images/20140707/203503859.jpg');"></i>
+									<p>客房</p>
+							</a></li>
+
+						
+						
+
+					
+						
+							<li class=""><a href="wwz!wxnewscommondetail.action-_id=1198&toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!wxnewscommondetail.action?_id=1198&toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+									<i class="left_ico"
+									style="background-image: url('/MyNosql/uploads/images/20140707/203650921.jpg');"></i>
+									<p>KTV</p>
+							</a></li>
+
+						
+						
+
+					
+						
+							<li class=""><a href="wwz!wxnewscommondetail.action-_id=1201&toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!wxnewscommondetail.action?_id=1201&toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+									<i class="left_ico"
+									style="background-image: url('/MyNosql/uploads/images/20140707/203845484.jpg');"></i>
+									<p>足浴</p>
+							</a></li>
+
+						
+						
+
+					
+						
+							<li class=""><a href="wwz!wxnewscommondetail.action-_id=1199&toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!wxnewscommondetail.action?_id=1199&toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+									<i class="left_ico"
+									style="background-image: url('/MyNosql/uploads/images/20140707/203752640.jpg');"></i>
+									<p>茶秀</p>
+							</a></li>
+
+						
+						
+
+					
+						
+						
+							<li class=""><a
+								href="wwz!contactus.action-type=bskl22&toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!contactus.action?type=bskl22&toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+									<i class="left_ico"
+									style="background-image: url('/MyNosql/uploads/images/20140710/175341390.jpg');"></i>
+									<p>联系我们</p>
+							</a></li>
+						
+
+					
+						
+						
+							<li class=""><a
+								href="wwz!photoview.action-type=bskl8&toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!photoview.action?type=bskl8&toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+									<i class="left_ico"
+									style="background-image: url('/MyNosql/uploads/images/20140707/204158531.jpg');"></i>
+									<p>凯隆相册</p>
+							</a></li>
+						
+
+					
+						
+						
+							<li class=""><a
+								href="wwz!aboutus.action-type=bskl25&toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!aboutus.action?type=bskl25&toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+									<i class="left_ico"
+									style="background-image: url('/MyNosql/uploads/images/20140707/213316921.jpg');"></i>
+									<p>关于我们</p>
+							</a></li>
+						
+
+					
+						
+						
+							<li class=""><a
+								href="wwz!wxnewscommon.action-type=bskl01&toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!wxnewscommon.action?type=bskl01&toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+									<i class="left_ico"
+									style="background-image: url('/MyNosql/uploads/images/20140708/142438234.jpg');"></i>
+									<p>WIFI</p>
+							</a></li>
+						
+
+					
+						
+						
+							<li class=""><a
+								href="wwz!wxshop.action-type=WSDF&toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!wxshop.action?type=WSDF&toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+									<i class="left_ico"
+									style="background-image: url('/MyNosqlimages-20141119-153647296.jpg');"></i>
+									<p>网上订房</p>
+							</a></li>
+						
+
+					
+						
+						
+							<li class=""><a
+								href="wwz!wxnewscommon.action-type=bskl20&toUser=bsklgg&fromUser=fromUserData&type=bskl30.htm" tppabs="http://114.215.116.254/MyNosql/wwz/wwz!wxnewscommon.action?type=bskl20&toUser=bsklgg&fromUser=fromUserData&type=bskl30">
+									<i class="left_ico"
+									style="background-image: url('/MyNosql');"></i>
+									<p>12</p>
+							</a></li>
+						
+
+					
+				
+			</ul>
+			<script type="text/javascript" src="js/panel.js" tppabs="http://114.215.116.254/MyNosql/wwz/js/panel.js"></script>
+		</div>
+		<!--右侧菜单结束-->
+		<script type="text/javascript">
+			document.addEventListener('WeixinJSBridgeReady',
+					function onBridgeReady() {
+						WeixinJSBridge.call('hideToolbar');
+					});
+			$(function() {
+				var ui_header = $('.ui_header');
+				var ui_content = $('.ui_content');
+				if ($('.ui_footer').length > 0) {
+					var ui_footer = $('.ui_footer');
+				} else {
+					var ui_footer = $('.footer');
+				}
+				panel_innit(ui_header, ui_content, ui_footer);
+			})
+		</script>
+		<script type="text/javascript" src="js/index.js" tppabs="http://114.215.116.254/MyNosql/wwz/js/index.js"></script>
+		<script type="text/javascript">  
+    $(document).ready(function(){ 
+        var range = 50;             //距下边界长度/单位px  
+       var pageNum = 2;  
+        var totalheight = 0;   
+        var main = $("#list_article");                //主体元素
+       var state = 0;  
+        var _srollPos = 0;
+
+        var TPL = '<article {guan}>'+
+                		' <header>'+
+                		' <ul class="tbox">'+
+                		' <li>'+
+                		' 	<a href="{his_tiezi_href}" class="head_img">'+
+                		' 		<img src="{head_img}" onerror="this.src=\'imgs/2.png\'/*tpa=http://114.215.116.254/MyNosql/wwz/imgs/2.png*/;" />'+
+                		' 	</a>'+
+                		' 	</li>'+
+                		' <li>'+
+                		' 	<h5>{nickname}</h5>'+
+                		' 	<p>2014-01-05  16:31</p>'+
+                		' </li>'+
+                		' <li>{edit_trend}</li>'+
+                		' </ul>'+
+                		' </header>'+
+                		' <section>'+
+                		' <figure data-count="{image_url_count}张图片" {show_pic}>'+
+                		' <div>{imgs}</div>'+
+                		' 	</figure>'+
+                		' 		<div>'+
+                		' 		<h5>{title}</h5>'+
+                		' 		<div>{content}</div>'+
+                		' 		<a href="{comment_href}">查看全文</a>'+
+                		' 	</section>'+
+                		' 	<footer>'+
+                		' 		<ul class="box">'+
+                		' 			<li>'+
+                		' 				<a href="javascript:;" class="a_collect {praise_on}" {praise_click} ><span class="icons icons_collect" >&nbsp;</span><label>{praise}</label></a>'+
+                		' 			</li>'+
+                		' 			<li>'+
+                		' 						<a href="{comment_href}" class="a_comment"><span class="icons icons_comment" >&nbsp;</span><label>{comment}</label></a>'+
+                	    ' 						</li>'+
+                	    ' 						<li>'+
+                	    ' 	<a href="javascript:;" class="a_like {collect_on}" {collect_click}><span class="icons icons_like"   >&nbsp;</span><label>{collect}</label></a>'+
+                	    ' </li>'+
+                	    ' 					</ul>'+
+                	    ' 		</footer>'+
+                	    ' </article>';
+
+       var TPL_imgs = '<img src="{img_url}" data-src="{img_url}" data-gid="g{gi}" onload="preViewImg(this, event);"/>';
+        
+        $(window).scroll(function(){  
+            var srollPos = $(window).scrollTop();    //滚动条距顶部距离(页面超出窗口的高度)  
+           if(srollPos<_srollPos){
+                return;
+            }else{
+            	_srollPos = srollPos;
+            }
+            totalheight = parseFloat($(window).height()) + parseFloat(srollPos);  
+            if(!state && (($(document).height()-range) <= totalheight) ) {
+          	    loading(true);
+            	state = 1;
+                $.post('/snsmobile/ajaxindex',{
+                    "sid"  : 44887,
+                    "ruid" : 21,
+                    "page" : pageNum
+                    },function(res){
+                        loading(false);
+                        if(res) {
+                            var data = $.parseJSON(res);
+                        html = iTemplate.makeList(TPL, data.rows, function(k,v){
+                            console.log(v);
+                            var gi = new Date().getTime();
+                            var subObj = {
+                                his_tiezi_href:'/snsmobile/othertrendslist?sid='+v.sid+'&uid='+v.uid+'&ruid='+v.ruid,
+                                edit_trend:v.uid==v.ruid?'<a href="http://114.215.116.254/MyNosql/wwz/snsmobile/trendsrow-pid='+v.sid+'&tid='+v.tid+'&exa_trends='+data.shopinfo.exa_trends+'.htm class="icons icons_edit">&nbsp;</a>':'',
+                                head_img:"2"http://www.weimob.com/== v.type?( v.head_img||'http://stc.weimob.com/img/sns/2.png'):(data.shopinfo.image),                                nickname:"2"== v.type?(v.nickname||'游客'):(data.shopinfo.nickname),
+                                guan: "1"http://www.weimob.com/==v.type?'data-role="guan"':'',
+                                image_url_count: v.image_url[0]? v.image_url.length:0,
+                        		show_pic:v.image_url[0]?'':'style="display:none;"',
+                                imgs: iTemplate.makeList(TPL_imgs, v.image_url, function(kk,vv){
+                                    return {
+                                         gi: gi 
+                                       }
+                                }),
+                                praise_on:"1" == v.ispraise?'on':'',
+                                collect_on:"1" == v.iscollect?'on':'',
+                                praise_click: v.uid==v.ruid?'style="opacity:0.5;"':'onclick="praiseTrends('+v.iscollect+', '+v.sid+', '+v.tid+', '+v.ruid+')"',
+                                collect_click:v.uid == v.ruid?'style="opacity:0.5;"':'onclick="collectTrends('+v.iscollect+', '+v.sid+', '+v.tid+', '+v.ruid+')"',
+                                comment_href: '/snsmobile/commentlist?sid='+v.sid+'&tid='+v.tid+'&ruid='+v.ruid
+                               
+                            };
+                            console.log(subObj);
+                            return subObj;
+                        });
+                        main.append($(html) );
+                        pageNum ++;
+                        state = 0;
+                    }else{
+                    	loading(false);
+                    	state = 0;
+                    	alert("没有更多了","1500");
+                    }
+                });
+            }  
+        });  
+    }); 
+</script>
+	</div>
+</body>
+</html>

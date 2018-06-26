@@ -1,0 +1,84 @@
+.threed {
+    color: #fafafa;
+    letter-spacing: 0;
+    text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135
+}
+
+.biaoqian {
+    position: absolute;
+}
+
+.xiejiao {
+    width: 0px;
+    height: 0px;
+    border-top: 40px solid #EF8200;
+    border-right: 40px solid transparent;
+    position: absolute;
+    left: 10px;
+    margin-top: -11px;
+}
+
+.tuijian {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    color: #fff;
+    font-size: 18px;
+    left: 6px;
+    margin-top: -50px;
+}
+
+.rotate45 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0.5);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+
+}
+
+
+/*水平翻转*/
+.flipx {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH();
+}
+
+/*垂直翻转*/
+.flipy {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipV();
+}
+
+/*顺时针旋转90度*/
+.rotate90 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+/*顺时针旋转180度*/
+.rotate180 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/*顺时针旋转270度*/
+.rotate270 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+}

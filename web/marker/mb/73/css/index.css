@@ -1,0 +1,22 @@
+body{
+	margin:0;
+	padding:0;
+	font-size:62.5%;
+	color:#fff;
+	font-family:"Microsoft YaHei",微软雅黑,"Microsoft JhengHei",华文细黑,STHeiti,MingLiu;
+	background: -webkit-linear-gradient(top,#ff0302, #8a1911);
+	background: -moz-linear-gradient(top, #ff0302, #8a1911); 
+    background: -o-linear-gradient(top,#ff0302, #8a1911); 
+}
+ul,li{margin:0;padding:0;list-style:none}
+#cover{position:fixed;width:100%;height:100%;left:0;top:0;z-index:999;background:-webkit-radial-gradient(50% 60%,#fb0303,#8a1911);background:-moz-radial-gradient(30% 50%,#fb0303,#8a1911);background-color:#8a1911;}
+.mask{position:absolute;width:100px;height:136px;left:50%;top:30%;margin-left:-50px;background:url("../img/sou.png")/*tpa=http://wx.kuaitec.com/Public/images/Sy/sou.png*/ no-repeat;}
+#mymask{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:10000;display:none;}
+#mymask img{position:fixed;top:5px;right:18px;width:260px;height:auto;z-index:10001;}
+.dp{position:relative;margin-top:10px;text-align:center}
+.content{margin:20px 10px 20px 10px;padding:20px;background-color:#fff;border-radius:10px;box-shadow: 0 0 5px #666;color:#000;}
+.pb_10{margin-top:10px;}
+.abu{position:relative;display:block;margin:10px 0;padding-left:70px;line-height:50px;border-radius:8px;font-size:1.2rem;height:50px;color:#fff;background-color:#df443e;box-shadow:0 1px 2px #666;text-decoration:none;padding-left:10px;text-align:left;}
+.yuan{position:absolute;top:5px;left:60px;right:10px;display:block;border-radius:8px;background-color:#fff;height:40px;font-size:1.2rem;color:#000;text-align:center;line-height:40px;width:auto}
+.sharebutton{position:relative;display:block;margin:10px;text-align:center;line-height:50px;border-radius:8px;font-size:1.4rem;height:50px;color:#fff;background-color:#eeb95c;box-shadow:0 1px 2px #666;text-decoration:none;}
+.bot{margin-top:10px;height:20px;}

@@ -1,0 +1,407 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css-2014-08-28.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="css/common.css-2014-08-28.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="css/home-28.css-2014-08-28.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="css/menu-3.css-2014-08-28.css"  media="all" />
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/swipe.js" ></script>
+<script type="text/javascript" src="js/zepto.js" ></script>
+<title>刷烤房</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="微白水" />
+        <meta name="Description" content="元亨商贸" />
+        <!-- Mobile Devices Support @begin -->
+            <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <!-- Mobile Devices Support @end -->
+        <link rel="shortcut icon" href="http://stc.weimob.com/img/favicon.ico" />
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+        
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css-v=2014100823.css"  media="all" />
+
+<div class="body">
+		<!--
+	幻灯片管理
+	-->
+	<div style="-webkit-transform:translate3d(0,0,0);">
+		<div id="banner_box" class="box_swipe">
+			<ul>
+									<li>
+												<a onClick="return false;">
+																<img src="img/hd1.jpg"  alt="3" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onClick="return false;">
+																<img src="img/hd2.jpg"  alt="4" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onClick="return false;">
+																<img src="img/hd3.jpg"  alt="5" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onClick="return false;">
+																<img src="img/hd4.jpg"  alt="5" style="width:100%;" />
+								</a>
+					</li>
+									<li>
+												<a onClick="return false;">
+																<img src="img/hd5.jpg"  alt="5" style="width:100%;" />
+								</a>
+					</li>
+                                                                        <li>
+												<a onClick="return false;">
+																<img src="img/hd6.jpg"  alt="5" style="width:100%;" />
+								</a>
+					</li>
+							</ul>
+			<ol>
+									<li class="on"></li>
+									<li ></li>
+									<li ></li>
+									<li ></li>
+									<li ></li>
+                                                                        <li ></li>
+							</ol>
+		</div>
+	</div>
+		<script>
+		$(function(){
+			new Swipe(document.getElementById('banner_box'), {
+				speed:500,
+				auto:3000,
+				callback: function(){
+					var lis = $(this.element).next("ol").children();
+					lis.removeClass("on").eq(this.index).addClass("on");
+				}
+			});
+		});
+	</script>
+<br/>			<section>
+			<a href="tel:0913-6187189" class="link_tel icon-phone">0913-6187000</a>
+		</section>
+<section>
+			<a href="tel:0913-6187189" class="link_tel icon-phone">0913-6187000</a>
+		</section>
+				<!--
+		用户分类管理
+        -->
+		<section>
+			<ul class="list_ul">
+									<li>
+													<a href="yh/index.html" >
+													<figure>
+								<div style="background-image:url(img/logo1.png);">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">会馆简介</figcaption>
+							</figure>
+						</a>
+					</li>
+									<li>
+													<a href="cpjs/index.html" >
+													<figure>
+								<div style="background-image:url(http://img.weimob.com/static/23/69/85/image/20140507/20140507195600_29674.jpg);">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">醉鲜鱼馆</figcaption>
+							</figure>
+						</a>
+					</li>
+									<li>
+													<a href="buy.html">
+													<figure>
+								<div style="background-image:url(http://img.weimob.com/static/23/69/85/image/20140507/20140507195653_76388.jpg);">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">元亨客房</figcaption>
+							</figure>
+						</a>
+					</li>
+									<li>
+													<a href="tghd/index.html" >
+													<figure>
+								<div style="background-image:url(http://img.weimob.com/static/23/69/85/image/20140507/20140507195753_91858.jpg);">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">元亨涮烤</figcaption>
+							</figure>
+						</a>
+					</li>
+									<li>
+													<a href="#" >
+													<figure>
+								<div style="background-image:url(http://img.weimob.com/static/23/69/85/image/20140507/20140507200101_95467.jpg);">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">名烟名酒</figcaption>
+							</figure>
+						</a>
+					</li>
+									<li>
+													<a href="cpdq/html" >
+													<figure>
+								<div style="background-image:url(http://img.weimob.com/static/23/69/85/image/20140507/20140507200736_66741.jpg);">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">文化传媒</figcaption>
+							</figure>
+						</a>
+					</li>
+									<li>
+													<a href="cjhd/index.html" >
+													<figure>
+								<div style="background-image:url(http://img.weimob.com/static/23/69/85/image/20140507/20140507200855_28581.jpg);">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">尚岛咖啡</figcaption>
+							</figure>
+						</a>
+					</li>
+									<li>
+													<a href="yjpj/html" >
+													<figure>
+								<div style="background-image:url(http://img.weimob.com/static/23/69/85/image/20140507/20140507200455_35711.jpg);">&nbsp;</div>
+								<figcaption style="height:33px; overflow:hidden;">特惠专区</figcaption>
+							</figure>
+						</a>
+					</li>
+							</ul>
+		</section>
+	</div>
+
+<!--
+导航菜单
+   后台设置的快捷菜单
+-->
+							<article id="shareCover" class="share" onclick="$('#shareCover').toggleClass('on')">
+			<table>
+				<tr>
+					<td colspan="2" style="text-align:right;">
+						<img src="img/share_1.png-v=2014-08-28.png"   style="width:120px!important;" />
+						<img src="img/share_2.png-v=2014-08-28.png"   style="width:30px!important;" />
+					</td>
+				</tr>
+				<tr>
+					<td style="width:50%;">
+						<img src=" img/share_4.png-v=2014-08-28.png"   />
+						<div>发送给朋友</div>
+					</td>
+					<td>
+						<img src=" img/share_3.png-v=2014-08-28.png"   />
+						<div>分享到朋友圈</div>
+					</td>
+				</tr>
+			</table>
+		</article>
+                         
+		<section data-role="widget" data-widget="nav7" class="nav7">
+
+                        
+			<div class="plug-div-wrap">
+<div style="width:1200px;height=:300px;background-color:#666ad3;">
+
+
+
+				<div class="plug-div model1">
+                                        
+                                       
+                                                                         
+
+					<div id="plug-phone" class="plug-phone">
+
+
+													<div onclick="cad()">
+																	<a href="" class="icon-phone" onclick="cad()">
+										<label onclick="cad()">电话</label>
+									</a>
+															</div>
+													<div>
+																	<a href="http://map.baidu.com/?latlng=35.190144,109.605677&title=%E5%85%9A%E6%9D%B0%E5%AE%B6&content=%E5%85%9A%E6%9D%B0%E5%AE%B6&autoOpen=true&l" class="icon-globe " >
+										<label>地址</label>
+									</a>
+															</div>
+													<div>
+																	<a href="#" class="icon-edit">
+										<label>留言</label>
+									</a>
+															</div>
+												<div>
+							<a href="index..html" class="icon-share"><label>首页</label></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	
+<!--
+分享前控制
+
+
+<script type="text/javascript">
+ function cad()
+ {      
+	   var p1 =document.getElementById("p1");
+	   var p2 =document.getElementById("p2");
+	   var p3 =document.getElementById("p3");
+	   var p4 =document.getElementById("p4");
+	   var p5 =document.getElementById("p5");
+	   var dd=document.getElementById("dd");
+           alert(dd.style.display)
+	   if(dd.style.display=="none")
+	   {
+	 
+		   dd.style.display="block";
+		   }else if(dd.style.display=="block")
+		   {
+			   dd.style.display="none";
+			   }
+	    if(p1.innerHTML=="")
+		{
+			 p1.innerHTML="总机：0913-6187189";
+		}else if(p1.innerHTML=!null)
+		{
+			p1.innerHTML="";
+			} 
+			
+			
+			
+			
+			
+	if(p2.innerHTML=="")
+	{
+		 p2.innerHTML="总机：0913-6187189";
+	} else if(p2.innerHTML=!null)
+		{
+			p2.innerHTML="";
+			} 
+			
+			
+	    if(p3.innerHTML=="")
+		{
+			   p3.innerHTML="总机：0913-6187189";
+			} else if(p3.innerHTML=!null)
+		{
+			p3.innerHTML="";
+			} 
+			
+			
+			if(p4.innerHTML=="")
+			{
+				 p4.innerHTML="总机：0913-6187189";
+				 
+				}else if(p4.innerHTML=!null)
+		{
+			p4.innerHTML="";
+			} 
+	  
+		 if(p5.innerHTML==null)
+		 {
+			   p5.innerHTML="总机：0913-6187189";
+			 
+				}else if(p5.innerHTML=!null)
+		{
+			p5.innerHTML="";
+			} 
+		
+                                     
+	 
+	 }
+
+</script>
+
+-->
+	<script type="text/javascript">
+		
+		window.shareData = {
+			"imgUrl": "",
+			"timeLineLink": "http://131200.m.weimob.com/weisite/home?pid=131200&bid=268890&wechatid=fromUsername&wxref=mp.weixin.qq.com",
+			"sendFriendLink": "http://131200.m.weimob.com/weisite/home?pid=131200&bid=268890&wechatid=fromUsername&wxref=mp.weixin.qq.com",
+			"weiboLink": "http://131200.m.weimob.com/weisite/home?pid=131200&bid=268890&wechatid=fromUsername&wxref=mp.weixin.qq.com",
+			"tTitle": "",
+			"tContent": "",
+			"fTitle": "",
+			"fContent": "",
+			"wContent": ""
+		};
+			</script>
+        			<footer style="overflow:visible;">
+				<div class="weimob-copyright" style="padding-bottom:50px;">
+											<span class="weimob-support" >陕西信使</span>
+									</div>
+			</footer>
+				<div mark="stat_code" style="width:0px; height:0px; display:none;">
+					</div>
+	</body>
+		 
+<script type="text/javascript" src="js/ChatFloat.js"></script>
+
+<script type="text/javascript">
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		WeixinJSBridge.call('hideToolbar');
+	});
+	
+	function zanCompany() {
+
+		$.post('/MyNosql/wwz/wwzajax!zanCompany.action?toUser=${toUser}&companyid=${company._id}',
+						function(res) {
+							
+							if (res) {
+								
+							} else {
+								alert('请求失败了');
+							}
+						});
+	}
+    </script>
+    <script type="text/javascript">
+    	window.shareData = {
+			"imgUrl": "${ip}${company.logo}",
+			"link": "${ip}/marker/company/company${company._id}.html",
+			"title": "${company.name}",
+			"content": "${company.summary}"
+		};
+	</script>
+	<script type="text/javascript">
+
+	document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+	// 发送给好友
+	WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+		WeixinJSBridge.invoke('sendAppMessage', { 
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.link,
+			"desc": window.shareData.content,
+			"title": window.shareData.title
+		}, function (res) {
+			weimobAfterShare("",window.shareData.link,'appmessage');
+			_report('send_msg', res.err_msg);
+		})
+	});
+
+	// 分享到朋友圈
+	WeixinJSBridge.on('menu:share:timeline', function (argv) {
+		WeixinJSBridge.invoke('shareTimeline', {
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.link,
+			"desc": window.shareData.content,
+			"title": window.shareData.title
+		}, function (res) {
+			weimobAfterShare("",window.shareData.link,'timeline');
+			_report('timeline', res.err_msg);
+		});
+	});
+
+	// 分享到微博
+	WeixinJSBridge.on('menu:share:weibo', function (argv) {
+		WeixinJSBridge.invoke('shareWeibo', {
+			"content": window.shareData.content,
+			"url": window.shareData.link
+		}, function (res) {
+			weimobAfterShare("",window.shareData.link,'weibo');
+			_report('weibo', res.err_msg);
+		});
+	});
+}, false);
+</script>
+ 
+</html>
+

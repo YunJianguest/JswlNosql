@@ -1,0 +1,289 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<title>页面标题</title>
+	<!--必选css-->
+	<link rel="stylesheet" type="text/css" href="css/vv.css" >
+</head>
+<body>
+
+	<div class="banner">
+		<a href=""><img src="images/banner.jpg"/></a>
+	</div>
+	<div class="content">
+		<div class="g-lottery-case">
+			<div class="hbcont hbcont3"   >
+					<div class="chekcont">
+						<input id="yzm" type="text" placeholder="请输入串码"/>
+						<span>兑换</span>
+						<div class="clear"></div>
+					</div>
+			</div>
+		</div>
+
+		<div class="cardcount">
+			<div class="touxiang">
+				<img src="images/timg.jpg"/><span>张三的卡包</span>
+			</div>
+			<ul>
+				<li>
+					<img src="images/card1.png"/>
+				</li>
+				<li>
+					<img src="images/card2.png"/>
+				</li>
+				<li>
+					<img src="images/card3.png"/>
+				</li>
+				<li>
+					<img src="images/card4.png"/>
+				</li>
+				<li>
+					<img src="images/card5.png"/>
+				</li>
+				<li>
+					<img src="images/card6.png"/>
+				</li>
+				<li>
+					<img src="images/card7.png"/>
+				</li>
+				<li>
+					<img src="images/card8.png"/>
+				</li>
+				<li>
+					<img src="images/card9.png"/>
+				</li>
+
+				<li>
+					<img src="images/card10.png"/>
+				</li>
+				<li>
+					<img src="images/card11.png"/>
+				</li>
+				<li>
+					<img src="images/card12.png"/>
+				</li>
+				<li>
+					<img src="images/card13.png"/>
+				</li>
+				<li>
+					<img src="images/card14.png"/>
+				</li>
+				<li>
+					<img src="images/card15.png"/>
+				</li>
+				<li>
+					<img src="images/card16.png"/>
+				</li>
+				<li>
+					<img src="images/card17.png"/>
+				</li>
+				<li>
+					<img src="images/card18.png"/>
+				</li>
+				<li>
+					<img src="images/card19.png"/>
+				</li>
+				<li>
+					<img src="images/card20.png"/>
+				</li>
+				<li>
+					<img src="images/card21.png"/>
+				</li>
+				<li>
+					<img src="images/card22.png"/>
+				</li>
+				<li>
+					<img src="images/card23.png"/>
+				</li>
+				<li>
+					<img src="images/card24.png"/>
+				</li>
+				<li>
+					<img src="images/card25.png"/>
+				</li>
+				<li>
+					<img src="images/card26.png"/>
+				</li>
+				<li>
+					<img src="images/card27.png"/>
+				</li>
+				<li>
+					<img src="images/card28.png"/>
+				</li>
+				<li>
+					<img src="images/card29.png"/>
+				</li>
+				<li>
+					<img src="images/card30.png"/>
+				</li>
+				<li>
+					<img src="images/card31.png"/>
+				</li>
+				<li>
+					<img src="images/card32.png"/>
+				</li>
+
+				<div class="clear"></div>
+			</ul>
+
+		</div>
+		<div class="hbcont hbcont4" >
+			<h2>您已集齐所有额球队卡</h2>
+			<span>开启非凡时刻</span>
+		</div>
+	</div>
+	<div class="bmenu">
+	<ul>
+		<li data-num="1" >
+			<a href="index.html" >
+				<img src="images/hover1.png"/>
+			</a>
+		</li>
+		<li data-num="2">
+			<a href="#">
+				<img src="images/hover2.png"/>
+			</a>
+		</li>
+		<li data-num="3">
+			<a href="#">
+				<img src="images/hover3.png"/>
+			</a>
+		</li>
+		<li data-num="4">
+			<a href="#">
+				<img src="images/hover4.png"/>
+			</a>
+		</li>
+	</ul>
+</div>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.rotate.min.js"></script>
+<script>
+	$(function(){
+		var num='';
+      $(".bmenu li").each(function(){
+		  $(this).click(function(){
+			num = $(this).attr('data-num');
+			  console.log($(this).children('img').attr(src));
+
+		  });
+
+	  });
+	});
+</script>
+<script>
+		$(function() {
+			var $btn = $('.playbtn');
+			var playnum = 1; //初始次数，由后台传入
+			$('.playnum').html(playnum);
+			var isture = 0;
+			var clickfunc = function() {
+				var data = [1, 2, 3, 4, 5, 6];
+				//data为随机出来的结果，根据概率后的结果
+				data = data[Math.floor(Math.random() * data.length)];
+				switch(data) {
+					case 1:
+						rotateFunc(1, 0, '恭喜您获得2000元理财金!');
+						break;
+					case 2:
+						rotateFunc(2, 60, '谢谢参与~再来一次吧~');
+						break;
+					case 3:
+						rotateFunc(3, 120, '恭喜您获得5200元理财金!');
+						break;
+					case 4:
+						rotateFunc(4, 180, '恭喜您获得100元京东E卡，将在次日以短信形式下发到您的手机上，请注意查收!');
+						break;
+					case 5:
+						rotateFunc(5, 240, '谢谢参与~再来一次吧~');
+						break;
+					case 6:
+						rotateFunc(6, 300, '恭喜您获得1000元理财金!');
+						break;
+				}
+			}
+			$btn.click(function() {
+				if(isture) return; // 如果在执行就退出
+				isture = true; // 标志为 在执行
+				//先判断是否登录,未登录则执行下面的函数
+				if(1 == 2) {
+					$('.playnum').html('0');
+					alert("请先登录");
+					isture = false;
+				} else { //登录了就执行下面
+					if(playnum <= 0) { //当抽奖次数为0的时候执行
+						alert("没有次数了");
+						$('.playnum').html(0);
+						isture = false;
+					} else { //还有次数就执行
+						playnum = playnum - 1; //执行转盘了则次数减1
+						if(playnum <= 0) {
+							playnum = 0;
+						}
+						$('.playnum').html(playnum);
+						clickfunc();
+					}
+				}
+			});
+			var rotateFunc = function(awards, angle, text) {
+				isture = true;
+				$btn.stopRotate();
+				$btn.rotate({
+					angle: 0,
+					duration: 4000, //旋转时间
+					animateTo: angle + 1440, //让它根据得出来的结果加上1440度旋转
+					callback: function() {
+						isture = false; // 标志为 执行完毕
+						alert(text);
+					}
+				});
+			};
+		});
+	</script>
+<script type="text/javascript" >
+	$(function () {
+		document.getElementsByTagName('body').height="100%";
+		$("body").css("overflow","hidden");
+		$('#close').click(function () {
+			$('.mask').hide();
+			$('.zxxcontent').hide();
+			document.getElementsByTagName('body').height="auto";
+			$("body").css("overflow","visible");
+		})
+	});
+</script>
+<script type="text/javascript">
+	function setCookie(cname,cvalue,exdays)
+	{
+		var d = new Date();
+		d.setTime(d.getTime()+(exdays*24*60*60*1000));
+		var expires = "expires="+d.toGMTString();
+		document.cookie = cname + "=" + escape(cvalue) + "; " + expires;
+	}
+
+	function getCookie(cname)
+	{
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++)
+		{
+			var c = ca[i].replace(/^\s+/,"");
+			if (c.indexOf(name)==0)
+				return unescape(c.slice(name.length));
+		}
+		return "";
+	}
+
+	var mytime = getCookie("mytime");
+	if (mytime=="" || (new Date()).getTime()-mytime>1*60*1000) {
+		document.getElementById("mask").style.display = "block";
+		document.getElementById("zxxcontent").style.display = "block";
+		setCookie("mytime",(new Date()).getTime(),1);
+	}
+</script>
+</body>
+</html>

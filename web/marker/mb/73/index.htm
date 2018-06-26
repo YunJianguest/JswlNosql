@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>寿 宴</title>
+<meta charset=utf-8"UTF-8">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="css/index.css" tppabs="http://wx.kuaitec.com/Public/css/Sy/index.css" media="all">
+<script type="text/javascript" src="js/jquery-1.10.1.min.js" tppabs="http://wx.kuaitec.com/Public/js/jquery-1.10.1.min.js"></script>
+</head>
+<body onselectstart="return true;" ondragstart="return false;">
+<div id="cover">
+<div class="mask"></div>
+</div>
+<div id="mymask" onclick='document.getElementById("mymask").style.display="none"'>
+    <img src="img/guide.png" tppabs="http://wx.kuaitec.com/Public/images/Baby/guide.png" />
+</div>
+<div class="dp">
+<img src="img/t.png" tppabs="http://wx.kuaitec.com/Public/images/Sy/t.png" />
+</div>
+<div class="content">
+<ul>
+<li class="pb_10"><video src="img/sou.mp4" tppabs="http://www.kuaitec.com/vd/sou.mp4" width="100%" id="myvd"  controls></video><li class="pb_10"><img src="img/403ca603117c173f86ab7f06661b3846.jpg" tppabs="http://wx.kuaitec.com/uploads/403ca603117c173f86ab7f06661b3846.jpg" style="width:100%;"></li><li class="pb_10"><img src="img/d0ad483f0d830f7f80de29162a0e4430.jpg" tppabs="http://wx.kuaitec.com/uploads/d0ad483f0d830f7f80de29162a0e4430.jpg" style="width:100%;"></li><li class="pb_10"><img src="img/a16616955c4818d8b8cd8e1d61382b4b.jpg" tppabs="http://wx.kuaitec.com/uploads/a16616955c4818d8b8cd8e1d61382b4b.jpg" style="width:100%;"></li><li class="pb_10"><img src="img/7b38ef5a9e42c2b5f98510a7adca807c.jpg" tppabs="http://wx.kuaitec.com/uploads/7b38ef5a9e42c2b5f98510a7adca807c.jpg" style="width:100%;"></li><li class="pb_10"><img src="img/4f13f82e5a4fae55879a903954b6eba3.jpg" tppabs="http://wx.kuaitec.com/uploads/4f13f82e5a4fae55879a903954b6eba3.jpg" style="width:100%;"></li></ul>
+<div style="text-align:left;font-size:22px;margin-top:10px;">想说的话</div>
+<div style="text-align:left;margin-top:5px;border:2px solid #000;border-radius:8px;padding:5px;line-height:22px;font-size:18px;">XXX先生（女士）：<br/>　　为家父（母）XX旬正诞，拟于（2014-09-30）15点整于娘家米汤饭店举行庆宴。<br/>　
+
+敬请光临<br /><br />
+
+    XXX恭侯<br /><br /></div><a class="abu">时间<span class="yuan">2014-09-30 15:00:00</span></a>
+<a class="abu" href="">导航<span class="yuan">娘家米汤饭大营店</span></a>
+<a class="abu" href="">全景<span class="yuan">环境展示</span></a><a class="abu" href="tel:08516781778">电话<span class="yuan">08516781778</span></a>
+<a class="sharebutton" href="javascript:void(0)" onclick='document.getElementById("mymask").style.display="block"'><span class="minijiankatong">分享给朋友</span></a>
+</div>
+
+
+<div class="bot"></div>
+ 
+
+<script type="text/javascript">
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+WeixinJSBridge.call('hideToolbar');
+});
+</script>
+</body>
+<script type="text/javascript"> 
+var ist=true;
+var covert=true;
+    th=-$('#cover').height()+"px";
+
+function closecover(){
+$('#cover').animate({top:th},900,'swing',function(){
+    $('#cover').remove();
+});
+}
+var handler_touch=function(e){
+    closecover();
+	if(document.getElementById('myaudio')){
+   document.getElementById('myaudio').play();
+	}
+	if(document.getElementById('myvd')){
+   document.getElementById('myvd').play();
+	}
+    e.preventDefault();
+    return false;
+}
+$('#cover').one('touchstart',handler_touch);
+</script>
+</html>

@@ -1,0 +1,186 @@
+/* reset */
+*{margin: 0; padding: 0; outline: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-box-sizing: border-box;}
+html{min-height: 100%; font-size: 100%; -webkit-text-size-adjust: 100%;}
+body{margin:0; padding:0; width: 100%; min-height: 100%; font-family: Helvetica, Arial, sans-serif; font-size: 14px;position: relative; word-break:break-all;}
+a{text-decoration: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.35);}
+img{-ms-interpolation-mode: bicubic; vertical-align: middle;}
+img:not([src*="/"]){display: none;}
+table{border-collapse: collapse; border-spacing: 0;}
+th, td, caption{vertical-align: middle;}
+textarea{resize: none;}
+input, button, select, textarea{outline: none; border-radius: 0; font-family: inherit; font-size: inherit;}
+ul,ol,li{list-style: none;}
+
+a{color: #7e7e7e;}
+body{color: #6d6d6d; }
+.mt5{margin-top: 5px;}
+.mt20{margin-top: 20px;}
+.pb15{padding-bottom: 15px;}
+.fr{float: right;}
+
+.ico_arrow, .ico_address, .ico_tel, .upload_wrap li .file_btn, .ico_clock, .ico_people, .ico_success, .upload_wrap .del_btn:after, .upload_wrap .swipe_close:after{display: inline-block; background: url("../imgs/s.png")/*tpa=http://stc.weimob.com/css/imgs/s.png*/ no-repeat; background-size: 129px auto; vertical-align: middle;}
+
+.fixed{position: fixed; left: 0; bottom: 0; width: 100%; background-color: #fff; border-width: 1px 0 0; z-index: 1000;}
+
+.border_dark, .fixed, .explain, .box, .detail_menu a{-webkit-border-image: url("../imgs/border_dark.gif")/*tpa=http://stc.weimob.com/css/imgs/border_dark.gif*/ 2 stretch;}
+.border_light, .box_list li, .list li, .detail_list dd, .detail_list dl{-webkit-border-image: url("../imgs/border_light.gif")/*tpa=http://stc.weimob.com/css/imgs/border_light.gif*/ 2 stretch;}
+
+.b_top{border-width: 1px 0 0;}
+.b_right{border-width: 0 1px 0 0;}
+.b_bottom{border-width: 0 0 1px;}
+.b_left{border-width: 0 0 0 1px;}
+
+.container{position: relative; max-width: 640px; min-height: 100%; margin: 0 auto; background-color: #fff; overflow: hidden;}
+.container img{max-width: 100%;}
+
+/* 立即预约 */
+.gray_bg{background-color: #f3f3f3;}
+.banner{border-bottom: 1px solid #858b86; margin-bottom: 11px;}
+.explain{background-color: #fff; border-width: 0 0 1px;}
+.explain h3{height: 39px; line-height: 39px; background-color: #858b86; color: #fff; padding-left: 15px; font-size: 16px;}
+.explain > div, .explain > article{padding: 10px; line-height: 2;}
+
+.box{border-width: 1px 0; margin-top: 11px; background-color: #fff; line-height: 44px; padding: 0 15px; font-size: 15px;}
+	.box_list li{display: table; width: 100%; border-width: 0 0 1px;}
+	.box_list li:last-child{border-width: 0;}
+	.box_list li > div{display: table-cell; vertical-align: middle;}
+	.box_list li > div:first-child{white-space: nowrap; padding-right: 5px;}
+	.box_list li > div:nth-of-type(2){width: 100%; padding: 10px 0; line-height: 25px;}
+	.box_list li > div:first-child i{margin-right: 13px;}
+
+	.box dt{color: #292929; font-size: 16px;}
+	.box dd{overflow: hidden;}
+
+	/* upload */
+		.upload_wrap, .apply_box .txt{float: left;}
+		.upload_wrap{margin-bottom: 5px;}
+		.upload_wrap li{position: relative; float: left; width: 54px; height: 54px; margin-right: 5px;}
+		.upload_wrap li:nth-of-type(5){margin: 0;}
+		.upload_wrap li span{position: relative; float: left; width: 100%; height: 100%; background-repeat: no-repeat; background-size: cover; border-radius: 5px; z-index: 2;}
+		.upload_wrap li .file_btn{width: 54px; height: 54px; background-position: 0 0; z-index: 0;}
+		.upload_wrap .swipe_close{position: absolute; right: 0; top: 0; width: 46px; height: 46px; padding: 10px; z-index: 30; display: none;}
+		.upload_wrap .swipe_close:after{content: ''; display: block; width: 100%; height: 100%; background-position: -92px -77px;}
+		.upload_wrap .upload_img{position: relative; width: 100%; height: 100%; overflow: hidden;}
+		.upload_wrap i{position: absolute; right: 0; top: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, .6); -webkit-transition: .3s ease-out;}
+		.upload_wrap .del_btn{position: absolute; left: 0; bottom: 0; width: 100%; height: 50px; background-color: rgba(0, 0, 0, .5); z-index: 3; display: none;}
+		.upload_wrap .del_btn:after{content: ''; position: absolute; left: 50%; top: 50%; margin: -16px 0 0 -17px; width: 34px; height: 33px; background-position: -54px -80px;}
+		.upload_wrap [type="file"]{position: absolute; left: 0; top: 0; opacity: 0; font-size: 100px; z-index: 1;}
+
+		.swipe{position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 1000; overflow: hidden; -webkit-animation: show .5s ease-out; background-color: #fff;}
+		.swipe .swipe_close{display: block;}
+		.swipe > ul{position: relative; height: 100%;}
+		.swipe li{position: absolute; left: 0; top: 0; display: none; width: 100%; height: 100%; background-color: #fff;}
+		.swipe li.cur{display: block; z-index: 10;}
+		.swipe li.action{z-index: 11; display: block;}
+		.animated{-webkit-transition: .3s;}
+		.swipe .del_btn{display: block;}
+		.swipe li{width: 100%; height: 100%;}
+		.swipe li span{border-radius: 0;}
+		.swipe .swipe_num{position: absolute; left: 0; width: 100%; height: 8px; line-height: 8px; bottom: 60px; text-align: center; z-index: 11;}
+		.swipe .swipe_num span{display: inline-block; width: 8px; height: 8px; border-radius: 8px; background-color: #7c7c7c; margin: 0 4px;}
+		.swipe .swipe_num span.on{background-color: #fff;}
+
+		.hide_fixed{z-index: 0}
+
+		.detail_swipe .swipe_num{bottom: 10px;}
+
+@-webkit-keyframes show{
+	0%{-webkit-transform: scale(0);}
+	100%{-webkit-transform: scale(1);}
+}		
+
+.r_tips{display: inline-block; height: 45px; font-size: 18px; vertical-align: top; color: #db2929;}
+.txt{-webkit-appearance: none; width: 100%%; height: 40px; border: 1px solid #dadbda; border-radius: 2px; background-color: #f6f6f6; padding: 0 10px;}
+textarea.txt{line-height: 30px; height: 162px; padding: 5px 10px;}
+select.txt{-webkit-appearance: button; -webkit-user-select: none; padding: 0 7px;}
+.sub_wrap{padding: 0 15px;}
+.btn{ -webkit-appearance: none; width: 100%; height: 43px; background-color: #209800; border: none; border-radius: 3px; font-size: 18px; color: #fff;}
+a.btn{display: inline-block; text-align: center; line-height: 43px;}
+
+input.error, textarea.error, input.error{border-color: red;}
+dt.error{color: red;}
+
+.ico_arrow{width: 8px; height: 15px; background-position: -92px -57px; margin-left: 5px; vertical-align: -2px;}
+.ico_address{width: 14px; height: 20px; background-position: -57px -57px;}
+.ico_tel{width: 15px; height: 16px; background-position: -75px -57px;}
+
+.index_bg footer{padding: 0 15px;}
+.copyright{font-size: 12px; color: #a7a7a7; text-align: center; line-height: 50px;}
+
+.nav{height: 49px;}
+.nav .fixed{display: -webkit-box; height: 49px;}
+.nav .fixed a{display: block; -webkit-box-flex: 1; text-align: center; line-height: 49px; font-size: 14px; color: #888888;}
+.nav .fixed a i{margin-right: 8px;}
+.nav .fixed a.on{color: #33a6ff;}
+
+.ico_clock{width: 23px; height: 25px; background-position: -29px -56px;}
+.on .ico_clock{background-position: -29px -82px;}
+.ico_people{width: 23px; height: 23px; background-position: 0 -56px;}
+.on .ico_people{background-position: 0 -82px;}
+
+/* loading */
+.loading{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, .2); display: block; z-index: 1000;}
+.loading span{position: absolute; left: 50%; top: 50%; margin: -12px 0 0 -12px; width: 24px; height: 24px; border: 2px solid #237FE5; border-radius: 24px; clip: rect(0 auto 12px 0); -webkit-animation: loading 1s infinite linear;}
+@-webkit-keyframes loading{
+	0%{-webkit-transform:rotate(0deg);}
+	100%{-webkit-transform:rotate(360deg);}
+}
+
+/* success */
+.success_wrap{position: fixed; left: 0; top: 50%; width: 100%; margin-top: -122px; font-size: 17px; color: #5a5959; text-align: center; padding: 0 10px;}
+.success_wrap h2{font-size: 32px; margin: 22px 0 14px;}
+.success_wrap a{margin-top: 58px;}
+.ico_success{width: 71px; height: 50px; background-position: -58px 0;}
+
+/* 我的预约 */
+.list{padding-left: 10px; color: #545454;}
+.list li{position: relative; border-width: 0 0 1px; line-height: 2; font-size: 12px;}
+.list li a{display: block; padding: 8px 0;}
+.list li h3{color: #111111; font-size: 16px;}
+
+.ico_status{position: absolute; right: -28px; top: -29px; width: 56px; height: 56px; -webkit-transform: rotate(45deg);}
+.ico_status:before{content: ''; position: absolute; left: 0; top: 0; width: 0; height: 0; border: 28px solid transparent;  overflow: hidden;}
+.ico_status.inhand:before{border-bottom-color: #7ebcff;}
+.ico_status.confirm:before{border-bottom-color: #79c778;}
+.ico_status.cancle:before{border-bottom-color: #a0a0a0;}
+.ico_status.refuse:before{border-bottom-color: #ff7774;}
+.ico_status span{position: absolute; left: 0; bottom: 2px; width: 100%; text-align: center; font-size: 10px; color: #fff; font-style: normal; line-height: 1;}
+
+.vali_tel li{margin-bottom: 13px;}
+.vali_tel li > span{display: table-cell; vertical-align: top;}
+.vali_tel li > span:first-child{width: 100%;}
+.vali_tel li > span:last-child{padding-left: 6px;}
+.vali_tel li:last-child{margin-bottom: -16px;}
+.vali_tel .txt{border-radius: 5px;}
+
+.btn1{display: block; height: 40px; line-height: 40px; padding: 0 16px; background-color: #209800; white-space: nowrap; color: #fff; font-size: 12px; border-radius: 3px;}
+.disabled{background-color: #9b9b9b; cursor: default;}
+
+/* 预约详情 */
+.detail_tt{position: relative; padding: 12px 15px; font-size: 21px; font-weight: normal; color: #292929; line-height: 34px; background-color: #f3f3f3;}
+.detail_list{font-size: 14px; margin-top: 0;}
+.detail_list li div:first-child{color: #292929; font-size: 16px;}
+.detail_list dl{border-width: 1px 0 0;}
+.detail_list dd{line-height: 25px; padding-bottom: 10px; border-width: 0 0 1px;}
+.detail_list dd:last-child{border-width: 0;}
+.detail_menu{height: 44px; line-height: 44px;}
+.detail_menu .fixed{display: -webkit-box;}
+.detail_menu a{display: block; -webkit-box-flex: 1; border-width: 0 1px 0 0; text-align: center; color: #007aff; font-size: 16px;}
+.detail_menu a:last-child{border-width: 0;}
+
+/* message_box */
+.message_box{position: fixed; left: 0; top: 0; width: 100%; height: 100%; padding: 0 25px; display: -webkit-box; -webkit-box-pack: center; -webkit-box-align: center; z-index: 1002;}
+.message_box.mask{background-color: rgba(0, 0, 0, .7); -webkit-animation: fadeIn .6s ease;}
+.message_box > div{position: relative; width: 100%; max-width: 500px; background-color: #ffffff; border-radius: 7px; text-align: center; font-size: 16px;  -webkit-animation: fadeIn1 .6s ease;}
+.message_box .text{padding: 30px 15px; line-height: 1.4; color: #000;}
+.message_box .btns{display: -webkit-box; line-height: 44px;}
+.message_box .btns a{display: block; -webkit-box-flex: 1; color: #3f95fb;}
+.message_box textarea{display: block; width: 100%; line-height: 24px; height: 84px; margin: -15px 0; padding: 5px; border-width: 1px; -webkit-appearance: none;}
+@-webkit-keyframes fadeIn{
+	0%{background-color: rgba(0, 0, 0, 0);}
+	100%{background-color: rgba(0, 0, 0, .7);}
+}
+@-webkit-keyframes fadeIn1{
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}

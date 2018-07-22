@@ -102,7 +102,8 @@
                         </button>
                         <ul class="dropdown-menu pull-right" role="menu">
                           <li><a href="javascript:add()"><i class="fa fa-share-alt-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;新增</a></li> 
-                           <li><a href="javascript:inexp()"><i class="fa fa-share-alt-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;导入</a></li> 
+                          <li><a href="javascript:inexp()"><i class="fa fa-share-alt-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;导入</a></li>
+                          <li><a href="${ctx}/suc/vivo/vivodraw!expcardpagefro.action"><i class="fa fa-share-alt-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;导出卡包明细</a></li>  
                           
                           
                         </ul>

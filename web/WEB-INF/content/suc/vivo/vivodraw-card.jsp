@@ -168,6 +168,9 @@
                                                     <li><a href="javascript:upd('${bean._id}');"><i
                                                             class="fa fa-plus "></i>&nbsp;&nbsp;&nbsp;&nbsp;修改</a>
                                                     </li> 
+                                                    <li><a href="${ctx}/suc/vivo/vivodraw!expcardfro.action?cid=${bean._id}"><i
+                                                            class="fa fa-plus "></i>&nbsp;&nbsp;&nbsp;&nbsp;导出明细</a>
+                                                    </li> 
                                                     <li><a href="javascript:del('${bean._id}');"><i
                                                             class="fa fa-trash-o "></i>&nbsp;&nbsp;&nbsp;&nbsp;删除</a>
                                                     </li> 

@@ -2595,18 +2595,8 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 		HashMap<String, Object> sortMap =new HashMap<String, Object>();
 		HashMap<String, Object> whereMap =new HashMap<String, Object>();
 	
-		String hdid=Struts2Utils.getParameter("hdid");
-		Struts2Utils.getRequest().setAttribute("hdid", hdid);
-		String cid=Struts2Utils.getParameter("cid");
-		
-		
-		DBObject box = baseDao.getMessage(PubConstants.SUC_LUCKYDROW, Long.parseLong(hdid));
-		Vivodraw entity = new Vivodraw();
-		if (box != null) {
-			entity = (Vivodraw) UniObject.DBObjectToObject(box, Vivodraw.class);
-		}
 		 
-		whereMap.put("hdid",  Long.parseLong(hdid));
+		String cid=Struts2Utils.getParameter("cid");  
 		if(StringUtils.isNotEmpty(cid)){
 			whereMap.put("cid",  Long.parseLong(cid));
 		}

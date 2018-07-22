@@ -134,7 +134,8 @@
                                 <tr>
                                     <th class="th5 table-action">姓名</th>
                                     <th class="th1 table-action">电话</th>
-                                    <th class="th1 table-action">区域</th>   
+                                    <th class="th1 table-action">区域</th>
+                                    <th class="th5 table-action">卡包</th>   
                                     <th class="th5 table-action">时间</th>
                                     
                                     
@@ -147,7 +148,8 @@
                                     <tr>
                                         <td>${bean.name}</td>
                                         <td>${bean.tel}</td> 
-                                        <td>${bean.address}</td>  
+                                        <td>${bean.address}</td> 
+                                        <td>${bean.list_size}/${bean.nelist_size}</td>  
                                         <td><fmt:formatDate pattern='yyyy-MM-dd HH:mm' value='${bean.createdate}'/></td>
                                         
                                         <td class="table-action">

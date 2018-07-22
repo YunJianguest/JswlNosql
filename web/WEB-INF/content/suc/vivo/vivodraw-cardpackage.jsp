@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8"%>
+﻿<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ include file="/webcom/taglibs.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html> 
@@ -18,25 +18,35 @@
 			background:#fff;
 			padding:30px 5px 10px 5px;
 		}
-		.content ul li{
-			width:auto;
-			margin:8px 8px;
+		.content ul li{ 
+			width:25%;
+			text-align:center; 
 			position:relative;
 			
 		}
 		.content ul li img{
 			height:100px;
-			width:auto;
+			width:90%;
+			display: inline;
 		}
 		.content ul li span{
 			padding: 4px;
 	    	border-radius: 50%;
 	    	background: #fff;
 	    	position: absolute;
-	    	top: -7px;
-	    	right: -8px;
+	    	top: -5px;
+	    	right: -3px;
     	}
 	</style>
+	<script type="text/javascript">
+	
+	function op(){
+		$('#zj').show();
+	}
+	function zp(){
+		$('#zj').hide();
+	}
+	</script>
 </head>
 <body>
 <div class="mask opacity" id="mask" > </div>
@@ -97,7 +107,7 @@
 		<c:if test="${isdj==0}">
 		<div class="hbcont hbcont4" >
 			<h2>您已集齐所有额球队卡</h2>
-			<span>开启非凡时刻</span>
+			<span onclick="op()">开启非凡时刻</span>
 		</div>
 		</c:if>
 		
@@ -126,6 +136,9 @@
 		</li>
 	</ul>
 </div> 
+<div class="mask" style="background-color: black;" id="zj" onclick="zp()">
+<img alt="" width="100%" height="100%" src="${ctx}/app/vivo/images/zjt.jpg">
+</div>
 <script>
 	$(function(){
         //轮播图
@@ -157,9 +170,20 @@
 	        		  $('#lscard').attr("src","${filehttp}/"+json.cardimg); 
 	        		  $('#zxxcontent2').show();
 	        		  $('#mask').show();
+	        	  }else if(json.state==3){
+	        		  alert("兑换失败，未登录！"); 
+	        	  }else if(json.state==4){
+	        		  alert("兑换失败，未开始！"); 
+	        	  }else if(json.state==5){
+	        		  alert("兑换失败，已结束！"); 
+	        	  }else if(json.state==9){
+	        		  alert("兑换失败，串码已经被使用！"); 
+	        	  }else if(json.state==10){
+	        		  alert("兑换失败，串码不存在！"); 
 	        	  }else{
-	        		  alert("兑换失败！"); 
-	        	  } 
+	        		  alert("系统忙,请稍候！"); 
+	        	  }  
+	        	  
 	        	 },"json");
 	}
 	$('#close2').click(function () {

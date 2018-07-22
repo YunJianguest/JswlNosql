@@ -491,9 +491,59 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 			fypage=Integer.parseInt(Struts2Utils.getParameter("fypage"));
 		}
 		fycount=baseDao.getCount(PubConstants.SUC_VIVO_EMPLOYEES, whereMap);
-		List<DBObject> list=baseDao.getList(PubConstants.SUC_VIVO_EMPLOYEES,whereMap,fypage,10, sortMap);
+		List<DBObject> list1=baseDao.getList(PubConstants.SUC_VIVO_EMPLOYEES,whereMap,fypage,10, sortMap);
 	 
-		Struts2Utils.getRequest().setAttribute("list", list);
+		for (DBObject dbObject1 : list1) {
+			HashMap<String, Object>whereqMap=new HashMap<>();
+			if(dbObject1.get("fromid")!=null){
+				whereqMap.put("fromUserid", dbObject1.get("fromid").toString());
+				HashMap<String, Object>sortqMap=new HashMap<>();
+				sortMap.put("createdate", -1);
+				List<DBObject>list=baseDao.getList(PubConstants.SUC_VIVO_CARDREWARD, whereqMap, sortqMap);
+				List<DBObject>nelist=new ArrayList<>(); 
+				System.out.println("-------"+list.size());
+				
+				HashMap<String, Integer>sMap=new HashMap<>(); 
+				for (DBObject dbObject : list) {
+					CardRecord cardRecord=(CardRecord) UniObject.DBObjectToObject(dbObject, CardRecord.class);
+					cardRecord.getCard();
+					 
+					if(nelist.size()==0) {
+						nelist.add(cardRecord);
+						sMap.put(cardRecord.getCard().get_id().toString(), 1);
+					}else {
+						if(sMap.get(cardRecord.getCard().get_id().toString())==null) {
+							nelist.add(cardRecord);
+							sMap.put(cardRecord.getCard().get_id().toString(), 1);
+							System.out.println("添加成功"); 
+						}else { 
+							sMap.put(cardRecord.getCard().get_id().toString(), sMap.get(cardRecord.getCard().get_id().toString())+1);
+						}
+						 
+					}
+				
+					
+				} 
+				
+				for (DBObject dbObject : nelist) {
+					CardRecord cardRecord=(CardRecord) UniObject.DBObjectToObject(dbObject, CardRecord.class);
+					cardRecord.getCard();
+					dbObject.put("lx",sMap.get(cardRecord.getCard().get_id().toString()));
+				}
+				System.out.println("-------11"+list.size());
+				//Struts2Utils.getRequest().setAttribute("list", list); 
+				//Struts2Utils.getRequest().setAttribute("nelist", nelist);
+				dbObject1.put("list_size", list.size());
+				dbObject1.put("nelist_size", nelist.size());
+				if (list.size()>=32) {
+					Struts2Utils.getRequest().setAttribute("isdj",0);
+				}else {
+					Struts2Utils.getRequest().setAttribute("isdj",-1);
+				}
+			}
+			
+		}
+		Struts2Utils.getRequest().setAttribute("list", list1);
 
 		return "members";
 	}
@@ -565,7 +615,7 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 		if(StringUtils.isNotEmpty(djcode)){
 			Pattern pattern = Pattern.compile("^.*" + djcode + ".*$",
 					Pattern.CASE_INSENSITIVE);
-			whereMap.put("djcode", pattern);
+			whereMap.put("code", pattern);
 			Struts2Utils.getRequest().setAttribute("djcode",  djcode);
 		}
 		String djtel=Struts2Utils.getParameter("djtel");
@@ -1053,8 +1103,8 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 					HashMap<String, Object> whereMap = new HashMap<String, Object>();
 					whereMap.put("fromid",fromUserid);
 					whereMap.put("tel",new BasicDBObject("$ne",null));
-					List<DBObject>vivolist=baseDao.getList(PubConstants.SUC_VIVO_EMPLOYEES, whereMap,null);
-					if (vivolist.size()!=1||vivolist.get(0).get("tel")==null) {
+					DBObject wuser=baseDao.getMessage(PubConstants.SUC_VIVO_EMPLOYEES, whereMap);
+					if (wuser==null||wuser.get("tel")==null||StringUtils.isEmpty(wuser.get("tel").toString())) {
 						//未登录
 						sub_map.put("state", 3);
 						String json = JSONArray.fromObject(sub_map).toString();
@@ -1062,15 +1112,7 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 						return ; 	
 						
 					}else {
-						System.out.println("kais111");
-						if (vivolist.get(0).get("tel")==null) {
-							//未登录
-							sub_map.put("state", 3);
-							String json = JSONArray.fromObject(sub_map).toString();
-							Struts2Utils.renderJson(json.substring(1, json.length() - 1), new String[0]);	
-							return ; 	
-							
-						}
+						 
 					}  
 					
 					//开始摇奖
@@ -1084,8 +1126,15 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 					wcMap.clear();
 					wcMap.put("fromUserid", fromUserid);
 					wcMap.put("hdid",Long.parseLong(lucid));
-					zjcs=baseDao.getCount(PubConstants.SUC_VIVO_REWARDRECORD, wcMap);
+					
+					
 					Long cardcount=baseDao.getCount(PubConstants.SUC_VIVO_CARDREWARD, wcMap);
+					wcMap.clear();
+					wcMap.put("wid",Long.parseLong(lucid)); 
+					wcMap.put("fromUserid", fromUserid); 
+					wcMap.put("lx",7);
+					zjcs=baseDao.getCount(PubConstants.WHD_WHDCOUNT, wcMap);
+					
 					
 					System.out.println("中奖次数了zjcs"+zjcs);
 					System.out.println("cardcount"+cardcount);
@@ -1333,7 +1382,7 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 						}
 					}else {
 						//已结束
-						sub_map.put("state", 9);
+						sub_map.put("state", 10);
 						sub_map.put("tsy", "串码不可用！");
 						String json = JSONArray.fromObject(sub_map).toString();
 						Struts2Utils.renderJson(json.substring(1, json.length() - 1), new String[0]);	
@@ -1344,8 +1393,8 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 					HashMap<String, Object> whereMap = new HashMap<String, Object>();
 					whereMap.put("fromid",fromUserid);
 					whereMap.put("tel",new BasicDBObject("$ne",null));
-					List<DBObject>vivolist=baseDao.getList(PubConstants.SUC_VIVO_EMPLOYEES, whereMap,null);
-					if (vivolist.size()!=1||vivolist.get(0).get("tel")==null) {
+					DBObject wuser=baseDao.getMessage(PubConstants.SUC_VIVO_EMPLOYEES, whereMap);
+					if (wuser==null||wuser.get("tel")==null||StringUtils.isEmpty(wuser.get("tel").toString())) {
 						//未登录
 						sub_map.put("state", 3);
 						String json = JSONArray.fromObject(sub_map).toString();
@@ -1353,16 +1402,8 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 						return ; 	
 						
 					}else {
-						System.out.println("kais111");
-						if (vivolist.get(0).get("tel")==null) {
-							//未登录
-							sub_map.put("state", 3);
-							String json = JSONArray.fromObject(sub_map).toString();
-							Struts2Utils.renderJson(json.substring(1, json.length() - 1), new String[0]);	
-							return ; 	
-							
-						}
-					} 
+						 
+					}  
 					System.out.println("kais");
 					//开始摇奖
 					List<DBObject> cards =baseDao.getList(PubConstants.SUC_VIVO_CARD, null, null);
@@ -1511,16 +1552,16 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 								board.set_id(mongoSequence.currval(PubConstants.SUC_VIVO_RANKING));
 								board.setCount(board.getCount()+1);
 								board.setUpdatedate(new Date());
-								board.setAddress(vivolist.get(0).get("address").toString());
+								board.setAddress(wuser.get("address").toString());
 								board.setFromid(fromUserid);
-								board.setNickname(vivolist.get(0).get("name").toString());
+								board.setNickname(wuser.get("name").toString());
 								board.setHeadimgurl(user.get("headimgurl").toString());
 								baseDao.insert(PubConstants.SUC_VIVO_RANKING, board);
 							}
 							
 							
 							
-							upRanking();
+							//upRanking();
 							//失效卡片 
 							DjCode code=(DjCode) UniObject.DBObjectToObject(codelist.get(0), DjCode.class); 
 							code.setState(1);
@@ -2316,7 +2357,7 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 		System.out.println(nelist.size());
 		System.out.println(list.size());
 		Struts2Utils.getRequest().setAttribute("nelist", nelist);
-		if (list.size()>=32) {
+		if (nelist.size()>=32) {
 			Struts2Utils.getRequest().setAttribute("isdj",0);
 		}else {
 			Struts2Utils.getRequest().setAttribute("isdj",-1);
@@ -2545,6 +2586,139 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 			count.setCreatedate(cardRecord.getInsDate());
 			baseDao.insert(PubConstants.WHD_WHDCOUNT, count);
 		}
+	}
+	/**
+	 * 根据卡片导出明细
+	 * @throws Exception
+	 */
+	public void expcardfro() throws Exception {
+		HashMap<String, Object> sortMap =new HashMap<String, Object>();
+		HashMap<String, Object> whereMap =new HashMap<String, Object>();
+	
+		String hdid=Struts2Utils.getParameter("hdid");
+		Struts2Utils.getRequest().setAttribute("hdid", hdid);
+		String cid=Struts2Utils.getParameter("cid");
+		
+		
+		DBObject box = baseDao.getMessage(PubConstants.SUC_LUCKYDROW, Long.parseLong(hdid));
+		Vivodraw entity = new Vivodraw();
+		if (box != null) {
+			entity = (Vivodraw) UniObject.DBObjectToObject(box, Vivodraw.class);
+		}
+		 
+		whereMap.put("hdid",  Long.parseLong(hdid));
+		if(StringUtils.isNotEmpty(cid)){
+			whereMap.put("cid",  Long.parseLong(cid));
+		}
+		sortMap.put("createdate", -1);
+		
+		List<DBObject> list=baseDao.getList(PubConstants.SUC_VIVO_CARDREWARD,whereMap, sortMap);
+		List<DBObject> relist=new ArrayList<DBObject>(); 
+		//微信用户查询
+		for(DBObject db:list){
+			db.put("createdate",DateFormat.getDate(DateFormat.getFormat(db.get("createdate").toString())));
+			if(db.get("fromUserid")!=null){
+		    whereMap.clear();
+		    whereMap.put("fromid", db.get("fromUserid").toString());
+			DBObject user=baseDao.getMessage(PubConstants.SUC_VIVO_EMPLOYEES,whereMap);
+			if(user!=null){
+				
+				if(user.get("tel")!=null){
+					db.put("tel", user.get("tel").toString());
+				} 
+				if(user.get("name")!=null){
+					db.put("name", user.get("name").toString());
+				}else{
+					db.put("name", "");
+				}
+				 
+			} 
+			CardRecord cardRecord=(CardRecord) UniObject.DBObjectToObject(db, CardRecord.class);
+			db.put("kp",cardRecord.getCard().getTitle());
+			relist.add(db);	
+			}
+		}
+		
+		String[] header={"id", "串码","卡片","用户名称",  "电话", "中奖日期"};  
+		String[] body={"_id", "jp","kp","name", "tel", "createdate"}; 
+		
+		String newtime = new Date().getTime() + ".xls";
+		
+		HSSFWorkbook wb = ExportExcel.exportByMongo(relist, header, body, newtime);  
+		Struts2Utils.getResponse().setHeader("Content-disposition", "attachment;filename="
+				+ URLEncoder.encode(newtime, "utf-8"));
+        OutputStream ouputStream = Struts2Utils.getResponse().getOutputStream();  
+        wb.write(ouputStream);  
+        ouputStream.flush();  
+        ouputStream.close();  
+	}
+	/**
+	 * 根据员工导出卡包明细
+	 * @throws Exception
+	 */
+	public void expcardpagefro() throws Exception {
+		HashMap<String, Object> sortMap =new HashMap<String, Object>();
+		HashMap<String, Object> whereMap =new HashMap<String, Object>();
+	 
+		sortMap.put("createdate", -1);
+		
+		List<DBObject> list=baseDao.getList(PubConstants.SUC_VIVO_EMPLOYEES,whereMap, sortMap);
+		List<DBObject> relist=new ArrayList<DBObject>(); 
+
+		for (DBObject dbObject1 : list) {
+			HashMap<String, Object>whereqMap=new HashMap<>();
+			if(dbObject1.get("fromid")!=null){
+				whereqMap.put("fromUserid", dbObject1.get("fromid").toString());
+				HashMap<String, Object>sortqMap=new HashMap<>();
+				sortMap.put("createdate", -1);
+				List<DBObject>list1=baseDao.getList(PubConstants.SUC_VIVO_CARDREWARD, whereqMap, sortqMap);
+				List<DBObject>nelist=new ArrayList<>();  
+				
+				HashMap<String, Integer>sMap=new HashMap<>(); 
+				for (DBObject dbObject : list1) {
+					CardRecord cardRecord=(CardRecord) UniObject.DBObjectToObject(dbObject, CardRecord.class);
+					cardRecord.getCard();
+					 
+					if(nelist.size()==0) {
+						nelist.add(cardRecord);
+						sMap.put(cardRecord.getCard().get_id().toString(), 1);
+					}else {
+						if(sMap.get(cardRecord.getCard().get_id().toString())==null) {
+							nelist.add(cardRecord);
+							sMap.put(cardRecord.getCard().get_id().toString(), 1); 
+						}else { 
+							sMap.put(cardRecord.getCard().get_id().toString(), sMap.get(cardRecord.getCard().get_id().toString())+1);
+						}
+						 
+					}
+				
+					
+				} 
+				
+				for (DBObject dbObject : nelist) {
+					CardRecord cardRecord=(CardRecord) UniObject.DBObjectToObject(dbObject, CardRecord.class);
+					cardRecord.getCard();
+					dbObject.put("lx",sMap.get(cardRecord.getCard().get_id().toString()));
+				}  
+				dbObject1.put("list_size", list1.size());
+				dbObject1.put("nelist_size", nelist.size());
+			 
+			}
+			relist.add(dbObject1);
+		}
+		
+		String[] header={"id", "姓名","电话","卡包总记录",  "卡片种类"};  
+		String[] body={"_id", "name","tel","list_size", "nelist_size",}; 
+		
+		String newtime = new Date().getTime() + ".xls";
+		
+		HSSFWorkbook wb = ExportExcel.exportByMongo(relist, header, body, newtime);  
+		Struts2Utils.getResponse().setHeader("Content-disposition", "attachment;filename="
+				+ URLEncoder.encode(newtime, "utf-8"));
+        OutputStream ouputStream = Struts2Utils.getResponse().getOutputStream();  
+        wb.write(ouputStream);  
+        ouputStream.flush();  
+        ouputStream.close();  
 	}
  
 	  

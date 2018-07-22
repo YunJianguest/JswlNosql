@@ -108,7 +108,7 @@
                 <div class="panel-body fu10">
                     <div class="row-pad-5">
                         <div class="form-group col-sm-1d">
-                            <input type="text" name="title" value="${title}" placeholder="名称" class="form-control"/>
+                            <input type="text" name="djcode" value="${djcode}" placeholder="名称" class="form-control"/>
                         </div>
                         <div class="form-group col-sm-1d">
                             <input type="text" name="djtel" value="${djtel}" placeholder="兑奖人电话" class="form-control"/>

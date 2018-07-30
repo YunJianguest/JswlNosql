@@ -2697,8 +2697,8 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 			relist.add(dbObject1);
 		}
 		
-		String[] header={"id", "姓名","电话","卡包总记录",  "卡片种类"};  
-		String[] body={"_id", "name","tel","list_size", "nelist_size",}; 
+		String[] header={"id", "姓名","电话","区域","卡包总记录","卡片种类"};  
+		String[] body={"_id", "name","tel","address","list_size", "nelist_size",}; 
 		
 		String newtime = new Date().getTime() + ".xls";
 		

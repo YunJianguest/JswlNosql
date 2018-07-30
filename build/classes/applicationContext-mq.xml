@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	default-lazy-init="true"> 
+    <!--   Active MQ 配置 -->
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+
+		<property name="brokerURL"><value>tcp://127.0.0.1:61616</value></property>
+
+
+	</bean>
+	<!--spring的JMS template,用来发送JMS消息到指定的队列-->
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory"><ref bean="connectionFactory"/></property>
+	</bean>
+	<!--队列配置-->
+	<bean id="zdymessageDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0"><value>zdymessage</value></constructor-arg>
+	</bean>
+
+	<bean id="zdymessageConsumer" class="com.lsp.mqsever.ZdymessageConsumer"/> 
+		
+    <bean id="listenerQueueZdymessage"  
+           class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+         <property name="concurrentConsumers" value="1" />  
+         <property name="destination" ref="zdymessageDestination"/>  
+         <property name="connectionFactory" ref="connectionFactory" />  
+         <property name="destinationName" value="zdymessage" />  
+         <property name="messageListener" ref="zdymessageConsumer" />  
+     </bean>
+     
+    <!--队列配置-->
+	<bean id="permessageDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0"><value>permessage</value></constructor-arg>
+	</bean>
+
+	<bean id="permessageConsumer" class="com.lsp.mqsever.PermessageConsumer"/> 
+		
+    <bean id="listenerQueuePermessage"  
+           class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+         <property name="concurrentConsumers" value="1" />  
+         <property name="destination" ref="permessageDestination"/>  
+         <property name="connectionFactory" ref="connectionFactory" />  
+         <property name="destinationName" value="permessage" />  
+         <property name="messageListener" ref="permessageConsumer" />  
+     </bean>
+    <!--队列配置-->
+	<bean id="redpacketDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0"><value>redpacket</value></constructor-arg>
+	</bean>
+
+	<bean id="redpacketConsumer" class="com.lsp.mqsever.RedpacketConsumer"/> 
+		
+    <bean id="listenerQueueRedmessage"  
+           class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+         <property name="concurrentConsumers" value="1" />  
+         <property name="destination" ref="redpacketDestination"/>  
+         <property name="connectionFactory" ref="connectionFactory" />  
+         <property name="destinationName" value="redpacket" />  
+         <property name="messageListener" ref="redpacketConsumer" />  
+    </bean>
+    
+     <!--队列配置-->
+	<bean id="repmessageDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0"><value>repmessage</value></constructor-arg>
+	</bean>
+
+	<bean id="repmessageConsumer" class="com.lsp.mqsever.RepmessageConsumer"/> 
+	<bean id="listenerQueueRepmessage"  
+           class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+         <property name="concurrentConsumers" value="1" />  
+         <property name="destination" ref="repmessageDestination"/>  
+         <property name="connectionFactory" ref="connectionFactory" />  
+         <property name="destinationName" value="repmessage" />  
+         <property name="messageListener" ref="repmessageConsumer" />  
+    </bean>	
+    
+	  
+     <!--队列配置-->
+	<bean id="checkmessageDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0"><value>checkmessage</value></constructor-arg>
+	</bean>
+
+	<bean id="checkmessageConsumer" class="com.lsp.mqsever.CheckrewardConsumer"/> 
+	<bean id="listenerQueueCheckmessage"  
+           class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+         <property name="concurrentConsumers" value="1" />  
+         <property name="destination" ref="checkmessageDestination"/>  
+         <property name="connectionFactory" ref="connectionFactory" />  
+         <property name="destinationName" value="checkmessage" />  
+         <property name="messageListener" ref="checkmessageConsumer" />  
+    </bean>	
+    
+      
+     <!--队列配置-->
+	<bean id="onlineDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0"><value>onlinemessage</value></constructor-arg>
+	</bean>
+
+	<bean id="onlinemessageConsumer" class="com.lsp.mqsever.OnlineConsumer"/> 
+	<bean id="listenerQueueOnlinemessage"  
+           class="org.springframework.jms.listener.DefaultMessageListenerContainer">  
+         <property name="concurrentConsumers" value="1" />  
+         <property name="destination" ref="onlineDestination"/>  
+         <property name="connectionFactory" ref="connectionFactory" />  
+         <property name="destinationName" value="onlinemessage" />  
+         <property name="messageListener" ref="onlinemessageConsumer" />  
+    </bean>	
+    
+    
+</beans>

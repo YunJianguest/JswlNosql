@@ -24,11 +24,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
  
-import com.alibaba.fastjson.JSONObject;
-import com.lsp.parttime.entity.Assets;
-import com.lsp.parttime.entity.AssetsRecord;
-import com.lsp.parttime.entity.Mission;
-import com.lsp.parttime.entity.MissionInform;
+import com.alibaba.fastjson.JSONObject; 
 import com.lsp.pub.dao.BaseDao;
 import com.lsp.pub.db.MongoSequence;
 import com.lsp.pub.entity.Fromusermb;
@@ -50,18 +46,7 @@ import com.lsp.pub.util.SysConfig;
 import com.lsp.pub.util.UniObject;
 import com.lsp.pub.util.UserUtil;
 import com.lsp.pub.util.WeiXinUtil;
-import com.lsp.shop.entiy.AgentDetail;
-import com.lsp.shop.entiy.AgentPrice;
-import com.lsp.shop.entiy.ComMain;
-import com.lsp.shop.entiy.ShopAgent;
-import com.lsp.suc.entity.Areward;
-import com.lsp.suc.entity.BbsInfo;
-import com.lsp.suc.entity.Bbsstick;
-import com.lsp.suc.entity.DatingInfo;
-import com.lsp.suc.entity.DatingMember;
-import com.lsp.suc.entity.IntegralInfo;
-import com.lsp.suc.entity.IntegralRecord;
-import com.lsp.suc.entity.Taskresults;
+import com.lsp.shop.entity.ComMain;
 import com.lsp.suc.entity.Comunit;
 import com.lsp.user.entity.Authcode;
 import com.lsp.user.entity.FriendsInfo;
@@ -887,189 +872,7 @@ public class WwzService {
 		}
 		return -1L;
 	}
-	/**
-	 * 完成任务
-	 * @param id
-	 * @param custid
-	 * @param fromUserid
-	 * @return
-	 */
-	public  boolean  completeTask(Long id,String custid,String fromUserid,String type){
-		//任务完成
-		Taskresults   taskresults=new Taskresults();
-		taskresults.set_id(mongoSequence.currval(PubConstants.SUC_TASKRESULT));
-		taskresults.setCreatedate(new Date());
-		taskresults.setCustid(custid);
-		taskresults.setFromUserid(fromUserid);
-		taskresults.setParentid(id);
-		baseDao.insert(PubConstants.SUC_TASKRESULT, taskresults);
-		
-		DBObject  task=baseDao.getMessage(PubConstants.SUC_TASK, id);
-		WxUser wxuser=(WxUser) UniObject.DBObjectToObject(getWxUser(fromUserid), WxUser.class); 
-		//增加经验奖励
-		if(Integer.parseInt(task.get("expreward").toString())>0){
-
-			Experience  exp=new Experience();
-			exp.set_id(mongoSequence.currval(PubConstants.WX_EXPERIENCE));
-			exp.setFromUserid(fromUserid);
-			exp.setCreatedate(new Date()); 
-			exp.setType("task");
-			exp.setCustid(custid);
-			exp.setExperience(Integer.parseInt(task.get("expreward").toString()));
-			baseDao.insert(PubConstants.WX_EXPERIENCE, exp);
-			 
-		
-			wxuser.setExperience(wxuser.getExperience()+Integer.parseInt(task.get("expreward").toString()));
-			wxuser.setGetExperience(wxuser.getGetExperience()+Integer.parseInt(task.get("expreward").toString()));
-			wxuser.setNeedExperience(LevelUtitls.getNeedExp(wxuser.getLevel()));
-			if(LevelUtitls.isUpLevel(wxuser.getGetExperience(), wxuser.getLevel())){
-				//升级
-				wxuser.setLevel(wxuser.getLevel()+1);
-				wxuser.setGetExperience(wxuser.getExperience()-wxuser.getNeedExperience());
-				wxuser.setNeedExperience(LevelUtitls.getNeedExp(wxuser.getLevel()));
-			} 
-			 
-		}
-		
-		if(Integer.parseInt(task.get("jfreward").toString())>0){
-			//增加积分奖励  
-			addjf(task.get("jfreward").toString(), fromUserid, type, custid, wxuser);
-		
-		}
-		baseDao.insert(PubConstants.DATA_WXUSER, wxuser);
-		  
-	  return false;
-			   
-	}
-	/**
-	 * 悬赏
-	 */
-	public  boolean  areward(String fromUserid,String custid,Long bmtid,String price,DBObject user){
-		HashMap<String,Object>whereMap=new HashMap<String, Object>();
-		whereMap.put("bmtid",bmtid);
-	    Long count=baseDao.getCount(PubConstants.BBS_AREWARD,whereMap);
-	    if(count==0L){
-	    	//开始悬赏
-	    	if(deljf(price, fromUserid, "bbsareward", custid, user)){ 
-	    		Areward  obj=new Areward();
-		    	obj.set_id(mongoSequence.currval(PubConstants.BBS_AREWARD));
-		    	obj.setBmtid(bmtid);
-		    	obj.setCustid(custid);
-		    	obj.setFromUserid(fromUserid);
-		    	obj.setState(0);
-		    	obj.setPrice(Integer.parseInt(price));  
-		    	obj.setCreatedate(new Date());
-		    	baseDao.insert(PubConstants.BBS_AREWARD, obj);
-		    	
-		    	//同步到帖子
-		    	DBObject  db=baseDao.getMessage(PubConstants.BBS_INFO,bmtid);
-		    	if(db!=null){
-		    		BbsInfo  bbs=(BbsInfo) UniObject.DBObjectToObject(db, BbsInfo.class);
-		    		bbs.setActivity(1);
-		    		baseDao.insert(PubConstants.BBS_INFO, bbs);
-		    		return true;
-		    	}
-		    	 
-	    	}   
-	    }
-		return false;
-		
-	}
-	/**
-	 * 置顶
-	 */
-	public  boolean   stick(String fromUserid,String custid,Long bmtid,String price,String time,DBObject user){
-		//验证是否已经置顶
-		HashMap<String,Object>whereMap=new HashMap<String, Object>();
-		whereMap.put("bmtid",bmtid);
-	    Long count=baseDao.getCount(PubConstants.BBS_STICK,whereMap);
-	    if(count==0L){
-	    	//开始置顶 
-            if(deljf(price, fromUserid, "bbsstick", custid, user)){
-            	Bbsstick  obj=new Bbsstick();
-    	    	obj.set_id(mongoSequence.currval(PubConstants.BBS_STICK));
-    	    	obj.setBmtid(bmtid);
-    	    	obj.setCustid(custid);
-    	    	obj.setFromUserid(fromUserid);
-    	    	obj.setState(0);
-    	    	obj.setPrice(Double.parseDouble(price));
-    	        obj.setTime(Long.parseLong(time));
-    	    	obj.setCreatedate(new Date());
-    	    	Calendar cal = Calendar.getInstance();
-    		    cal.add(Calendar.HOUR_OF_DAY,+Integer.parseInt(obj.getTime().toString()));   
-    		    obj.setStartdate(new Date());
-    		    obj.setEnddate(cal.getTime()); 
-    	    	baseDao.insert(PubConstants.BBS_STICK, obj); 
-    	    	//同步到帖子
-    	    	DBObject  db=baseDao.getMessage(PubConstants.BBS_INFO,bmtid);
-    	    	if(db!=null){
-    	    		BbsInfo  bbs=(BbsInfo) UniObject.DBObjectToObject(db, BbsInfo.class);
-    	    		bbs.setStick(1);
-    	    		baseDao.insert(PubConstants.BBS_INFO, bbs);
-    	    		return true;
-    	    	}
-			};  
-		
-		 
-	    } 
-		return false;
-		
-	}
-	public  boolean addjf(String price,String fromUserid,String type,String custid,DBObject wxuser){
-		try {
-			if(Float.parseFloat(price)>0){
-				IntegralInfo  info=new IntegralInfo(); 
-				info.set_id(mongoSequence.currval(PubConstants.INTEGRAL_INFO));
-				info.setCreatedate(new Date());
-				info.setFromUserid(fromUserid);
-				info.setValue(Float.parseFloat(price));
-				info.setType(type);
-				info.setState(0);
-				info.setCustid(custid);
-				baseDao.insert(PubConstants.INTEGRAL_INFO, info); 
-				if(changeJf(custid,fromUserid,Float.parseFloat(price),0)){
-					return true;	
-				}else{
-					return false;
-				}
-				
-			}
-			
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block 
-			e.printStackTrace(); 
-		}
-		return false;
-		
-		
-	}
-	public boolean deljf(String price,String fromUserid,String type,String custid,DBObject wxuser){
-		try {
-			if(Float.parseFloat(price)>0){ 
-				if(changeJf(custid,fromUserid,Float.parseFloat(price),1)){
-					IntegralInfo  info=new IntegralInfo(); 
-					info.set_id(mongoSequence.currval(PubConstants.INTEGRAL_INFO));
-					info.setCreatedate(new Date());
-					info.setFromUserid(fromUserid);
-					info.setValue(Float.parseFloat(price));
-					info.setType(type);
-					info.setState(1);
-					info.setCustid(custid);
-					baseDao.insert(PubConstants.INTEGRAL_INFO, info);
-					return true;
-				}else{
-					return false; 	
-				}
-				  
-			}
-		
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace(); 
-		}
-		return false;
-		
-	}
+	 
 	/**
 	 * 根据类型获取价格
 	 * @return
@@ -1307,50 +1110,7 @@ public class WwzService {
 		return null;
 		
 	}
-	/**
-	 * 积分更新
-	 * @param custid
-	 * @param fromUserid
-	 * @param value
-	 * @param type
-	 */
-	public  boolean  changeJf(String custid,String fromUserid,float value,int type){
-		try {
-			HashMap<String, Object>whereMap=new HashMap<String, Object>();
-			whereMap.put("custid",custid);
-			whereMap.put("fromUserid",fromUserid);
-			IntegralRecord  ir=null;
-			DBObject  db=baseDao.getMessage(PubConstants.SUC_INTEGRALRECORD, whereMap);
-			if(db==null){
-				ir=new IntegralRecord();
-				ir.set_id(mongoSequence.currval(PubConstants.SUC_INTEGRALRECORD));
-			}else{
-				ir=(IntegralRecord) UniObject.DBObjectToObject(db, IntegralRecord.class);
-			}
-			ir.setCustid(custid);
-			ir.setFromUserid(fromUserid);
-			if(type==0){ 
-				ir.setValue(ir.getValue()+value);
-				baseDao.insert(PubConstants.SUC_INTEGRALRECORD, ir);
-				return true;
-			}else if(type==1&&ir.getValue()>value){
-				ir.setValue(ir.getValue()-value);
-				baseDao.insert(PubConstants.SUC_INTEGRALRECORD, ir);
-				return true;
-			}else if(type==2){
-				ir.setValue(value);
-				baseDao.insert(PubConstants.SUC_INTEGRALRECORD, ir);
-				return true;
-			}else{
-				return false;
-			}
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block 
-			e.printStackTrace();
-			return false;
-		} 
-	}
+	 
 	/**
 	 * 获取用户积分
 	 * @param custid
@@ -1614,70 +1374,7 @@ public class WwzService {
 		return false;
     	
     }
-    /**
-     * 增加佣金
-     * @param id
-     * @param price
-     * @return
-     */
-    public  boolean  addAgent(String id,double price,String oid,String fromUserid,String custid){
-    	 if(StringUtils.isEmpty(oid)){
-    		return false;
-    	 }
-    	if(StringUtils.isNotEmpty(id)&&price>0){
-    		DBObject  db=baseDao.getMessage(PubConstants.SHOP_SHOPAGENT, id);
-        	if(db!=null){
-        		//结算到店铺
-        		ShopAgent agent=(ShopAgent) UniObject.DBObjectToObject(db, ShopAgent.class);
-        		agent.setSales(agent.getSales()+price);
-        		agent.setPrice(agent.getPrice()+price);
-        		baseDao.insert(PubConstants.SHOP_SHOPAGENT, agent);
-        		//记录
-        		AgentDetail detail=new AgentDetail();
-    			detail.set_id(mongoSequence.currval(PubConstants.SHOP_AGENTDETAIL));
-    			detail.setWid(id);
-    			detail.setOid(oid);
-    			detail.setPrice(price);
-    			detail.setFromUserid(fromUserid);
-    			detail.setType(1);
-    			detail.setCreatedate(new Date());
-    			baseDao.insert(PubConstants.SHOP_AGENTDETAIL, detail);
-    			
-    			//结算到账户
-    			if(addAgentPrice(custid, fromUserid, price)){
-    				return true;
-    			}
-    			 
-        	}
-    	} 
-		return false; 	
-    }
-    /**
-     * 佣金提现
-     * @param id
-     * @param price
-     * @return
-     */
-    public  boolean  delAgent(String id,double price,String oid,String fromUserid,String custid){
-    	if(StringUtils.isNotEmpty(id)&&price>0){
-    	           //记录
-            		AgentDetail detail=new AgentDetail();
-        			detail.set_id(mongoSequence.currval(PubConstants.SHOP_AGENTDETAIL));
-        			//detail.setWid(id);
-        			detail.setOid(oid);
-        			detail.setFromUserid(fromUserid);
-        			detail.setPrice(price);
-        			detail.setType(2);
-        			detail.setCreatedate(new Date());
-        			baseDao.insert(PubConstants.SHOP_AGENTDETAIL, detail); 
-        			//结算到账户
-        			if(addAgentPrice(custid, fromUserid, price)){
-        				return true;	
-        			}
-            
-    	} 
-		return false; 
-    }
+   
     /**
      * 获取代理ID
      * @param comid
@@ -1744,79 +1441,8 @@ public class WwzService {
         	return true;
         }
 		return false; 
-    }
-    /**
-     * 获取佣金
-     * @return
-     */
-    public double  getAgent(String custid,String fromUserid){
-    	DBObject db=getAgentPrice(custid, fromUserid);
-    	if(db.get("price")!=null){
-    		return Double.parseDouble(db.get("price").toString());
-    	}
-    	return 0;
-    }
-    /**
-     * 获取佣金账户
-     * @param custid
-     * @param fromUserid
-     * @return
-     */
-    public DBObject getAgentPrice(String custid,String fromUserid){
-    	if(StringUtils.isEmpty(fromUserid)||StringUtils.isEmpty(custid)){
-    		return null;
-    	}
-    	DBObject db=baseDao.getMessage(PubConstants.SHOP_AGENTPRICE, custid+"-"+fromUserid);
-    	if(db!=null){
-    		return db;
-    	}else{
-    		AgentPrice agentPrice=new AgentPrice();
-    		agentPrice.set_id(custid+"-"+fromUserid);
-    		agentPrice.setCustid(custid);
-    		agentPrice.setFromUserid(fromUserid);
-    		baseDao.insert(PubConstants.SHOP_AGENTPRICE, agentPrice);
-    		return baseDao.getMessage(PubConstants.SHOP_AGENTPRICE, custid+"-"+fromUserid);
-    	} 
-    	
-    }
-    /**
-     * 结算到佣金账户
-     * @param custid
-     * @param fromUserid
-     * @param price
-     * @return
-     */
-    public  boolean  addAgentPrice(String custid,String fromUserid,double price){
-    	DBObject agp=getAgentPrice(custid,fromUserid);
-		if(agp!=null){
-			AgentPrice agentPrice=(AgentPrice) UniObject.DBObjectToObject(agp, AgentPrice.class);
-			agentPrice.setCustid(custid);
-			agentPrice.setFromUserid(fromUserid);
-			agentPrice.setPrice(agentPrice.getPrice()+price);
-			baseDao.insert(PubConstants.SHOP_AGENTPRICE, agentPrice);
-			return true;
-		}
-		return false;
-    }
-    /**
-     * 结算到佣金账户
-     * @param custid
-     * @param fromUserid
-     * @param price
-     * @return
-     */
-    public  boolean  delAgentPrice(String custid,String fromUserid,double price){
-    	DBObject agp=getAgentPrice(custid,fromUserid);
-		if(agp!=null){
-			AgentPrice agentPrice=(AgentPrice) UniObject.DBObjectToObject(agp, AgentPrice.class);
-			agentPrice.setCustid(custid);
-			agentPrice.setFromUserid(fromUserid);
-			agentPrice.setPrice(agentPrice.getPrice()-price);
-			baseDao.insert(PubConstants.SHOP_AGENTPRICE, agentPrice);
-			return true;
-		}
-		return false;
-    }
+    } 
+    
     /**
      * 验证客户端是否是微信浏览器
      * @param request
@@ -1882,136 +1508,8 @@ public class WwzService {
 		}
 		return false; 
     }
-    /**
-     * 兼职通知
-     * @param custid
-     * @param fromid
-     * @param title
-     * @param content
-     * @param type
-     * @param tid
-     * @param oid
-     * @param mid
-     * @return
-     */
-    public boolean InsMissionInform(String custid,String fromid,String title,String content,int type,String tid,String oid,Long mid) {
-    	try {
-			MissionInform inform=new MissionInform();
-			inform.set_id(mongoSequence.currval(PubConstants.PARTTIME_MISSIONINFORM));
-			inform.setContent(content);
-			inform.setCreatedate(new Date());
-			inform.setCustid(custid);
-			inform.setFromid(fromid);
-			inform.setMid(mid);
-			inform.setOid(oid);
-			inform.setTid(tid);
-			inform.setType(type); 
-			baseDao.insert(PubConstants.PARTTIME_MISSIONINFORM, inform);
-			return true;
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	return false; 
-    }
-    /**
-     * 结算资金
-     * @param custid
-     * @param fromid
-     * @param price
-     * @param state
-     * @return
-     */
-    private boolean clearingMiss(String custid,String fromid,double price,int type) { 
-    		
-    		DBObject dbObject=getAssetMiss(custid,fromid);
-			Assets obj=new Assets();
-			if (dbObject!=null) {
-				obj=(Assets) UniObject.DBObjectToObject(dbObject, Assets.class);
-			}else {
-				obj.set_id(mongoSequence.currval(PubConstants.PARTTIME_ASSETS));
-			}
-    		if (type==0) { 
-    			obj.setValue(obj.getValue()+price);
-    			boolean bl=insAssMiss(custid, fromid, price, type);
-    			if (bl) {
-    				obj.setCustid(custid);
-            		obj.setFromid(fromid);
-            		obj.setUpdate(new Date());
-            		baseDao.insert(PubConstants.PARTTIME_ASSETS, obj);
-            		return true;
-				}
-    			
-			}else {
-				if (obj.getValue()-price>=0) {
-					obj.setValue(obj.getValue()-price);
-					boolean bl=insAssMiss(custid, fromid, price, type);
-					if (bl) {
-	    				obj.setCustid(custid);
-	            		obj.setFromid(fromid);
-	            		obj.setUpdate(new Date());
-	            		baseDao.insert(PubConstants.PARTTIME_ASSETS, obj);
-	            		return true;
-					}
-				}
-				
-			}
-    	
-    		
-    		
-		return false; 	
-    }
-    /**
-     * 增加资金
-     * @param custid
-     * @param fromid
-     * @param price
-     * @return
-     */
-    public boolean  addAssMiss(String custid,String fromid,double price) {
-    	clearingMiss(custid, fromid, price, 0);
-		return false;
-		
-	}
-    /**
-     * 减少资金
-     * @param custid
-     * @param fromid
-     * @param price
-     * @return
-     */
-    public boolean  reduceAssMiss(String custid,String fromid,double price) {
-    	clearingMiss(custid, fromid, price, 1);
-		return false;
-		
-	}
-    /**
-     * 记录
-     * @param custid
-     * @param fromid
-     * @param price
-     * @param type
-     * @return
-     */
-    private boolean insAssMiss(String custid,String fromid,double price,int type) {
-    	try {
-			AssetsRecord assetsRecord=new AssetsRecord();
-			Long idLong=mongoSequence.currval(PubConstants.PARTTIME_ASSETSRECORD);
-			assetsRecord.set_id(idLong);
-			assetsRecord.setCustid(custid);
-			assetsRecord.setFromid(fromid); 
-			assetsRecord.setValue(price);
-			assetsRecord.setCreatedate(new Date());
-			assetsRecord.setType(type);
-			assetsRecord.setState(0);
-			baseDao.insert(PubConstants.PARTTIME_ASSETSRECORD,assetsRecord);
-			return true;
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false; 
-    }
+   
+ 
     /**
      * 获取资金
      * @param custid

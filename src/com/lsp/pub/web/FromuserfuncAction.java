@@ -19,8 +19,7 @@ import com.lsp.pub.entity.PubConstants;
 import com.lsp.pub.util.SpringSecurityUtils;
 import com.lsp.pub.util.Struts2Utils;
 import com.lsp.pub.util.UniObject;
-import com.lsp.pub.web.GeneralAction;
-import com.lsp.shop.entiy.ShopMb;
+import com.lsp.pub.web.GeneralAction; 
 import com.mongodb.DBObject;
 import com.sun.org.apache.commons.beanutils.WrapDynaBean;
 /**

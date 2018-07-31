@@ -20,7 +20,7 @@ import com.lsp.pub.util.Struts2Utils;
 import com.lsp.pub.util.SysConfig;
 import com.lsp.pub.util.WeiXinUtil;
 import com.lsp.pub.web.GeneralAction;
-import com.lsp.shop.entiy.ComMain;
+import com.lsp.shop.entity.ComMain;
 import com.lsp.suc.entity.Comunit;
 import com.lsp.website.service.WwzService;
 import com.lsp.weixin.entity.ShortUrl;

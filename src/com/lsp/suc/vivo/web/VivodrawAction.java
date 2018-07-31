@@ -1197,17 +1197,17 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 					  }
 						//开始摇奖
 						Random rand = new Random();
-						if(luck.getJfxh()>0){
-							//消耗积分
-							if(!wwzService.deljf(luck.getJfxh()+"", fromUserid, "luck-xh", custid, null)){
-								//积分不够
-								sub_map.put("state",9);
-								sub_map.put("tsy", "积分不够！");
-								String json = JSONArray.fromObject(sub_map).toString();
-								Struts2Utils.renderJson(json.substring(1, json.length() - 1), new String[0]);	
-								return ;
-							};
-						}
+//						if(luck.getJfxh()>0){
+//							//消耗积分
+//							if(!wwzService.deljf(luck.getJfxh()+"", fromUserid, "luck-xh", custid, null)){
+//								//积分不够
+//								sub_map.put("state",9);
+//								sub_map.put("tsy", "积分不够！");
+//								String json = JSONArray.fromObject(sub_map).toString();
+//								Struts2Utils.renderJson(json.substring(1, json.length() - 1), new String[0]);	
+//								return ;
+//							};
+//						}
 						int now = 0;   
 							int num=0;
 							if(luck.getZjl()>0){
@@ -1462,17 +1462,17 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 					  }
 						//开始摇奖
 						Random rand = new Random();
-						if(luck.getJfxh()>0){
-							//消耗积分
-							if(!wwzService.deljf(luck.getJfxh()+"", fromUserid, "luck-xh", custid, null)){
-								//积分不够
-								sub_map.put("state",9);
-								sub_map.put("tsy", "积分不够！");
-								String json = JSONArray.fromObject(sub_map).toString();
-								Struts2Utils.renderJson(json.substring(1, json.length() - 1), new String[0]);	
-								return ;
-							};
-						}
+//						if(luck.getJfxh()>0){
+//							//消耗积分
+//							if(!wwzService.deljf(luck.getJfxh()+"", fromUserid, "luck-xh", custid, null)){
+//								//积分不够
+//								sub_map.put("state",9);
+//								sub_map.put("tsy", "积分不够！");
+//								String json = JSONArray.fromObject(sub_map).toString();
+//								Struts2Utils.renderJson(json.substring(1, json.length() - 1), new String[0]);	
+//								return ;
+//							};
+//						}
 						
 						int now = 0;
 						while (true) {
@@ -2002,12 +2002,12 @@ public class VivodrawAction extends GeneralAction<Vivodraw> {
 			}
 		 }else if(jp.indexOf("积分")>0){
 			jp=jp.substring(0,jp.indexOf("积分")).trim();
-			if(StringUtils.isNotEmpty(jp)){ 
-				//开始积分结算 
-				if(wwzService.addjf(jp, fromUserid,"luck-zj", custid,null)){
-					return "ok";
-				};
-			}
+//			if(StringUtils.isNotEmpty(jp)){ 
+//				//开始积分结算 
+//				if(wwzService.addjf(jp, fromUserid,"luck-zj", custid,null)){
+//					return "ok";
+//				};
+//			}
 		 }
 		return "error";
 	}

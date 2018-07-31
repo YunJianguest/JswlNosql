@@ -47,7 +47,5 @@
          	<ref bean ="dataSource"  />  
     	</property>  
  	</bean>
- 	<bean id="chatService" class="com.lsp.android.web.ChatAction"/> 
- 	<bean id="msgService" class="com.lsp.android.web.ReplyAction"/>  
-    <bean id="StudentAddListener" class="com.lsp.dwr.web.ChatMessageClient"></bean>
+ 	 
 </beans>

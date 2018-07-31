@@ -51,10 +51,7 @@ import com.lsp.pub.entity.GetAllFunc;
 import com.lsp.pub.entity.HttpClient;
 import com.lsp.pub.entity.PubConstants;
 import com.lsp.pub.entity.WeiXinMessage; 
-import com.lsp.pub.entity.WxToken;
-import com.lsp.shop.entiy.ComMain;
-import com.lsp.suc.entity.CompanyInfo;
-import com.lsp.suc.entity.Comunit; 
+import com.lsp.pub.entity.WxToken; 
 import com.lsp.weixin.entity.ShortUrl;
 import com.lsp.weixin.entity.WeixinRequest; 
 import com.lsp.weixin.entity.WxUser;
@@ -125,12 +122,7 @@ public class WeiXinUtil {
 	 * @throws Exception
 	 */
 	public static WxToken getSignature(String toUser, HttpServletRequest request) {
-		
-		
-		ComMain commain=GetAllFunc.comToUser.get(toUser);
-		if(commain!=null){
-			toUser=commain.getToUser();
-		}
+		 
 		WxToken token=GetAllFunc.wxtoken.get(toUser);
 		
 		if(token==null||token.getZhlx()==0||"test".equals(SysConfig.getProperty("test"))){
@@ -1519,79 +1511,7 @@ public class WeiXinUtil {
 		}
 		return osshttp;
 	}
-	/**
-	 * 获取车辆xml
-	 * @param weixin
-	 * @param list
-	 * @return
-	 */
-	public static String getPubMessageXml(WeixinRequest weixin,List<DBObject> list,ComMain commain,boolean b) {
-		StringBuffer resultXml=new StringBuffer();
-		Date dt = new Date();
-		
-		int size=list.size();
-		resultXml.append("<xml> <ToUserName><![CDATA[")
-		.append(weixin.getFromUser()).append("]]></ToUserName> <FromUserName><![CDATA[")
-		.append(weixin.getToUser()).append("]]></FromUserName> <CreateTime>").append(dt.getTime())
-		.append("</CreateTime> <MsgType><![CDATA[news]]></MsgType>")
-		.append("<ArticleCount>").append(size).append("</ArticleCount><Articles> ");
-		 
-		for(int i=0;i<size;i++){
-			DBObject zdy=list.get(i);
-			resultXml.append("<item><Title><![CDATA[").append(zdy.get("title").toString()).append("]]></Title> ");
-			if(size==1){
-				resultXml.append("<Description><![CDATA[").append(zdy.get("summary").toString()).append("]]></Description>");
-			}
-			else {
-				resultXml.append("<Description><![CDATA[]]></Description>");
-			}
-			
-			resultXml.append(" <PicUrl><![CDATA[").append(getOsshttp()).append(zdy.get("picurl").toString()).append("]]></PicUrl>");
-			resultXml.append("<Url><![CDATA[").append(WeiXinUtil.getBdUrl(commain,weixin.getFromUser(),zdy.get("url").toString(),b)).append("]]></Url></item>");										
-		}
-		
-		resultXml.append("</Articles></xml>");	
-		
-		return resultXml.toString();
-	}
-	
-	/**
-	 * 获取欢迎页xml
-	 * @param weixin
-	 * @param list
-	 * @return
-	 */
-	public static String getSubscribeXml(WeixinRequest weixin,List<DBObject> list,ComMain commain,boolean b) {
-		StringBuffer resultXml=new StringBuffer();
-		Date dt = new Date();
-		
-		resultXml.append("<xml> <ToUserName><![CDATA[")
-		.append(weixin.getFromUser()).append("]]></ToUserName> <FromUserName><![CDATA[")
-		.append(weixin.getToUser()).append("]]></FromUserName> <CreateTime>").append(dt.getTime())
-		.append("</CreateTime> <MsgType><![CDATA[news]]></MsgType>")
-		.append("<ArticleCount>").append(list.size()).append("</ArticleCount><Articles> ");
-
-		for(int i=0;i<list.size();i++){
-			DBObject sub=list.get(i);
-			resultXml.append("<item><Title><![CDATA[").append(sub.get("newtitle").toString()).append("]]></Title> ");
-		
-			resultXml.append("<Description><![CDATA[]]></Description>");
-			
-	
-			resultXml.append(" <PicUrl><![CDATA[").append(getOsshttp()).append(sub.get("picurl").toString()).append("]]></PicUrl>");
-	
-			if(sub.get("url")==null||sub.get("url").toString().equals("link")){
-				resultXml.append("<Url><![CDATA[").append(WeiXinUtil.getBdUrl(commain,weixin.getFromUser(),sub.get("context").toString(),b)).append("]]></Url></item>");
-			}else{
-				resultXml.append("<Url><![CDATA[").append(WeiXinUtil.getBdUrl(commain,weixin.getFromUser(),SysConfig.getProperty("ip")+"/wwz/wwz!"+sub.get("url").toString()+"&toUser="+weixin.getToUser()+"&fromUser=fromUserData",b)).append("]]></Url></item>");
-			}
-
-		}
-
-		resultXml.append("</Articles></xml>");
-		
-		return resultXml.toString();
-	}
+	 
 	public static String getTextXml(WeixinRequest weixin,String message) {
 		StringBuffer resultXml=new StringBuffer();
 		Date dt = new Date();
@@ -1605,166 +1525,7 @@ public class WeiXinUtil {
 		
 		return resultXml.toString();
 	}
-	/**
-	 * 获取图文xml
-	 * @param weixin
-	 * @param list
-	 * @return
-	 */
-	public static String getNewsXml(WeixinRequest weixin,List<DBObject> list,ComMain commain,boolean b) {
-		StringBuffer resultXml=new StringBuffer();
-		Date dt = new Date();
-		
-		resultXml.append("<xml> <ToUserName><![CDATA[")
-		.append(weixin.getFromUser()).append("]]></ToUserName> <FromUserName><![CDATA[")
-		.append(weixin.getToUser()).append("]]></FromUserName> <CreateTime>").append(dt.getTime())
-		.append("</CreateTime> <MsgType><![CDATA[news]]></MsgType>")
-		.append("<ArticleCount>").append(list.size()).append("</ArticleCount><Articles> ");
-		
-		
-		for(DBObject db:list){
-			
-			resultXml.append("<item><Title><![CDATA[").append(db.get("newtitle").toString()).append("]]></Title> ");
-			
-			resultXml.append("<Description><![CDATA[]]></Description>");
-		
-			resultXml.append(" <PicUrl><![CDATA[").append(getOsshttp()).append(db.get("picUrl").toString()).append("]]></PicUrl>");	
-			if(db.get("lx").toString().equals("2")){
-				resultXml.append("<Url><![CDATA[").append(db.get("url").toString()).append("]]></Url></item>");	
-				
-			}else{
-				resultXml.append("<Url><![CDATA[").append(SysConfig.getProperty("ip")).append("/wwz/wwz!wxnewscommondetail.action?_id=").append(db.get("_id").toString()).append("&toUser=").append(weixin.getToUser()).append("&fromUser=fromUserData]]></Url></item>");											
-			}
-		}
-		
-		resultXml.append("</Articles></xml>");
-		return resultXml.toString();
-	}
-	/**
-	 * //自定义回复
-	 * @param weixin
-	 * @param list
-	 * @return
-	 */
-	public static String getZdyMessageXml(WeixinRequest weixin,List<DBObject> list,ComMain commain,boolean b) {
-		StringBuffer resultXml=new StringBuffer();
-		Date dt = new Date();
-		
-		resultXml.append("<xml> <ToUserName><![CDATA[")
-		.append(weixin.getFromUser()).append("]]></ToUserName> <FromUserName><![CDATA[")
-		.append(weixin.getToUser()).append("]]></FromUserName> <CreateTime>").append(dt.getTime())
-		.append("</CreateTime> <MsgType><![CDATA[news]]></MsgType>")
-		.append("<ArticleCount>").append(list.size()).append("</ArticleCount><Articles> ");
-		 
-		for(int i=0;i<list.size();i++){
-			DBObject zdy=list.get(i);
-			resultXml.append("<item><Title><![CDATA[").append(zdy.get("title").toString()).append("]]></Title> ");
-			
-			resultXml.append("<Description><![CDATA[]]></Description>");
-			resultXml.append(" <PicUrl><![CDATA[").append(getOsshttp()).append(zdy.get("picurl").toString()).append("]]></PicUrl>");
-			if(zdy.get("url").toString().indexOf(SysConfig.getProperty("ip"))>=0){
-				System.out.println(">0");
-				resultXml.append("<Url><![CDATA[").append(WeiXinUtil.getBdUrl(commain,weixin.getFromUser(),zdy.get("url").toString(),b)).append("]]></Url></item>");
-			}else{
-				resultXml.append("<Url><![CDATA[").append(zdy.get("url").toString()).append("]]></Url></item>");
-			}
-													
-		}
-		
-		resultXml.append("</Articles></xml>");	
-		return resultXml.toString();
-	}
-	/**
-	 * //搜索商家
-	 * @param weixin
-	 * @param list
-	 * @return
-	 */
-	public static String getSSCompanyXml(WeixinRequest weixin,List<DBObject> list,ComMain commain,boolean b,DBObject weldb) {
-		StringBuffer resultXml=new StringBuffer();
-		Date dt = new Date();
-		int size=list.size();
-		if(weldb!=null){
-			size=size+1;
-		}
-		resultXml.append("<xml> <ToUserName><![CDATA[")
-		.append(weixin.getFromUser()).append("]]></ToUserName> <FromUserName><![CDATA[")
-		.append(weixin.getToUser()).append("]]></FromUserName> <CreateTime>").append(dt.getTime())
-		.append("</CreateTime> <MsgType><![CDATA[news]]></MsgType>")
-		.append("<ArticleCount>").append(size).append("</ArticleCount><Articles> ");
-		
-		
-		if(weldb!=null){
-			resultXml.append("<item><Title><![CDATA[").append(weldb.get("newtitle").toString()).append("]]></Title> ");
-			resultXml.append("<Description><![CDATA[]]></Description>");
-			
-			
-			resultXml.append(" <PicUrl><![CDATA[").append(getOsshttp()).append(weldb.get("picurl").toString()).append("]]></PicUrl>");
-			if(weldb.get("url")==null||weldb.get("url").toString().equals("link")){
-				resultXml.append("<Url><![CDATA[").append(WeiXinUtil.getBdUrl(commain,weixin.getFromUser(),weldb.get("context").toString(),b)).append("]]></Url></item>");
-			}else{
-				resultXml.append("<Url><![CDATA[").append(WeiXinUtil.getBdUrl(commain,weixin.getFromUser(),SysConfig.getProperty("ip")+"/wwz/wwz!"+weldb.get("url").toString()+"&toUser="+weixin.getToUser()+"&fromUser=fromUserData",b)).append("]]></Url></item>");
-			}
-			
-		}
-		
-		for(int i=0;i<list.size();i++){
-			DBObject company=list.get(i);
-			resultXml.append("<item><Title><![CDATA[").append(company.get("name").toString()).append("]]></Title> ");
-			
-			resultXml.append("<Description><![CDATA[]]></Description>");
-			
-			resultXml.append(" <PicUrl><![CDATA[").append(getOsshttp()).append(company.get("logo").toString()).append("]]></PicUrl>");						
-			if(company.get("toUserid")==null||company.get("toUserid").toString().length()==0){
-				resultXml.append("<Url><![CDATA[").append(WeiXinUtil.getBdUrl(commain,weixin.getFromUser(),SysConfig.getProperty("ip")+"/wwz/wwz!companydetail.action?_id="+list.get(i).get("_id").toString()+"&toUser="+weixin.getToUser()+"&fromUser=fromUserData",b)).append("]]></Url></item>");
-				//resultXml.append("<Url><![CDATA[").append(SysConfig.getProperty("ip")).append("/wwz/wwz!companydetail").append(".action?_id=").append(company.get("_id").toString()).append("&toUser=").append(weixin.getToUser()).append("&fromUser=fromUserData]]></Url></item>");						
-				
-			}else{
-				resultXml.append("<Url><![CDATA[").append(company.get("toUserid").toString()).append("]]></Url></item>");
-			}
-			
-		}
-		
-		resultXml.append("</Articles></xml>");	
-		return resultXml.toString();
-	}
-	/**
-	 * //自定义回复
-	 * @param weixin
-	 * @param list
-	 * @return
-	 */
-	public static String getCompanyXml(WeixinRequest weixin,List<DBObject> list,ComMain commain,boolean b) {
-		StringBuffer resultXml=new StringBuffer();
-		Date dt = new Date();
-		
-		resultXml.append("<xml> <ToUserName><![CDATA[")
-		.append(weixin.getFromUser()).append("]]></ToUserName> <FromUserName><![CDATA[")
-		.append(weixin.getToUser()).append("]]></FromUserName> <CreateTime>").append(dt.getTime())
-		.append("</CreateTime> <MsgType><![CDATA[news]]></MsgType>")
-		.append("<ArticleCount>").append(list.size()).append("</ArticleCount><Articles> ");
-		
-		for(int i=0;i<list.size();i++){
-			CompanyInfo company=(CompanyInfo)UniObject.DBObjectToObject(list.get(i),CompanyInfo.class);
-			resultXml.append("<item><Title><![CDATA[").append(company.getName()).append("]]></Title> ");
-			if(list.size()==1){
-				resultXml.append("<Description><![CDATA[").append(company.getSummary()).append("]]></Description>");
-			}
-			else {
-				resultXml.append("<Description><![CDATA[]]></Description>");
-			}
-			resultXml.append(" <PicUrl><![CDATA[").append(getOsshttp()).append(company.getPicurl()).append("]]></PicUrl>");	
-			if(StringUtils.isEmpty(company.getUrl())){
-				resultXml.append("<Url><![CDATA[").append(WeiXinUtil.getBdUrl(commain,weixin.getFromUser(),SysConfig.getProperty("ip")+"/wwz/wwz!companydetail.action?_id="+list.get(i).get("_id").toString()+"&toUser="+weixin.getToUser()+"&fromUser=fromUserData",b)).append("]]></Url></item>");
-				//resultXml.append("<Url><![CDATA[").append(SysConfig.getProperty("ip")).append("/wwz/wwz!companydetail").append(".action?_id=").append(list.get(i).get("_id").toString()).append("&toUser=").append(weixin.getToUser()).append("&fromUser=fromUserData]]></Url></item>");									
-			}else{
-				resultXml.append("<Url><![CDATA[").append(company.getUrl()).append("]]></Url></item>");							
-			}
-		}
-		
-		resultXml.append("</Articles></xml>");	
-		return resultXml.toString();
-	}
+	 
 	/**
 	 * //自定义回复
 	 * @param weixin
@@ -1782,30 +1543,7 @@ public class WeiXinUtil {
 		.append("<MsgType><![CDATA[transfer_customer_service]]></MsgType></xml>");
 		return resultXml.toString();
 	}
-	/**
-	 * 获取绑定地址
-	 * @param commain
-	 * @param fromUser
-	 * @param url
-	 * @param b
-	 * @return
-	 */
-	public static String getBdUrl(ComMain commain,String fromUser,String url,boolean b){
-	
-		if(commain==null){
-			return url+"&fromUser="+fromUser;
-		}
-		if(b){
-			WxToken token=GetAllFunc.wxtoken.get(commain.getToUser());
-			url=url.replace("&fromUser=fromUserData", "");
-			String  reurl="https://open.weixin.qq.com/connect/oauth2/authorize?appid="+token.getAppid()+"&redirect_uri="+URLEncoder.encode(SysConfig.getProperty("ip")+"/wwz/wwz!bd.action?toUser="+token.getToUser()+"&comUser="+fromUser+"&method="+URLEncoder.encode(url))+"&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
-			
-			return reurl;
-		}else{
-			return url;
-		}
-		
-	}
+	 
 	/**
 	 * 图文分析数据接口
 	 * @param commain

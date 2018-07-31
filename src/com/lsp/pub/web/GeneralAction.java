@@ -3,8 +3,7 @@ import com.lsp.pub.entity.GetAllFunc;
 import com.lsp.pub.entity.WxToken;
 import com.lsp.pub.util.Struts2Utils;
 import com.lsp.pub.util.SysConfig;
-import com.lsp.pub.util.WeiXinUtil; 
-import com.lsp.suc.entity.Comunit;
+import com.lsp.pub.util.WeiXinUtil;  
 import com.lsp.website.service.WwzService;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
@@ -126,12 +125,7 @@ public abstract class GeneralAction<T> extends ActionSupport implements ModelDri
 
 	public void setCate_id(String cate_id) {
 		this.cate_id = cate_id;
-	}
-
-	
-	public int getCss() {
-		return  GetAllFunc.wxTouser.get(toUser).getCss();
-	}
+	} 
 	public void setCss(int css) {
 		this.css = css;
 	} 
@@ -148,10 +142,7 @@ public abstract class GeneralAction<T> extends ActionSupport implements ModelDri
 
 	public void setToUser(String toUser) {
 		this.toUser = toUser;
-	}
-	public String getLogo() {
-		return  GetAllFunc.wxTouser.get(toUser).getLogo();
-	}
+	} 
 
 	public void setLogo(String logo) {
 		this.logo = logo;
@@ -323,20 +314,10 @@ public abstract class GeneralAction<T> extends ActionSupport implements ModelDri
 			}  
 			if(StringUtils.isNotEmpty(fromUserid)){
 				lscode=wwzService.createcode(fromUserid); 
-		        Struts2Utils.getRequest().setAttribute("lscode",lscode);
-		        Comunit  com=GetAllFunc.wxTouser.get(custid);
-				Struts2Utils.getRequest().setAttribute("com",com);  
+		        Struts2Utils.getRequest().setAttribute("lscode",lscode);  
 				//加载用户
 				Struts2Utils.getRequest().setAttribute("user",wwzService.getWxUser(fromUserid));
-				//积分验证 
-				if (com!=null) {
-					if(com.getZsjf()>0){
-						if(wwzService.chekjf(custid, fromUserid, "sczs")){
-							wwzService.addjf(com.getZsjf()+"", fromUserid, "sczs", custid, null);
-							Struts2Utils.getRequest().setAttribute("sczs",1);  
-						}
-					} 
-				}
+				 
 				
 		        wwzService.recordlogin(custid, fromUserid);
 		        
@@ -363,9 +344,7 @@ public abstract class GeneralAction<T> extends ActionSupport implements ModelDri
 			
 		}else{  
 	        Struts2Utils.getRequest().setAttribute("lscode",lscode); 
-			fromUserid=wwzService.getfromUseridfromcode(lscode);
-			Comunit  com=GetAllFunc.wxTouser.get(custid);
-			Struts2Utils.getRequest().setAttribute("com",com); 
+			fromUserid=wwzService.getfromUseridfromcode(lscode); 
 			//加载用户
 			Struts2Utils.getRequest().setAttribute("user",wwzService.getWxUser(fromUserid));
 			//邮件提醒验证

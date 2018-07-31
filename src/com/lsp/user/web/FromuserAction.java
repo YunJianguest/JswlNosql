@@ -274,10 +274,7 @@ public class FromuserAction extends GeneralAction<WxUser>{
 		  }
 		  share.put("fximg",GetAllFunc.wxTouser.get(custid).getLogo());
 		  share.put("fxurl",url);  
-		  Struts2Utils.getRequest().setAttribute("share", share);
-		  //加载佣金
-		  DBObject  agent=wwzservice.getAgentPrice(custid, fromUserid);
-		  Struts2Utils.getRequest().setAttribute("agent",agent);
+		  Struts2Utils.getRequest().setAttribute("share", share);  
 		  //检测代理 
 		  if(wwzservice.checkAgent(custid,fromUserid)){
 			 Struts2Utils.getRequest().setAttribute("isAgent","ok");
